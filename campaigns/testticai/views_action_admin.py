@@ -244,7 +244,7 @@ def ActiveData(request):
             excel = decorators.exportExcel(request, name="活动数据", dict1=l1)
             return excel
         elif request.GET['suchchoice'] == "time":
-            activedata = models.walkCount.objects.all().order_by("-creaTime")[start: end]
+            activedata = models.walkCount.objects.all().order_by("creaTime")[start: end]
             l1 = []
             for i in activedata:
                 if i.image is None:
@@ -1026,9 +1026,9 @@ def fakeData(request):
                 phoneNum = ""
                 telList = [130, 131, 132, 155, 156, 186, 185, 134,135, 137, 136, 138, 139, 150, 151, 152, 157, 158, 159, 182, 183, 188, 187, 133, 153, 180, 181, 189]
                 telHand = random.randint(0, len(telList) - 1)
-                phoneNum += telHand
+                phoneNum += str(telList[telHand])
                 for i in range(0, 8):
-                    phoneNum += random.randint(0, 9)
+                    phoneNum += str(random.randint(0, 9))
                 name = makeName.full_name(makeName.last_names, makeName.first_names)
                 openid = "WHYC" + str(uuid.uuid4().hex)[0: 9]
                 usrinfo = "手机号 " + phoneNum + " " + "姓名 " + name
