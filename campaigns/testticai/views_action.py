@@ -13,19 +13,7 @@ from campaigns.testticai.applet.Tcos import Auth
 from django.core.cache import cache
 import requests
 
-@decorators.action_render
-def getCache(request):
-    try:
-        access_token = request.session.get("walkCount")
-        print access_token
-        url = "https://api.weixin.qq.com/hardware/snstransfer/bracelet/getstep?access_token={0}".format(access_token)
-        r = requests.get(url)
-        print r
-        print r.request
-        print r.reason
-        return {'access_token': r.text, "result_code": 0}
-    except Exception as e:
-        return {"result_msg": e}
+
 
 
 
@@ -65,12 +53,10 @@ def update(request):
             image = request.POST['img'].encode("utf-8")
             count = request.POST['count']
             usrprice = models.UsrPhoneCall.objects.filter(openid=openid).first()
-            print usrprices
             if usrprice is None:
                 usrprice = models.UsrPhoneCall.objects.create(
                     openid=openid
                 )
-                print 111
                 usrdate = models.walkCount.objects.create(
                     # openid=request.session.get('wxUser'),
                     openid=openid,
@@ -83,7 +69,6 @@ def update(request):
                 return {"result_code": 0, "result_msg": None, "first": False, "id": usrdate.id, 'walk': count, "money": round(float(count) / 2000, 2)}
             else:
                 usrdate = models.walkCount.objects.create(
-                   # openid=request.session.get('wxUser'),
                     openid=openid,
                     image=image,
                     walk=count,
@@ -116,17 +101,37 @@ def suchAll(request):
 
 
 
+
+@decorators.action_render
+def firstUp(request):
+    openid = request.session.get("wxUser")
+    walkInfo = models.walkCount.objects.filter(openid=openid).first()
+
+    if walkInfo is None:
+        return {"result_code": 0, "result_msg": None}
+    else:
+        tel = "".join(str(walkInfo.info.usractive).split(" ")[1])
+        name = "".join(str(walkInfo.info.usractive).split(" ")[3])
+        return {"result_code": 1, "result_msg": None, "phone": tel, "name": name}
+
+
 #监测当天上传
 @decorators.action_render
 def checktoday(request):
     now = timezone.now()
     now = datetime.datetime(now.year, now.month, now.day, 0, 0, 0, tzinfo=pytz.utc)
-    print now
-
     walkInfo = models.walkCount.objects.filter(openid=request.session.get("wxUser")).filter(
         creaTime__gte=now).first()
     if walkInfo is not None:
-        return {"result_code": 1, "result_msg": "已上传过", "walk": walkInfo.walk, "id": walkInfo.openid}
+        walk = None
+        if walkInfo.change != "0":
+            if int(walkInfo.change) == 0:
+                walk = 0
+            else:
+                walk = walkInfo.change
+        else:
+            walk = walkInfo.walk
+        return {"result_code": 1, "result_msg": "已上传过", "walk": walk, "id": walkInfo.openid}
     else:
         return {"result_code": 0, "result_msg": "为上传"}
 
@@ -242,11 +247,14 @@ def myDonate(request):
                     break
                 else:
                     count += 1
-            d1['rank'] = count
-            d1['myWalk'] = myWalk
+            if myWalk == 0:
+                d1['rank'] = None
+                d1['myWalk'] = 0
+            else:
+                d1['rank'] = count
+                d1['myWalk'] = myWalk
             L1.append(d1)
-        nowDay = timezone.datetime.now()
-        nowDay = datetime.datetime(nowDay.year, nowDay.month, nowDay.day, 0, 0, 0, tzinfo=pytz.utc)
+        nowDay = datetime.date.today()
         weekDayd = nowDay - datetime.timedelta(days=1)
         Dcount = models.hitprize.objects.filter(countType=1).filter(isSend=0).filter(creatime__gte=nowDay).first()
         dayCount = models.hitprize.objects.filter(countType=1).filter(isSend=0).all().order_by("-creatime")
@@ -257,17 +265,22 @@ def myDonate(request):
                 creaTime = 0
                 rank = 0
                 walk = 0
+                info = None
                 valueList = json.loads(j.usrList)['data']
                 for i in valueList:
                     if i['user'] == myId.id:
-                        creaTime = i['creatime']
-                        rank = i['rank']
-                        walk = i['walk']
+                        if i is not None:
+                            creaTime = i['creatime']
+                            rank = i['rank']
+                            walk = i['walk']
+                            if i.has_key("info"):
+                                info = i['info']
                         break
                 d1['weekMatch'] = j.weekMacht
                 d1['creatime'] = creaTime
                 d1['rank'] = rank
                 d1['walk'] = walk
+                d1['info'] = info
                 l1.append(d1)
             if Dcount is not None:
                 myData = models.walkCount.objects.filter(creaTime__gte=nowDay).filter(openid=openid).all()
@@ -278,7 +291,13 @@ def myDonate(request):
                 for M in myData:
                     d2 = {}
                     d2['user'] = myId.id
-                    d2['walk'] = M.walk
+                    if M.change != "0":
+                        if int(M.change) == 0:
+                            d2['walk'] = 0
+                        else:
+                            d2['walk'] = M.change
+                    else:
+                        d2['walk'] = M.walk
                     d2['id'] = M.id
                     d2['creatime'] = str(M.creaTime).split(" ")[0] + " " + str(M.creaTime).split(" ")[1].split(".")[0]
                     l2.append(d2)
@@ -292,13 +311,19 @@ def myDonate(request):
                 else:
                     d2 = {}
                     d2['user'] = myId.id
-                    d2['walk'] = i.walk
+                    if i.change != "0":
+                        if int(i.change) == 0:
+                            d2['walk'] = 0
+                        else:
+                            d2['walk'] = int(i.change)
+                    else:
+                        d2['walk'] = int(i.walk)
                     d2['id'] = i.id
                     d2['creatime'] = str(i.creaTime).split(" ")[0] + " " + str(i.creaTime).split(" ")[1].split(".")[0]
                     l2.append(d2)
         return {"week": L1, "day": l1, "result_code": 0, "result_msg": None, "no_check": l2}
     except Exception as e:
-        return {"result_code": -1, "result_msg": str(e)}
+        return {"result_code": -1, "result_msg": e}
 
 
 
@@ -334,8 +359,7 @@ def fetchprice(request):
 @decorators.action_render
 def signup(request):
     try:
-        usrinfo = request.POST.get("usrinfo")
-        print usrinfo
+        usrinfo = request.POST['usrinfo']
         # openid = request.session.get("wxUser")
         openid = request.session.get("wxUser")
         USER = models.walkCount.objects.filter(openid=openid).all()
@@ -427,6 +451,7 @@ def activeuser(request):
     except Exception as e:
         return {"result_code": -1, "result_msg": e}
 
+
 # 周排行
 @decorators.action_render
 def weekCount(request):
@@ -438,11 +463,15 @@ def weekCount(request):
         now = timezone.datetime.today()
         nowday = datetime.datetime(now.year, now.month, now.day, 0, 0, 0)
         weekDayd = nowday - datetime.timedelta(days=1)
-        matchWek = int(str(datetime.date.today() - datetime.date.fromtimestamp(config.WorkConfig.starTime)).split(" ")[0])
-        if 0 < matchWek <= 7:
+        matWek = str(datetime.date.today() - datetime.date.fromtimestamp(config.WorkConfig.starTime))
+        if matWek == "0:00:00":
+            matchWek = 0
+        else:
+            matchWek = int(matWek.split(" ")[0])
+        if 0 <= matchWek < 7:
             weekCount = 1
 
-        elif 7 < matchWek <= 14:
+        elif 7 <= matchWek < 14:
             weekCount = 2
             matchWek -= 7
         else:
@@ -461,6 +490,7 @@ def weekCount(request):
                 if ID == i['user']:
                     d2["user"] = i['user']
                     d2['walk'] = i['walk']
+                    d2['info'] = i['info']
                     break
                 else:
                     count += 1

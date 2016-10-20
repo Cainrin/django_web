@@ -18,8 +18,8 @@ log = logging.getLogger('django')
 # campaign = models.Campaign.objects.get(pk=app_id)
 # appid = campaign.weixin.key
 # secret = campaign.weixin.secret
-appid = "wx09a6ae929e7445a8"
-secret = "de9f05f4575f5b2c2790c645c77f23e5"
+appid = ""
+secret = ""
 
 
 class APIError(object):

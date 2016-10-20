@@ -4,7 +4,7 @@ import time
 class WorkConfig(object):
     # relative path
     REL_PATH_IMAGE = 'campaigns/testticai/work/image/'
-    starTime = time.mktime(time.strptime("2016-10-05", "%Y-%m-%d"))
+    starTime = time.mktime(time.strptime("2016-10-19", "%Y-%m-%d"))
     week = 1
 
 class VoteConfig(object):

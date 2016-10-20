@@ -10,9 +10,9 @@ import binascii
 
 class Auth(object):
     def __init__(self):
-        self.appid = "10030008"
-        self.secret_id = "AKIDLMiPp9s40iDyGlzsULO6izGZICDuujJw"
-        self.secret_key = "DvpK3udaFkI9XaBxshirtgTGEma6A26N"
+        self.appid = ""
+        self.secret_id = ""
+        self.secret_key = ""
 
 
 

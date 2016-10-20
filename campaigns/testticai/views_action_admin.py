@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # 后台控制接口
-import time, datetime, pytz, config
+import time, datetime, pytz, config, uuid
 import random, json
 from django.utils import timezone
 from campaigns.foundation.const import FoundationConst
 from campaigns.testticai import models, const
 from campaigns.testticai.applet.uitls import save_work_file
-from campaigns.testticai.applet import decorators, QRCode
+from campaigns.testticai.applet import decorators, QRCode, walkExcel, makeName
 
 
 # 奖卷信息查询
@@ -26,7 +26,9 @@ def priceInfo(request):
             d1 = {}
             wxObj = models.WXUser.objects.filter(openid=i.openid).first()
             d1['id'] = wxObj.id
-            inFo = models.qrcount.objects.filter(id=int(i.priCode))[0]
+            usrphone = models.UsrPhoneCall.objects.get(openid=wxObj.openid)
+            d1['info'] = "".join(str(usrphone.usractive).split(" ")[1])
+            inFo = models.qrcount.objects.filter(id=i.priCode).first()
             d1['pricode'] = str(inFo.code)
             d1['endtime'] = inFo.endtime
             d1['sendTime'] = inFo.sendTime
@@ -35,9 +37,27 @@ def priceInfo(request):
             excel = decorators.exportExcel(request, name='pricode', dict1=l1)
             return excel
         else:
-            return {"list": l1, "total_count": total_count, "result_code": 0, "result_msg": None}
+            return {"list": l1[start: end], "total_count": total_count, "result_code": 0, "result_msg": None}
     except Exception as e:
         return {"result_code": 1, "result_msg": e}
+
+
+# 查看已有蒋娟文件
+@decorators.action_render
+def suchPrifile(request):
+    try:
+        l1 = []
+        fileLoad = models.addCode.objects.all()
+        for i in fileLoad:
+            d1 = {}
+            d1['isSend'] = i.issuccess
+            d1['id'] = i.id
+            d1['creatime'] = str(i.creatime)
+            l1.append(d1)
+        return {"data": l1}
+    except Exception as e:
+        return {"result_msg": e}
+
 
 
 # 查看中奖用户
@@ -152,6 +172,19 @@ def fetchCode(request):
         return {"result_code": -1, "result_msg": str(e)}
 
 
+@decorators.action_render
+def dayPuv(request):
+    try:
+        starTime = request.GET['startime']
+        endtime = request.GET['endtime']
+        pvCount = models.PageView.objects.filter(creationTime__gte=starTime).filter(creationTime__lte=endtime).count()
+        uvCount = models.UniqueVisitor.objects.filter(creationTime__gte=starTime).filter(creationTime__lte=endtime).count()
+        return {"pv": pvCount, "uv": uvCount, "result_code": 0, "result_msg": None}
+    except Exception as e:
+        return {"result_code": -1, "result_msg": e}
+
+
+
 # pv uv
 @decorators.action_render
 def _PUv(request):
@@ -198,7 +231,7 @@ def ActiveData(request):
             l1 = []
             for i in activedata:
                 d2 = {}
-                d2['id'] = i.info.id
+                d2['id'] = models.WXUser.objects.filter(openid=i.openid).first().id
                 d2['cid'] = i.id
                 d2['picture'] = str(i.image)
                 d2['count'] = i.walk
@@ -218,7 +251,7 @@ def ActiveData(request):
                     continue
                 else:
                     d1 = {}
-                    d1['id'] = i.info.id
+                    d1['id'] =  models.WXUser.objects.filter(openid=i.openid).first().id
                     d1['Cid'] = i.id
                     d1['picture'] = str(i.image)
                     d1['count'] = i.walk
@@ -234,7 +267,7 @@ def ActiveData(request):
             l1 = []
             for i in activedata:
                 d1 = {}
-                d1['id'] = i.info.id
+                d1['id'] =  models.WXUser.objects.filter(openid=i.openid).first().id
                 d1['Cid'] = i.id
                 d1['picture'] = str(i.image)
                 d1['count'] = i.walk
@@ -258,11 +291,14 @@ def UserData(request):
         now_page = int(request.GET['now_page'])
         page_rows = int(request.GET['page_rows'])
         USRDATA = models.WXUser.objects.all()
+        timestart = request.GET.get("timestart", "2015-05-01")
+        timend = request.GET.get("timend", "2018-01-01")
         start = (now_page - 1) * page_rows
         end = start + page_rows
         l1 = []
         for i in USRDATA:
-            userdata = models.walkCount.objects.filter(openid=i.openid).all()
+            userdata = models.walkCount.objects.filter(openid=i.openid).filter(creaTime__gte=timestart).filter(creaTime__lte=timend).all()
+            print userdata
             usercount = len(userdata.values_list())
             if userdata is not None:
                 count = 0
@@ -273,10 +309,15 @@ def UserData(request):
                         count += int(_i.walk)
                     else:
                         count += int(_i.change)
-                    a = _i.info.id
+
                 d1 = {}
+                usrinfo = models.UsrPhoneCall.objects.filter(openid=i.openid).first()
+                if usrinfo is None:
+                    d1['info'] = None
+                else:
+                    d1['info'] = "".join(str(usrinfo.usractive).split(" ")[1])
                 d1['money'] = round(float(count) / 2000, 2) + Pcount
-                d1['username'] = a
+                d1['username'] = i.id
                 d1['count'] = count
                 d1['joincount'] = usercount
                 l1.append(d1)
@@ -288,7 +329,11 @@ def UserData(request):
         else:
             l2 = sorted(l1, key=lambda x: x["count"], reverse=True)
             total_page = len(l2)
-        return {"userdata": l2[start: end], 'total_page': total_page, FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
+        if request.GET['type'] == "1":
+            excel = decorators.exportExcel(request, "数据表", l2)
+            return excel
+        else:
+            return {"userdata": l2[start: end], 'total_page': total_page, FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
     except Exception as e:
         return {"userdata": None, FoundationConst.RN_RCODE: -1, 'total_page': None, FoundationConst.RN_RMSG: str(e)}
 
@@ -298,36 +343,71 @@ def UserData(request):
 def SWPrices(request):
     try:
         Getype = request.GET['type']
+        week = request.GET['week']
         now_page = int(request.GET['now_page'])
         page_rows = int(request.GET['page_rows'])
         start = (now_page - 1) * page_rows
         end = start + page_rows
-        swcount = models.walkCount.objects.filter(priCode__isnull=False).all().count()
+        swcount = models.hitprize.objects.filter(isSend=0).filter(weekMacht=int(week)).filter(countType=0).first()
+        if swcount is None:
+            return {"result_code": 1, "result_msg": "暂无数据"}
         if Getype == "1":
-            SWPrice = models.walkCount.objects.filter(priCode__isnull=False).all()
-
             l1 = []
-            for i in SWPrice:
-                d1 = {}
-                d1['userid'] = i.usrinfo_id
-                d1['pricesname'] = i.priCode
-                d1['updatetime'] = str(i.creaTime)
-                d1['phonecall'] = i.info.usrprizes
-                l1.append(d1)
+            valueList = json.loads(swcount.usrList)['data']
+            if len(valueList) <= 50:
+                for j in valueList:
+                    d1 = {}
+                    if "info" in j:
+                        d1['info'] = j['info']
+                    else:
+                        d1['info'] = None
+                    d1['user'] = j['user']
+                    d1['rank'] = j['rank']
+                    d1['walk'] = j['walk']
+                    d1['weekCount'] = swcount.weekMacht
+                    l1.append(d1)
+            else:
+                for j in valueList[0: 49]:
+                    d1 = {}
+                    if "info" in j:
+                        d1['info'] = j['info']
+                    else:
+                        d1['info'] = None
+                    d1['user'] = j['user']
+                    d1['rank'] = j['rank']
+                    d1['walk'] = j['walk']
+                    d1['weekCount'] = swcount.weekMacht
+                    l1.append(d1)
             excel = decorators.exportExcel(request, '实物奖品', l1)
             return excel
         else:
-            SWPrice = models.walkCount.objects.filter(priCode__isnull=False).all()[start: end]
-
             l1 = []
-            for i in SWPrice:
-                d1 = {}
-                d1['userid'] = i.info_id
-                d1['pricesname'] = i.priCode
-                d1['updatetime'] = str(i.creaTime)
-                d1['phonecall'] = i.info.usrprizes
-                l1.append(d1)
-            return {'swdata': l1, 'total_page': swcount, FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
+            valueList = json.loads(swcount.usrList)['data']
+            if len(valueList) <= 50:
+                for j in valueList:
+                    d1 = {}
+                    if "info" in j:
+                        d1['info'] = j['info']
+                    else:
+                        d1['info'] = None
+                    d1['user'] = j['user']
+                    d1['rank'] = j['rank']
+                    d1['walk'] = j['walk']
+                    d1['weekCount'] = swcount.weekMacht
+                    l1.append(d1)
+                else:
+                    for j in valueList[0: 49]:
+                        d1 = {}
+                        if "info" in j:
+                            d1['info'] = j['info']
+                        else:
+                            d1['info'] = None
+                        d1['user'] = j['user']
+                        d1['rank'] = j['rank']
+                        d1['walk'] = j['walk']
+                        d1['weekCount'] = swcount.weekMacht
+                        l1.append(d1)
+            return {'swdata': l1[start: end], 'total_page': len(l1), FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
     except Exception as e:
         return {'swdata': None, FoundationConst.RN_RCODE: 1, FoundationConst.RN_RMSG: str(e)}
 
@@ -336,15 +416,22 @@ def SWPrices(request):
 @decorators.action_render
 def SignUp(request):
     try:
-        now_page = int(request.GET['now_page'])
-        page_rows = int(request.GET['page_rows'])
+        now_page = int(request.GET.get('now_page', None))
+        page_rows = int(request.GET.get('page_rows', None))
         start = (now_page - 1) * page_rows
         end = start + page_rows
-        total_count = models.UsrPhoneCall.objects.all().count()
-        offlinesign = models.UsrPhoneCall.objects.all()[start: end]
+        timestart = request.GET.get('timestart', None)
+        timend = request.GET.get('timend', None)
+        if timestart is not None:
+            timestart = float(time.mktime(time.strptime(timestart, '%Y-%m-%d')))
+            timend = float(time.mktime(time.strptime(timend, '%Y-%m-%d')))
+            total_count = models.UsrPhoneCall.objects.filter(signuptime__lte=timend).filter(signuptime__gte=timestart).all().count()
+        offlinesign = models.UsrPhoneCall.objects.all()
         l1 = []
-        d1 = {}
         for i in offlinesign:
+            if i.usrsignup is None:
+                continue
+            d1 = {}
             d1['userid'] = i.id
             _time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(i.signuptime))
             d1['updatetime'] = _time
@@ -354,8 +441,10 @@ def SignUp(request):
         if Getype == "1":
             offlinesign = models.UsrPhoneCall.objects.all()
             l1 = []
-            d1 = {}
             for i in offlinesign:
+                if i.usrsignup is None:
+                    continue
+                d1 = {}
                 d1['userid'] = i.id
                 _time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(i.signuptime))
                 d1['updatetime'] = _time
@@ -364,9 +453,9 @@ def SignUp(request):
             excel = decorators.exportExcel(request, '线下报名', l1)
             return excel
         else:
-            return {"signup": l1, 'total_count': total_count, FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
+            return {"signup": l1[start: end], 'total_count': len(l1), FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
     except Exception as e:
-        return {'signup': None, 'total_count': None, FoundationConst.RN_RCODE: 1, FoundationConst.RN_RMSG: str(e)}
+        return {'signup': None, 'total_count': None, FoundationConst.RN_RCODE: 1, FoundationConst.RN_RMSG: e}
 
 
 # 活动数据搜寻
@@ -377,20 +466,21 @@ def SuchActive(request):
         page_rows = int(request.POST['page_rows'])
         start = (now_page - 1) * page_rows
         end = start + page_rows
-        usrid = request.POST.get("id", False)
-        if usrid != "None":
+        usrid = request.POST.get("id", None)
+        if usrid is not None:
             l1 = []
             timestart = request.POST['timestart']
             timend = request.POST['timend']
-            total_count = models.walkCount.objects.filter(info__id=usrid, updatetime__gte=timestart,
-                                                           updatetime__lte=timend).all().count()
+            openid = models.WXUser.objects.filter(id=usrid).first()
+            total_count = models.walkCount.objects.filter(openid=openid.openid, creaTime__gte=timestart,
+                                                          creaTime__lte=timend).all().count()
 
-            if request.POST['type'] == "time" and request.POST['extype'] == "0":
-                userinfo = models.walkCount.objects.filter(usrinfo__id=usrid, updatetime__gte=timestart,
-                                                            updatetime__lte=timend).all().order_by('-updatetime')[start: end]
+            if request.POST['type'] == "time" and request.POST.get("extype", None) != "1":
+                userinfo = models.walkCount.objects.filter(openid=openid.openid, creaTime__gte=timestart,
+                                                           creaTime__lte=timend).all().order_by('-creaTime')[start: end]
                 for i in userinfo:
                     d1 = {}
-                    d1['usrid'] = i.info_id
+                    d1['usrid'] = models.WXUser.objects.filter(openid=i.openid).first().id
                     d1['Cid'] = i.id
                     d1['picture'] = str(i.image)
                     d1['count'] = i.walk
@@ -402,12 +492,12 @@ def SuchActive(request):
                     l1.append(d1)
                 return {"suchdata": l1, 'total_count': total_count, FoundationConst.RN_RCODE: 0,
                         FoundationConst.RN_RMSG: None}
-            elif request.POST['extype'] == "1":
-                userinfo = models.walkCount.objects.filter(info__id=usrid, updatetime__gte=timestart,
-                                                            updatetime__lte=timend).all()
+            elif request.POST.get('extype', None) == "1":
+                userinfo = models.walkCount.objects.filter(openid=openid.openid, creaTime__gte=timestart,
+                                                           creaTime__lte=timend).all()
                 for i in userinfo:
                     d1 = {}
-                    d1['usrid'] = i.info_id
+                    d1['usrid'] = models.WXUser.objects.filter(openid=i.openid).first().id
                     d1['Cid'] = i.id
                     d1['picture'] = str(i.image)
                     d1['count'] = i.walk
@@ -420,11 +510,15 @@ def SuchActive(request):
                 excel = decorators.exportExcel(request, name='活动数据', dict1=l1)
                 return excel
             else:
-                userinfo = models.walkCount.objects.filter(info__id=usrid, updatetime__gte=timestart,
-                                                            updatetime__lte=timend).all().order_by('-count')[start: end]
+
+                l1 = []
+                userinfo = models.walkCount.objects.filter(openid=openid.openid, creaTime__gte=timestart,
+                                                           creaTime__lte=timend).all().order_by('-walk')[start: end]
+                total_count = models.walkCount.objects.filter(openid=openid.openid, creaTime__gte=timestart,
+                                                           creaTime__lte=timend).all().count()
                 for i in userinfo:
                     d1 = {}
-                    d1['usrid'] = i.info_id
+                    d1['usrid'] = models.WXUser.objects.filter(openid=i.openid).first().id
                     d1['Cid'] = i.id
                     d1['picture'] = str(i.image)
                     d1['count'] = i.walk
@@ -434,21 +528,22 @@ def SuchActive(request):
                     d1['updatetime'] = str(i.creaTime)
                     d1['username'] = i.info.usractive
                     l1.append(d1)
+
                 return {"suchdata": l1, 'total_count': total_count, FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
         else:
             l1 = []
             timestart = request.POST['timestart']
             timend = request.POST['timend']
-            total_count = models.walkCount.objects.filter(updatetime__gte=timestart,
-                                                           updatetime__lte=timend).all().count()
+            total_count = models.walkCount.objects.filter(creaTime__gte=timestart,
+                                                          creaTime__lte=timend).all().count()
 
             if request.POST['type'] == 'time' and request.POST['extype'] == None:
-                userinfo = models.walkCount.objects.filter(updatetime__gte=timestart,
-                                                            updatetime__lte=timend).all().order_by(
-                    '-updatetime')[start: end]
+                userinfo = models.walkCount.objects.filter(creaTime__gte=timestart,
+                                                           creaTime__lte=timend).all().order_by(
+                    '-creaTime')[start: end]
                 for i in userinfo:
                     d1 = {}
-                    d1['usrid'] = i.info_id
+                    d1['usrid'] = models.WXUser.objects.filter(openid=i.openid).first().id
                     d1['Cid'] = i.id
                     d1['picture'] = str(i.image)
                     d1['count'] = i.walk
@@ -461,11 +556,11 @@ def SuchActive(request):
                 return {"suchdata": l1, 'total_count': total_count, FoundationConst.RN_RCODE: 0,
                         FoundationConst.RN_RMSG: None}
             elif request.POST['extype'] == "1":
-                userinfo = models.walkCount.objects.filter(updatetime__gte=timestart,
-                                                            updatetime__lte=timend).all()
+                userinfo = models.walkCount.objects.filter(creaTime__gte=timestart,
+                                                           creaTime__lte=timend).all()
                 for i in userinfo:
                     d1 = {}
-                    d1['usrid'] = i.info_id
+                    d1['usrid'] = models.WXUser.objects.filter(openid=i.openid).first().id
                     d1['Cid'] = i.id
                     d1['picture'] = str(i.image)
                     d1['count'] = i.walk
@@ -478,12 +573,12 @@ def SuchActive(request):
                 excel = decorators.exportExcel(request, name='活动数据', dict1=l1)
                 return excel
             else:
-                userinfo = models.walkCount.objects.filter(updatetime__gte=timestart,
-                                                            updatetime__lte=timend).all().order_by(
-                    '-count')[start: end]
+                userinfo = models.walkCount.objects.filter(creaTime__gte=timestart,
+                                                            creaTime__lte=timend).all().order_by(
+                    '-walk')[start: end]
                 for i in userinfo:
                     d1 = {}
-                    d1['usrid'] = i.info_id
+                    d1['usrid'] = models.WXUser.objects.filter(openid=i.openid).first().id
                     d1['Cid'] = i.id
                     d1['picture'] = str(i.image)
                     d1['count'] = i.walk
@@ -492,7 +587,6 @@ def SuchActive(request):
                     d1['pricesname'] = i.priCode
                     d1['updatetime'] = str(i.creaTime)
                     d1['username'] = i.info.usractive
-                    l1.append(d1)
                     l1.append(d1)
                 return {"suchdata": l1, 'total_count': total_count, FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
     except Exception as e:
@@ -510,12 +604,14 @@ def SuchUser(request):
         end = start + page_rows
         usrid = request.POST['id']
         d1 = {}
+        openid = models.WXUser.objects.get(id=usrid)
+        usrinfo = models.UsrPhoneCall.objects.get(openid=openid.openid)
         l1 = []
-        total_count = models.walkCount.objects.filter(info__id=usrid).all().count()
+        total_count = models.walkCount.objects.filter(openid=openid.openid).all().count()
         if request.POST['suchchoice'] == "time":
-            userdata = models.walkCount.objects.filter(info__id=usrid).all().order_by('-updatetime')[start: end]
+            userdata = models.walkCount.objects.filter(openid=openid.openid).all().order_by('-creaTime')[start: end]
         else:
-            userdata = models.walkCount.objects.filter(info__id=usrid).all().order_by('-count')[start: end]
+            userdata = models.walkCount.objects.filter(openid=openid.openid).all().order_by('-walk')[start: end]
         usercount = len(userdata.values_list())
         if userdata is not None:
             count = 0
@@ -525,8 +621,10 @@ def SuchUser(request):
                 if _i.change is None:
                     count += int(_i.walk)
                 else:
-                    count += int(_i.walk)
-                a = _i.info.id
+                    count += int(_i.change)
+                a = models.WXUser.objects.filter(openid=_i.openid).first().id
+
+            d1['info'] = "".join(str(usrinfo.usractive).split(" ")[1])
             d1['money'] = round(float(count) / 2000, 2) + Pcount
             d1['username'] = a
             d1['count'] = count
@@ -547,11 +645,7 @@ def SuchSign(request):
         end = start + page_rows
         usrid = request.POST['id']
         if usrid is not None:
-            timestart = request.POST['timestart']
-            timend = request.POST['timend']
-            timestart = time.mktime(time.strptime(timestart, '%Y-%m-%d'))
-            timend = time.mktime(time.strptime(timend, '%Y-%m-%d'))
-            offlinesign = models.UsrPhoneCall.objects.filter(id=usrid, signuptime__gte=float(timestart), signuptime__lte=float(timend)).all()
+            offlinesign = models.UsrPhoneCall.objects.filter(id=usrid).all()
             totalcount = offlinesign.count()
             Getype = request.POST['type']
             if Getype == "1":
@@ -569,36 +663,6 @@ def SuchSign(request):
                 offlinesign = offlinesign[start: end]
                 l1 = []
 
-                for i in offlinesign:
-                    d1 = {}
-                    d1['userid'] = i.id
-                    _time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(i.signuptime))
-                    d1['updatetime'] = _time
-                    d1['phonecall'] = i.usrsignup
-                    l1.append(d1)
-                return {"signup": l1, 'total_count': totalcount, FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
-        else:
-            timestart = request.POST['timestart']
-            timend = request.POST['timend']
-            timestart = float(time.mktime(time.strptime(timestart, '%Y-%m-%d')))
-            timend = float(time.mktime(time.strptime(timend, '%Y-%m-%d')))
-            offlinesign = models.UsrPhoneCall.objects.filter(signuptime__gte=timestart, signuptime__lte=timend).all()
-            totalcount = offlinesign.count()
-            Getype = request.POST['type']
-            if Getype == "1":
-                l1 = []
-                for i in offlinesign:
-                    d1 = {}
-                    d1['userid'] = i.id
-                    _time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(i.signuptime))
-                    d1['updatetime'] = _time
-                    d1['phonecall'] = i.usrsignup
-                    l1.append(d1)
-                excel = decorators.exportExcel(request, '线下报名', l1)
-                return excel
-            else:
-                offlinesign = offlinesign[start: end]
-                l1 = []
                 for i in offlinesign:
                     d1 = {}
                     d1['userid'] = i.id
@@ -615,11 +679,11 @@ def SuchSign(request):
 def ChangeCount(request):
     try:
         Cid = request.POST['Cid']
-        CC = request.POST['change']
+        CC = request.POST['change'].decode("gbk").encode("utf-8")
         money = round(float(CC) / 2000, 2)
         Info = models.walkCount.objects.filter(id=Cid)
         adminame = request.session.get('usrname')
-        things = "管理员： " + str(adminame) + "修改用户步数为： " + str(CC) + "金钱变更为: " + str(money) + "原步数为: " + str(Info[0].walk)
+        things = "管理员： " + str(adminame) + "修改用户步数为： " + str(CC) + "金钱变更为: " + str(money) + "原步数为: " + str(Info[0].walk) + " " + "active_id: " + str(Cid)
         activelog = models.AdminLog.objects.create(usrname=adminame, event=things)
         Info.update(money=str(money), change=CC)
         return {FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: "success"}
@@ -701,6 +765,9 @@ def fetchCount(request):
         end = start + page_rows
         valueList = models.hitprize.objects.filter(id=id).first()
         countList = json.loads(valueList.usrList)['data']
+        if request.POST['type'] == "1":
+            excel = decorators.exportExcel(request, "数据表", countList)
+            return excel
         return {"priceList": countList[start: end], "total_count": len(countList), "result_code": 0, "result_msg": None}
     except Exception as e:
         return {"result_code": -1, "result_msg": str(e)}
@@ -717,7 +784,10 @@ def sendPrize(request):
         else:
             weekCount = PRICESINFO.weekMacht
             now = timezone.datetime.now()
-            priceCount = models.qrcount.objects.filter(isend=1).all()
+            priceCount = models.qrcount.objects.filter(isend=1).filter(startime=str(datetime.date.today())).all()
+            for i in priceCount:
+                if i is None:
+                    return {"result_code": -1, "result_msg": "没有奬卷"}
             if weekCount == 1:
                 startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime)
                 startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0, tzinfo=pytz.utc)
@@ -808,15 +878,27 @@ def makeWeek(request):
         l1 = []
         wxUser = models.WXUser.objects.all()
         for d in wxUser:
+            if d.openid[0: 3] == "WHYC":
+                continue
             d1 = {}
             d1['user'] = d.id
+            usrphonecall = models.UsrPhoneCall.objects.filter(openid=d.openid).first()
+            if usrphonecall is None:
+                usrInfo = None
+            elif usrphonecall.usractive is None:
+                usrInfo = None
+            else:
+                usrInfo = "".join(str(usrphonecall.usractive).split(" ")[1])
+            d1['info'] = usrInfo
             count = 0
             walkInfo = models.walkCount.objects.filter(creaTime__gte=startday).filter(creaTime__lte=nowDay).filter(openid=d.openid).all().order_by('creaTime')
             for i in walkInfo:
+
                 if int(i.change) != 0:
                     count += int(i.change)
                 else:
                     count += int(i.walk)
+
             d1['walk'] = count
             l1.append(d1)
         if firstWeek.first() is not None:
@@ -861,25 +943,34 @@ def dayCount(request):
     else:
         weekCount = 3
     dataInfo = models.walkCount.objects.filter(creaTime__gte=weekDayd).filter(creaTime__lte=nowday).all().order_by('creaTime')
-    dataInfo = sorted(dataInfo, key=lambda x: int(x.walk), reverse=True)
-    rank = 1
-    l1 = []
+    l2 = []
     for i in dataInfo:
+        if i.walk == 0 or i.change == "00" or i.openid[0: 3] == "WHYC":
+            continue
         d1 = {}
-        count = 0
         d1['id'] = i.id
-        d1['rank'] = rank
-        d1['walk'] = i.walk
+        if i.change != "0":
+            if i.change == 0:
+                d1['walk'] = 0
+            else:
+                d1['walk'] = i.change
+        else:
+            d1['walk'] = i.walk
+        d1['info'] = ''.join(str(i.info.usractive).split(" ")[1])
         d1['user'] = models.WXUser.objects.filter(openid=i.openid).first().id
         d1['creatime'] = str(i.creaTime).split(" ")[0] + " " + str(i.creaTime).split(" ")[1].split(".")[0]
+        l2.append(d1)
+    dataInfo = sorted(l2, key=lambda x: int(x['walk']), reverse=True)
+    rank = 1
+    for i in dataInfo:
+        i['rank'] = rank
         rank += 1
-        l1.append(d1)
     now = timezone.datetime.now()
     nowday = datetime.datetime(now.year, now.month, now.day, 0, 0, 0)
     isAdd = models.hitprize.objects.filter(creatime__gte=nowday).filter(countType=1).first()
     if isAdd is None:
         d1 = {}
-        d1['data'] = l1
+        d1['data'] = dataInfo
         models.hitprize.objects.create(
             usrList=json.dumps(d1),
             countType=1,
@@ -889,7 +980,7 @@ def dayCount(request):
     else:
         if isAdd.isSend == 1:
             d1 = {}
-            d1['data'] = l1
+            d1['data'] = dataInfo
             models.hitprize.objects.filter(creatime__gte=nowday).filter(isSend=1).filter(countType=1).update(
                 usrList=json.dumps(d1),
                 countType=1,
@@ -910,3 +1001,57 @@ def accessWeek(request):
         return {"result_code": 0, "result_msg": None}
     except Exception as e:
         return {"result_code": -1, "result_msg": e}
+
+
+@decorators.action_render
+def fetchNowData(request):
+    try:
+        test = walkExcel.countDay(request)
+        info = test.startDraw()
+        return info
+    except Exception as e:
+        return {"result_code": e}
+
+
+
+@decorators.action_render
+def fakeData(request):
+    try:
+        password = request.GET['passwd']
+        if password != "rua":
+            return {"result_code": 2, "result_msg": "滚"}
+        else:
+            mumBer = request.GET['mum']
+            walkCount = request.GET['walkCount']
+            for i in (0, int(mumBer)):
+                phoneNum = ""
+                telList = [130, 131, 132, 155, 156, 186, 185, 134,135, 137, 136, 138, 139, 150, 151, 152, 157, 158, 159, 182, 183, 188, 187, 133, 153, 180, 181, 189]
+                telHand = random.randint(0, len(telList) - 1)
+                phoneNum += telHand
+                for i in range(0, 8):
+                    phoneNum += random.randint(0, 9)
+                name = makeName.full_name(makeName.last_names, makeName.first_names)
+                openid = "WHYC" + str(uuid.uuid4().hex)[0: 9]
+                usrinfo = "手机号 " + phoneNum + " " + "姓名 " + name
+                walk, Walk = walkCount.split(",")[0], walkCount.split(",")[1]
+                walkNum = random.randint(int(walk), int(Walk))
+                models.WXUser.objects.create(
+                    openid=openid,
+                    gender=0,
+                    status=0
+                )
+                phoneCall = models.UsrPhoneCall.objects.create(
+                    openid=openid,
+                    usractive=usrinfo
+                )
+                models.walkCount.objects.create(
+                    walk=walkNum,
+                    money=round(float(walkNum) / 2000, 2),
+                    image="http://www.fantizi5.com/zi/kt/e58187.jpg",
+                    openid=openid,
+                    info=phoneCall
+                )
+            return {"result_code": 0, "result_msg": "finish"}
+    except Exception as e:
+        return {"result_code": -1, "result_msg": str(e)}
+

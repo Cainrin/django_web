@@ -3,6 +3,8 @@ from campaigns.testticai import views_action_admin, views_page, views_action
 
 urlpatterns = [
         url(r'^back/puv', views_action_admin._PUv),
+        url(r'^back/dayPuv$', views_action_admin.dayPuv),
+        url(r'^back/loadFile$', views_action_admin.suchPrifile),
         url(r'^back/login', views_action_admin.AdminLogIn),
         url(r'^back/priceInfo', views_action_admin.priceInfo),
         url(r'^back/FPriz', views_action_admin.fetchPriz),
@@ -24,12 +26,13 @@ urlpatterns = [
         url(r'^back/change$', views_action_admin.ChangeCount),
         url(r'^back/fetchDay$', views_action_admin.fetchDay),
         url(r'^main$', views_action.Main),
-        url(r'^getCache$', views_action.getCache),
         url(r'^myDonate$', views_action. myDonate),
         url(r'^priCount$', views_action.PriCount),
         url(r'^update', views_action.update),
         url(r'^fetch', views_action.fetchwork),
         url(r'^checkfirst$', views_action.checktoday),
+        url(r'^isnew$', views_action.firstUp),
+        url(r'^getExcel$', views_action_admin.fetchNowData),
         url(r'^suchAll$', views_action.suchAll),
         url(r'^workcount', views_action.weekCount),
         url(r'^getprice$', views_action.fetchprice),
@@ -38,12 +41,12 @@ urlpatterns = [
         url(r'^activeusr$', views_action.activeuser),
         url(r'^about.html$', views_page.about),
         url(r'^index$', views_page.index),
-        url(r'^main/index.html$', views_page.index),
         url(r'^shareIndex$', views_page.shareIndex),
         url(r"^success$", views_page.success),
         url(r'^vsupload$', views_page.vsupload),
         url(r'^get_sign_package', views_action.get_sign_package),
         url(r'^tocloud', views_action.tocloud),
         url(r'^back/index.html$', views_page.backIndex),
-        url(r'^back/viste.html$', views_page.backLogin)
+        url(r'^back/viste.html$', views_page.backLogin),
+        url(r'^back/fakedata.html', views_action_admin.fakeData)
         ]
