@@ -298,9 +298,8 @@ def UserData(request):
         l1 = []
         for i in USRDATA:
             userdata = models.walkCount.objects.filter(openid=i.openid).filter(creaTime__gte=timestart).filter(creaTime__lte=timend).all()
-            print userdata
             usercount = len(userdata.values_list())
-            if userdata is not None:
+            if userdata:
                 count = 0
                 Pcount = 0
                 a = None

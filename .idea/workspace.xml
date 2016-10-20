@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c697ffa-87ae-4408-9427-8f4f34273144" name="默认的" comment="默认的">
+    <list default="true" id="0c697ffa-87ae-4408-9427-8f4f34273144" name="默认的" comment="新增makeName walkExcel模块为刷票以及导出主要excel数据&#10;后台新增接口&#10;back.fakedata.html&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testticai/admin.py" afterPath="$PROJECT_DIR$/campaigns/testticai/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testticai/applet/Tcos.py" afterPath="$PROJECT_DIR$/campaigns/testticai/applet/Tcos.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testticai/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/testticai/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testticai/config.py" afterPath="$PROJECT_DIR$/campaigns/testticai/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testticai/urls.py" afterPath="$PROJECT_DIR$/campaigns/testticai/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testticai/views_action.py" afterPath="$PROJECT_DIR$/campaigns/testticai/views_action.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testticai/views_action_admin.py" afterPath="$PROJECT_DIR$/campaigns/testticai/views_action_admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testticai/wechat_api.py" afterPath="$PROJECT_DIR$/campaigns/testticai/wechat_api.py" />
     </list>
     <ignored path="cmp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +41,58 @@
     <favorites_list name="cmp" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="views_action.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8720">
+              <caret line="508" column="36" selection-start-line="508" selection-start-column="36" selection-end-line="508" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="makeName.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/testticai/applet/makeName.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-324">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="walkExcel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/testticai/applet/walkExcel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/testticai/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views_action_admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action_admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="298" column="25" selection-start-line="298" selection-start-column="25" selection-end-line="298" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -110,10 +154,10 @@
         <option value="$PROJECT_DIR$/campaigns/testticai/views_action.py" />
         <option value="$PROJECT_DIR$/campaigns/testticai/applet/decorators.py" />
         <option value="$PROJECT_DIR$/../pa/pa.py" />
-        <option value="$PROJECT_DIR$/campaigns/testticai/views_action_admin.py" />
         <option value="$PROJECT_DIR$/campaigns/testticai/urls.py" />
         <option value="$PROJECT_DIR$/campaigns/testticai/wechat_api.py" />
         <option value="$PROJECT_DIR$/campaigns/hypro/wechat_api.py" />
+        <option value="$PROJECT_DIR$/campaigns/testticai/views_action_admin.py" />
       </list>
     </option>
   </component>
@@ -679,6 +723,21 @@
       <option name="presentableId" value="Default" />
       <updated>1461556094813</updated>
     </task>
+    <task id="LOCAL-00001" summary="默认的">
+      <created>1476953189023</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1476953189023</updated>
+    </task>
+    <task id="LOCAL-00002" summary="新增makeName walkExcel模块为刷票以及导出主要excel数据&#10;后台新增接口&#10;back.fakedata.html&#10;">
+      <created>1476953261407</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1476953261407</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -723,6 +782,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="默认的" />
+    <MESSAGE value="新增makeName walkExcel模块为刷票以及导出主要excel数据&#10;后台新增接口&#10;back.fakedata.html&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增makeName walkExcel模块为刷票以及导出主要excel数据&#10;后台新增接口&#10;back.fakedata.html&#10;" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
@@ -733,13 +797,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/campaigns/fenda201605/applet/vote.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/foundation/applet/vote.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1023,38 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action_admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="862" column="22" selection-start-line="862" selection-start-column="22" selection-end-line="862" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="508" column="36" selection-start-line="508" selection-start-column="36" selection-end-line="508" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/testticai/applet/walkExcel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/testticai/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="50" column="64" selection-start-line="50" selection-start-column="64" selection-end-line="50" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/testticai/wechat_api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1107,6 +1132,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/testticai/applet/makeName.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/testticai/applet/walkExcel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8720">
+          <caret line="508" column="36" selection-start-line="508" selection-start-column="36" selection-end-line="508" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/testticai/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action_admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="298" column="25" selection-start-line="298" selection-start-column="25" selection-end-line="298" selection-end-column="25" />
           <folding />
         </state>
       </provider>
