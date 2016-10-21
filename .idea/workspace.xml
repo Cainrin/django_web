@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c697ffa-87ae-4408-9427-8f4f34273144" name="默认的" comment="UserData接口list为空判断问题不可直接判断空列表为None但可以直接if list如果列表为空返回为false">
+    <list default="true" id="0c697ffa-87ae-4408-9427-8f4f34273144" name="默认的" comment="脑残问题修改">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testticai/views_action_admin.py" afterPath="$PROJECT_DIR$/campaigns/testticai/views_action_admin.py" />
     </list>
@@ -45,7 +45,7 @@
       <file leaf-file-name="views_action.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8720">
+            <state relative-caret-position="13392">
               <caret line="508" column="36" selection-start-line="508" selection-start-column="36" selection-end-line="508" selection-end-column="36" />
               <folding />
             </state>
@@ -55,7 +55,7 @@
       <file leaf-file-name="makeName.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/campaigns/testticai/applet/makeName.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-324">
+            <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -85,8 +85,8 @@
       <file leaf-file-name="views_action_admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action_admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="323" column="24" selection-start-line="323" selection-start-column="24" selection-end-line="323" selection-end-column="24" />
+            <state relative-caret-position="511">
+              <caret line="879" column="40" selection-start-line="879" selection-start-column="40" selection-end-line="879" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -204,6 +204,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -296,8 +298,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -760,7 +760,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476953761986</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="脑残问题修改">
+      <created>1476957251640</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1476957251640</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -809,7 +816,8 @@
     <MESSAGE value="默认的" />
     <MESSAGE value="新增makeName walkExcel模块为刷票以及导出主要excel数据&#10;后台新增接口&#10;back.fakedata.html&#10;" />
     <MESSAGE value="UserData接口list为空判断问题不可直接判断空列表为None但可以直接if list如果列表为空返回为false" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserData接口list为空判断问题不可直接判断空列表为None但可以直接if list如果列表为空返回为false" />
+    <MESSAGE value="脑残问题修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="脑残问题修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1051,7 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1512">
           <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,7 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,7 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,7 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,7 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6237">
           <caret line="240" column="55" selection-start-line="240" selection-start-column="55" selection-end-line="240" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,7 +1111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,7 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,7 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,7 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-486">
           <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,7 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,7 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
           <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1162,7 +1159,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/testticai/applet/makeName.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1178,7 +1175,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8720">
+        <state relative-caret-position="13392">
           <caret line="508" column="36" selection-start-line="508" selection-start-column="36" selection-end-line="508" selection-end-column="36" />
           <folding />
         </state>
@@ -1194,8 +1191,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/testticai/views_action_admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="323" column="24" selection-start-line="323" selection-start-column="24" selection-end-line="323" selection-end-column="24" />
+        <state relative-caret-position="511">
+          <caret line="879" column="40" selection-start-line="879" selection-start-column="40" selection-end-line="879" selection-end-column="40" />
           <folding />
         </state>
       </provider>

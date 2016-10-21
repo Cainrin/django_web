@@ -877,7 +877,7 @@ def makeWeek(request):
         l1 = []
         wxUser = models.WXUser.objects.all()
         for d in wxUser:
-            if d.openid[0: 3] == "WHYC":
+            if d.openid[0: 4] == "WHYC":
                 continue
             d1 = {}
             d1['user'] = d.id
@@ -944,7 +944,7 @@ def dayCount(request):
     dataInfo = models.walkCount.objects.filter(creaTime__gte=weekDayd).filter(creaTime__lte=nowday).all().order_by('creaTime')
     l2 = []
     for i in dataInfo:
-        if i.walk == 0 or i.change == "00" or i.openid[0: 3] == "WHYC":
+        if i.walk == 0 or i.change == "00" or i.openid[0: 4] == "WHYC":
             continue
         d1 = {}
         d1['id'] = i.id
