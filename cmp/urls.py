@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^fenda201605/', include('campaigns.fenda201605.urls')),
     url(r'^yiquan/', include('campaigns.yiquan.urls')),
     url(r'^testticai/', include('campaigns.testticai.urls')),
-    url(r'^ticai/', include('campaigns.testticai.urls')),
+    url(r'^testticai/', include('campaigns.testticai.urls')),
     url(r'^qiche/', include('campaigns.qiche.urls')),
     url(r'^yh/', include('campaigns.yh.urls')),
     url(r'^picc/', include('campaigns.picc.urls'))

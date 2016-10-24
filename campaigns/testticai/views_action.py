@@ -270,6 +270,7 @@ def PriCount(request):
 @decorators.action_render
 def myDonate(request):
     try:
+
         openid = request.session.get("wxUser")
         myId = models.WXUser.objects.filter(openid=openid).first()
         firstWeek = models.weekCount.objects.filter(openid=openid).all()
@@ -285,7 +286,7 @@ def myDonate(request):
         nowDay = datetime.date.today()
         weekDayd = nowDay - datetime.timedelta(days=1)
         Dcount = models.hitprize.objects.filter(countType=1).filter(isSend=0).filter(creatime__gte=nowDay).first()
-        dayCount = models.walkCount.objects.filter(creaTime__gte=weekDayd).filter(creaTime__lt=nowDay).filter(openid=openid).first()
+        dayCount = models.walkCount.objects.filter(creaTime__lt=nowDay).filter(openid=openid).first()
         if Dcount is not None:
             l1 = []
             d1 = {}

@@ -88,32 +88,20 @@ WSGI_APPLICATION = 'cmp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'cmp',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Hytestsql',
-#         'HOST': '192.168.100.250',
-#         'PORT': '5432'
-#     }
-# }
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': ''
+        'NAME': 'hylink',
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
 CACHES = {
     'default': {
         'BACKEND': 'redis_cache.cache.RedisCache',
-        'LOCATION': '',
+        'LOCATION': '127.0.0.1:6379',
         'OPTIONS': {
             "CLITEN_CLASS": "redis_cache.client.DefaultClient"
         },
