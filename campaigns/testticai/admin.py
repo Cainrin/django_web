@@ -4,9 +4,15 @@ from django import forms
 from django.utils.html import format_html
 from .const import WorkConst
 from campaigns.foundation.const import FoundationConst
-from .models import WXUser, CountPUV, AdminLog, AdminUser, WXUser, UsrPhoneCall, walkCount, qrcount, hitprize, hitsprize, addCode, PageView
+from .models import WXUser, CountPUV, AdminLog, AdminUser, WXUser, UsrPhoneCall, walkCount, qrcount, hitprize, weekCount, addCode, PageView
 from .applet import cheat
 from campaigns.foundation.actions import action_export_excel, form_platform_validate
+
+
+
+class weekCountAdmin(admin.ModelAdmin):
+    list_display = ['id', 'openid']
+
 
 
 class CountPUVAdmin(admin.ModelAdmin):
@@ -77,6 +83,7 @@ class PriceAdmin(admin.ModelAdmin):
 
 class qrcountAdmin(admin.ModelAdmin):
     list_display = ['id']
+    search_fields = ['code']
 
 
 class hitprizeAdmin(admin.ModelAdmin):
@@ -96,6 +103,6 @@ admin.site.register(UsrPhoneCall, PhoneAdmin)
 admin.site.register(walkCount, WalkAdmin)
 admin.site.register(qrcount, qrcountAdmin)
 admin.site.register(hitprize, hitprizeAdmin)
-admin.site.register(hitsprize, testAdmin)
+admin.site.register(weekCount, weekCountAdmin)
 admin.site.register(addCode, addCodeAdmin)
 admin.site.register(PageView, pvAdmin)

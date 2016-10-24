@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 # 后台控制接口
 import time, datetime, pytz, config, uuid
-import random, json
+import random, json, copy
 from django.utils import timezone
 from campaigns.foundation.const import FoundationConst
 from campaigns.testticai import models, const
 from campaigns.testticai.applet.uitls import save_work_file
 from campaigns.testticai.applet import decorators, QRCode, walkExcel, makeName
+
 
 
 # 奖卷信息查询
@@ -71,43 +72,54 @@ def fetchPriz(request):
         end = start + page_rows
         if Type == "week":
             inFo = models.hitprize.objects.filter(isSend=1, countType=0).all()
-            if inFo is not None:
-                for d in inFo:
-                    walkList = json.loads(d.usrList)['data']
+            if inFo:
+                l1 = []
+                for d in inFo[start: end]:
+                    d1 = {}
+                    openID = models.WXUser.objects.filter(openid=d.usr).first()
+                    d1['id'] = openID.id
+                    d1['walk'] = d.walk
+                    d1['weekCount'] = d.weekMacht
+                    l1.append(d1)
+                if request.GET['excel'] == 1:
                     l1 = []
-                    for i in walkList:
+                    for d in inFo:
                         d1 = {}
-                        openID = models.WXUser.objects.filter(openid=i["user"]).first()
+                        openID = models.WXUser.objects.filter(openid=d.usr).first()
                         d1['id'] = openID.id
-                        d1['walk'] = i['walk']
+                        d1['walk'] = d.walk
                         d1['weekCount'] = d.weekMacht
                         l1.append(d1)
-                    if request.GET['excel'] == 1:
-                        excel = decorators.exportExcel(request, name='pricode', dict1=l1)
-                        return excel
-                    else:
-                        return {"countList": l1[start: end], "result_code": 0, "result_msg": None, "total_count": len(l1)}
-            else:
-                return {"result_code": 2, "result_msg": "暂无数据"}
+                    excel = decorators.exportExcel(request, name='pricode', dict1=l1)
+                    return excel
+                else:
+                    return {"countList": l1, "result_code": 0, "result_msg": None, "total_count": inFo.count()}
+        else:
+            return {"result_code": 2, "result_msg": "暂无数据"}
         if Type == "day":
             inFo = models.hitprize.objects.filter(isSend=1, countType=1).all()
-            if inFo is not None:
-                for d in inFo:
-                    walkList = json.loads(d.usrList)['data']
+            if inFo:
+                l1 = []
+                for d in inFo[start: end]:
+                    d1 = {}
+                    d1['id'] = models.WXUser.objects.get(openid=models.walkCount.objects.get(id=d.usr).openid).id
+                    d1['walk'] = d.walk
+                    d1['weekCount'] = d.weekMacht
+                    l1.append(d1)
+                if request.GET['excel'] == 1:
                     l1 = []
-                    for i in walkList:
+                    for d in inFo:
                         d1 = {}
-                        d1['id'] = models.WXUser.objects.get(openid=models.walkCount.objects.get(id=i["user"]).openid).id
-                        d1['walk'] = i['walk']
+                        d1['id'] = models.WXUser.objects.get(openid=models.walkCount.objects.get(id=d.usr).openid).id
+                        d1['walk'] = d.walk
                         d1['weekCount'] = d.weekMacht
                         l1.append(d1)
-                    if request.GET['excel'] == 1:
-                        excel = decorators.exportExcel(request, name='pricode', dict1=l1)
-                        return excel
-                    else:
-                        return {"countList": l1[start: end],"total_count": len(l1), "result_code": 0, "result_msg": None}
+                    excel = decorators.exportExcel(request, name='pricode', dict1=l1)
+                    return excel
                 else:
-                    return {"result_code": 2, "result_msg": "暂无数据"}
+                    return {"countList": l1,"total_count": inFo.count(), "result_code": 0, "result_msg": None}
+            else:
+                return {"result_code": 2, "result_msg": "暂无数据"}
     except Exception as e:
         return {"result_code": -1, "result_msg": str(e)}
 
@@ -226,6 +238,8 @@ def ActiveData(request):
         start = (nowpage - 1) * page_rows
         end = start + page_rows
         total_count = models.walkCount.objects.all().count()
+        statime = request.GET['timestart']
+        endtime = request.GET['timend']
         if request.GET['type'] == "1":
             activedata = models.walkCount.objects.all()
             l1 = []
@@ -244,7 +258,9 @@ def ActiveData(request):
             excel = decorators.exportExcel(request, name="活动数据", dict1=l1)
             return excel
         elif request.GET['suchchoice'] == "time":
-            activedata = models.walkCount.objects.all().order_by("creaTime")[start: end]
+            total_count = models.walkCount.objects.all().filter(creaTime__lte=endtime).filter(
+                creaTime__gte=statime).order_by("creaTime").count()
+            activedata = models.walkCount.objects.all().filter(creaTime__lte=endtime).filter(creaTime__gte=statime).order_by("creaTime")[start: end]
             l1 = []
             for i in activedata:
                 if i.image is None:
@@ -263,7 +279,9 @@ def ActiveData(request):
                     l1.append(d1)
             return {"acivedata": l1, "total_count": total_count, FoundationConst.RN_RCODE: 1, FoundationConst.RN_RMSG: None}
         else:
-            activedata = models.walkCount.objects.all().order_by("-walk")[start: end]
+            total_count = models.walkCount.objects.all().filter(creaTime__lte=endtime).filter(
+                creaTime__gte=statime).order_by("creaTime").count()
+            activedata = models.walkCount.objects.all().filter(creaTime__lte=endtime).filter(creaTime__gte=statime).order_by("-change")[start: end]
             l1 = []
             for i in activedata:
                 d1 = {}
@@ -290,14 +308,13 @@ def UserData(request):
     try:
         now_page = int(request.GET['now_page'])
         page_rows = int(request.GET['page_rows'])
-        USRDATA = models.WXUser.objects.all()
-        timestart = request.GET.get("timestart", "2015-05-01")
-        timend = request.GET.get("timend", "2018-01-01")
         start = (now_page - 1) * page_rows
         end = start + page_rows
+        total_page = models.WXUser.objects.all().count()
+        USRDATA = models.WXUser.objects.all()[start: end]
         l1 = []
         for i in USRDATA:
-            userdata = models.walkCount.objects.filter(openid=i.openid).filter(creaTime__gte=timestart).filter(creaTime__lte=timend).all()
+            userdata = models.walkCount.objects.filter(openid=i.openid).all()
             usercount = len(userdata.values_list())
             if userdata:
                 count = 0
@@ -321,18 +338,21 @@ def UserData(request):
                 d1['joincount'] = usercount
                 l1.append(d1)
             else:
-                continue
+                d1 = {}
+                d1['username'] = i.id
+                d1['money'] = 0
+                d1['count'] = 0
+                d1['joincount'] = 0
+                l1.append(d1)
         if request.GET['suchchoice'] == "time":
             l2 = sorted(l1, key=lambda x: x["joincount"], reverse=True)
-            total_page = len(l2)
         else:
             l2 = sorted(l1, key=lambda x: x["count"], reverse=True)
-            total_page = len(l2)
         if request.GET['type'] == "1":
             excel = decorators.exportExcel(request, "数据表", l2)
             return excel
         else:
-            return {"userdata": l2[start: end], 'total_page': total_page, FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
+            return {"userdata": l2, 'total_page': total_page, FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
     except Exception as e:
         return {"userdata": None, FoundationConst.RN_RCODE: -1, 'total_page': None, FoundationConst.RN_RMSG: str(e)}
 
@@ -351,62 +371,50 @@ def SWPrices(request):
         if swcount is None:
             return {"result_code": 1, "result_msg": "暂无数据"}
         if Getype == "1":
+            dataCount = models.weekCount.objects.filter(weekMatch=week).order_by('-walk').all()
             l1 = []
-            valueList = json.loads(swcount.usrList)['data']
-            if len(valueList) <= 50:
-                for j in valueList:
+            if dataCount.count() <= 50:
+                for j in dataCount[start: end]:
                     d1 = {}
-                    if "info" in j:
-                        d1['info'] = j['info']
-                    else:
-                        d1['info'] = None
-                    d1['user'] = j['user']
-                    d1['rank'] = j['rank']
-                    d1['walk'] = j['walk']
-                    d1['weekCount'] = swcount.weekMacht
+                    d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=j.openid)[0].usractive.split(" ")[1])
+                    d1['user'] = models.WXUser.objects.filter(openid=j.openid).first().id
+                    d1['rank'] = models.weekCount.objects.filter(walk__gt=j.walk).count() + 1
+                    d1['walk'] = j.walk
+                    d1['weekCount'] = j.weekMacht
                     l1.append(d1)
             else:
-                for j in valueList[0: 49]:
+                for j in swcount[0: 49]:
                     d1 = {}
-                    if "info" in j:
-                        d1['info'] = j['info']
-                    else:
-                        d1['info'] = None
-                    d1['user'] = j['user']
-                    d1['rank'] = j['rank']
-                    d1['walk'] = j['walk']
-                    d1['weekCount'] = swcount.weekMacht
+                    d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=j.openid)[0].usractive.split(" ")[1])
+                    d1['user'] = models.WXUser.objects.filter(openid=j.openid).first().id
+                    d1['rank'] = models.weekCount.objects.filter(walk__gt=j.walk).count() + 1
+                    d1['walk'] = j.walk
+                    d1['weekCount'] = j.weekMacht
                     l1.append(d1)
             excel = decorators.exportExcel(request, '实物奖品', l1)
             return excel
         else:
             l1 = []
-            valueList = json.loads(swcount.usrList)['data']
-            if len(valueList) <= 50:
-                for j in valueList:
+            if swcount.count() <= 50:
+                for j in swcount[start: end]:
                     d1 = {}
-                    if "info" in j:
-                        d1['info'] = j['info']
-                    else:
-                        d1['info'] = None
-                    d1['user'] = j['user']
-                    d1['rank'] = j['rank']
-                    d1['walk'] = j['walk']
-                    d1['weekCount'] = swcount.weekMacht
+                    d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=j.openid)[0].usractive.split(" ")[1])
+                    d1['user'] = models.WXUser.objects.filter(openid=j.openid).first().id
+                    d1['rank'] = models.weekCount.objects.filter(walk__gt=j.walk).count() + 1
+                    d1['walk'] = j.walk
+                    d1['weekCount'] = j.weekMacht
                     l1.append(d1)
                 else:
-                    for j in valueList[0: 49]:
+                    for j in swcount[0: 49]:
                         d1 = {}
-                        if "info" in j:
-                            d1['info'] = j['info']
-                        else:
-                            d1['info'] = None
-                        d1['user'] = j['user']
-                        d1['rank'] = j['rank']
-                        d1['walk'] = j['walk']
-                        d1['weekCount'] = swcount.weekMacht
+                        d1['info'] = "".join(
+                            models.UsrPhoneCall.objects.filter(openid=j.openid)[0].usractive.split(" ")[1])
+                        d1['user'] = models.WXUser.objects.filter(openid=j.openid).first().id
+                        d1['rank'] = models.weekCount.objects.filter(walk__gt=j.walk).count() + 1
+                        d1['walk'] = j.walk
+                        d1['weekCount'] = j.weekMacht
                         l1.append(d1)
-            return {'swdata': l1[start: end], 'total_page': len(l1), FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
+            return {'swdata': l1[start: end], 'total_page': swcount.count(), FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
     except Exception as e:
         return {'swdata': None, FoundationConst.RN_RCODE: 1, FoundationConst.RN_RMSG: str(e)}
 
@@ -512,7 +520,7 @@ def SuchActive(request):
 
                 l1 = []
                 userinfo = models.walkCount.objects.filter(openid=openid.openid, creaTime__gte=timestart,
-                                                           creaTime__lte=timend).all().order_by('-walk')[start: end]
+                                                           creaTime__lte=timend).all().order_by('-change')[start: end]
                 total_count = models.walkCount.objects.filter(openid=openid.openid, creaTime__gte=timestart,
                                                            creaTime__lte=timend).all().count()
                 for i in userinfo:
@@ -574,7 +582,7 @@ def SuchActive(request):
             else:
                 userinfo = models.walkCount.objects.filter(creaTime__gte=timestart,
                                                             creaTime__lte=timend).all().order_by(
-                    '-walk')[start: end]
+                    '-change')[start: end]
                 for i in userinfo:
                     d1 = {}
                     d1['usrid'] = models.WXUser.objects.filter(openid=i.openid).first().id
@@ -678,9 +686,12 @@ def SuchSign(request):
 def ChangeCount(request):
     try:
         Cid = request.POST['Cid']
-        CC = request.POST['change'].decode("gbk").encode("utf-8")
+        CC = int(request.POST['change'].decode("gbk").encode("utf-8"))
         money = round(float(CC) / 2000, 2)
         Info = models.walkCount.objects.filter(id=Cid)
+        _walk = models.weekCount.objects.filter(openid=Info[0].openid).filter(weekMatch=Info[0].weekMatch)
+        walkData = _walk[0].walk + CC - Info[0].change
+        _walk.update(walk=walkData)
         adminame = request.session.get('usrname')
         things = "管理员： " + str(adminame) + "修改用户步数为： " + str(CC) + "金钱变更为: " + str(money) + "原步数为: " + str(Info[0].walk) + " " + "active_id: " + str(Cid)
         activelog = models.AdminLog.objects.create(usrname=adminame, event=things)
@@ -688,6 +699,8 @@ def ChangeCount(request):
         return {FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: "success"}
     except Exception as e:
         return {FoundationConst.RN_RCODE: 1, FoundationConst.RN_RMSG: str(e)}
+
+
 
 
 # 改变pv uv
@@ -728,30 +741,126 @@ def ChangePUv(request):
 #     except Exception as e:
 #         return {"result_code": -1, "result_msg": e}
 
+
+@decorators.action_render
+def fetchmumber(request):
+    try:
+        allCount = models.hitprize.objects.all()
+        l1 = []
+        for i in allCount:
+            d1 = {}
+            d1['id'] = i.id
+            d1['creatime'] = str(i.creatime)
+            d1['countType'] = i.countType
+            d1['isSend'] = i.isSend
+            d1['weekMacht'] = i.weekMacht
+            l1.append(d1)
+        return {"countList": l1, "result_code": 0, "result_msg": None}
+    except Exception as e:
+        return {"countList": None, "result_code": -1, "result_msg": e}
+
+
+
+#add
 @decorators.action_render
 def fetchDay(request):
     try:
-        startime = request.GET['startime']
-        endtime = request.GET['endtime']
+        iD = request.GET['id']
         now_page = int(request.GET['now_page'])
         page_rows = int(request.GET['page_rows'])
+        _Info = models.hitprize.objects.filter(id=iD)[0]
+        weekMatch = _Info.weekMacht
         start = (now_page - 1) * page_rows
         end = start + page_rows
-        endtime = str(endtime.split("-")[0]) + "-" + str(endtime.split("-")[1]) + "-" + str(int(endtime.split("-")[2]) + 1)
-        valueList = models.hitprize.objects.filter(creatime__gte=startime).filter(creatime__lte=endtime).all()
-        total_count = valueList.count()
-        l1 = []
-        for i in valueList[start: end]:
-            d1 = {}
-            d1['id'] = i.id
-            d1['countType'] = i.countType
-            d1['isSend'] = i.isSend
-            d1['week'] = i.weekMacht
-            d1['creatime'] = str(i.creatime)
-            l1.append(d1)
+        Type = _Info.countType
+        if Type == 0:
+            UserData = models.weekCount.objects.filter(weekMatch=weekMatch).all().order_by('-walk')
+            total_count = UserData.count()
+            l1 = []
+            count = 1
+            if request.GET['type'] == '1':
+                if total_count < 3000:
+                    end = total_count
+                else:
+                    end = 3000
+                for i in UserData[0: end]:
+                    d1 = {}
+                    d1['rank'] = count
+                    count += 1
+                    d1['usr'] = models.WXUser.objects.filter(openid=i.openid).first().id
+                    d1['id'] = i.id
+                    d1['walk'] = i.walk
+                    d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usractive.split(" ")[1])
+                    d1['isSend'] = i.isSend
+                    d1['countType'] = _Info.countType
+                    d1['week'] = i.weekMatch
+                    d1['creatime'] = str(_Info.creatime)
+                    l1.append(d1)
+                excel = decorators.exportExcel(request, "数据表", l1)
+                return excel
+
+            for i in UserData[start: end]:
+                d1 = {}
+                d1['rank'] = count
+                d1['usr'] = models.WXUser.objects.filter(openid=i.openid).first().id
+                d1['id'] = i.id
+                d1['walk'] = i.walk
+                d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usractive.split(" ")[1])
+                d1['isSend'] = i.isSend
+                d1['countType'] = 0
+                d1['week'] = weekMatch
+                d1['creatime'] = str(_Info.creatime)
+                count += 1
+                l1.append(d1)
+        else:
+            now = datetime.date.today()
+            Date = _Info.creatime.date()
+            weekDay = Date - datetime.timedelta(days=1)
+            valueList = models.walkCount.objects.filter(creaTime__gte=weekDay).filter(creaTime__lt=now).order_by('-change').all()
+            total_count = valueList.count()
+            l1 = []
+            if now_page == 1:
+                count = 1
+            else:
+                count = ((now_page - 1) * 5) + 1
+            if request.GET['type'] == '1':
+                if total_count < 3000:
+                    end = total_count
+                else:
+                    end = 3000
+                for i in valueList[0: end]:
+                    d1 = {}
+                    d1['rank'] = count
+                    count += 1
+                    d1['usr'] = models.WXUser.objects.filter(openid=i.openid).first().id
+                    d1['id'] = i.id
+                    d1['walk'] = i.change
+                    d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usractive.split(" ")[1])
+                    d1['isSend'] = i.isGet
+                    d1['countType'] = _Info.countType
+                    d1['week'] = i.weekMatch
+                    d1['creatime'] = str(_Info.creatime)
+                    l1.append(d1)
+                excel = decorators.exportExcel(request, "数据表", l1)
+                return excel
+
+            for i in valueList[start: end]:
+                d1 = {}
+                d1['rank'] = count
+                count += 1
+                d1['usr'] = models.WXUser.objects.filter(openid=i.openid).first().id
+                d1['id'] = i.id
+                d1['walk'] = i.change
+                d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usractive.split(" ")[1])
+                d1['isSend'] = i.isGet
+                d1['countType'] = _Info.countType
+                d1['week'] = i.weekMatch
+                d1['creatime'] = str(_Info.creatime)
+                l1.append(d1)
         return {"priceList": l1, "result_code": 1, "result_msg": None, 'total_count': total_count}
     except Exception as e:
         return {"result_code": -1, "result_msg": e}
+
 
 
 @decorators.action_render
@@ -776,12 +885,14 @@ def fetchCount(request):
 @decorators.action_render
 def sendPrize(request):
     try:
-        iD = request.POST['id']
-        PRICESINFO = models.hitprize.objects.filter(id=iD).filter(countType=1).first()
-        if PRICESINFO is None:
+        now = datetime.date.today()
+        PRICESINFO = models.hitprize.objects.filter(creatime__gte=now).filter(countType=1).all()
+        weekDay = now - datetime.timedelta(days=1)
+        if not PRICESINFO:
             return {"result_code": 0, "result_msg": "error!!"}
         else:
-            weekCount = PRICESINFO.weekMacht
+            weekCount = PRICESINFO[0].weekMacht
+            nowday = datetime.date.today()
             now = timezone.datetime.now()
             priceCount = models.qrcount.objects.filter(isend=1).filter(startime=str(datetime.date.today())).all()
             for i in priceCount:
@@ -792,29 +903,32 @@ def sendPrize(request):
                 startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0, tzinfo=pytz.utc)
             elif weekCount == 2:
                 startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime)
-                startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0, tzinfo=pytz.utc) + datetime.timedelta(days=7)
+                startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0, tzinfo=pytz.utc)\
+                            + datetime.timedelta(days=7)
             else:
                 startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime)
                 startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0,
                                               tzinfo=pytz.utc) + datetime.timedelta(days=14)
-            priceList = json.loads(PRICESINFO.usrList)['data']
-            isUseList = models.walkCount.objects.filter(creaTime__gte=startTime).filter(priCode__isnull=False).all()
-            l1 = []
-            for j in isUseList:
-                l1.append(j.id)
-            for i in priceList:
-                if i['user'] in l1:
-                    priceList.remove(i)
-            if len(priceList) < 3000:
-
-                for i, j in zip(priceList, priceCount):
-                    models.walkCount.objects.filter(id=i['id']).update(priCode=j.id)
-                    models.qrcount.objects.filter(id=j.id).update(isend=0, sendTime=now)
+            priceList = []
+            usrInfo = models.walkCount.objects.filter(creaTime__gte=weekDay, creaTime__lt=nowday, isGet=0).order_by(
+                '-change').all()
+            if usrInfo.count() >= 3000:
+                end = 3000
             else:
-                for i, j in zip(priceList[0: 2999], priceCount):
-                    models.walkCount.objects.filter(id=i['id']).update(priCode=j.id)
-                    models.qrcount.objects.filter(id=j.id).update(isend=0, sendTime=now)
-            models.hitprize.objects.filter(id=iD).filter(countType=1).update(isSend=0)
+                end = usrInfo.count()
+            for i in usrInfo[:end]:
+                d1 = {}
+                d1['user'] = models.WXUser.objects.filter(openid=i.openid).first().id
+                d1['id'] = i.id
+                priceList.append(d1)
+            for i, j in zip(priceList, priceCount):
+                usrAlias = models.walkCount.objects.filter(id=i['id'])
+                todayInfo = usrAlias.filter(creaTime__gte=datetime.date.today())
+                if todayInfo.first() is not None:
+                    todayInfo.update(isGet=1)
+                usrAlias.update(priCode=j.id)
+                models.qrcount.objects.filter(id=j.id).update(isend=0, sendTime=now)
+            PRICESINFO.update(isSend=0)
             return {"result_code": 0, "result_msg": None}
     except Exception as e:
         return {"result_code": 1, "result_msg": e}
@@ -826,12 +940,13 @@ def allCount(request):
     try:
         nowDay = datetime.date.today()
         matchWeek = datetime.date.fromtimestamp(config.WorkConfig.starTime)
-        priceInfo = models.hitprize.objects.filter(countType=2)
+        priceInfo = models.hitprize.objects.filter(countType=2).all()
         l1 = []
         wxUser = models.WXUser.objects.all()
         for d in wxUser:
             d1 = {}
             d1['user'] = d.id
+            d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=d.openid)[0].usractive.split(" ")[1])
             count = 0
             walkInfo = models.walkCount.objects.filter(creaTime__gte=matchWeek).filter(creaTime__lte=nowDay).filter(openid=d.openid).all()
             for i in walkInfo:
@@ -841,16 +956,26 @@ def allCount(request):
                     count += int(i.walk)
             d1['walk'] = count
             l1.append(d1)
-        d1 = {}
-        d1['data'] = l1
+        count = 1
         if priceInfo[0] is None:
-            models.hitsprize.objects.create(
-                countType=2,
-                usrList=json.dumps(d1),
-                weekMacht=3
-            )
+            for i in l1:
+                models.hitprize.objects.create(
+                    countType=2,
+                    walk=i['walk'],
+                    rank=count,
+                    info=i['info'],
+                    weekMacht=3,
+                )
         else:
-            priceInfo.update(usrList=json.dumps(d1))
+            models.hitprize.objects.filter(countType=2).all().delete()
+            for i in l1:
+                models.hitprize.objects.create(
+                    countType=2,
+                    walk=i['walk'],
+                    rank=count,
+                    info=i['info'],
+                    weekMacht=3,
+                )
 
         return {"result_code": 0, "result_msg": None}
     except Exception as e:
@@ -873,58 +998,16 @@ def makeWeek(request):
             weekCount = 3
             matchWek -= 14
         startday = nowDay - datetime.timedelta(days=matchWek)
-        firstWeek = models.hitprize.objects.filter(weekMacht=weekCount).filter(countType=0).filter(isSend=1)
-        l1 = []
-        wxUser = models.WXUser.objects.all()
-        for d in wxUser:
-            if d.openid[0: 4] == "WHYC":
-                continue
-            d1 = {}
-            d1['user'] = d.id
-            usrphonecall = models.UsrPhoneCall.objects.filter(openid=d.openid).first()
-            if usrphonecall is None:
-                usrInfo = None
-            elif usrphonecall.usractive is None:
-                usrInfo = None
-            else:
-                usrInfo = "".join(str(usrphonecall.usractive).split(" ")[1])
-            d1['info'] = usrInfo
-            count = 0
-            walkInfo = models.walkCount.objects.filter(creaTime__gte=startday).filter(creaTime__lte=nowDay).filter(openid=d.openid).all().order_by('creaTime')
-            for i in walkInfo:
-
-                if int(i.change) != 0:
-                    count += int(i.change)
-                else:
-                    count += int(i.walk)
-
-            d1['walk'] = count
-            l1.append(d1)
-        if firstWeek.first() is not None:
-            d1 = {}
-            l1 = sorted(l1, key=lambda x: x["walk"], reverse=True)
-            count = 1
-            for i in l1:
-                i["rank"] = count
-                count += 1
-            d1['data'] = l1
-            firstWeek.update(usrList=json.dumps(d1), creatime=timezone.datetime.now())
-            return {"result_code": 0, "result_msg": "数据已更新"}
+        CountInfo = models.hitprize.objects.filter(countType=0).filter(weekMacht=weekCount).first()
+        if CountInfo is not None:
+            return {"result_code": 0, "result_msg": "已更新"}
         else:
-            d1 = {}
-            l1 = sorted(l1, key=lambda x: x["walk"], reverse=True)
-            count = 1
-            for i in l1:
-                i["rank"] = count
-                count += 1
-            d1['data'] = l1
             models.hitprize.objects.create(
-                usrList=json.dumps(d1),
                 countType=0,
-                weekMacht=weekCount,
-                creatime=timezone.datetime.now()
+                isSend=1,
+                weekMacht=weekCount
             )
-            return {"result_code": 0, "result_msg": "数据已创建"}
+            return {"result_code": 0, "result_msg": "已创建"}
     except Exception as e:
         return {"result_code": -1, "result_msg": e}
 
@@ -932,63 +1015,31 @@ def makeWeek(request):
 # 生成日排行
 @decorators.action_render
 def dayCount(request):
-    nowday = datetime.date.today()
-    weekDayd = nowday - datetime.timedelta(days=1)
-    matchWek = int(str(nowday - datetime.date.fromtimestamp(config.WorkConfig.starTime)).split(" ")[0])
-    if 0 < matchWek <= 7:
-        weekCount = 1
-    elif 7 < matchWek <= 14:
-        weekCount = 2
-    else:
-        weekCount = 3
-    dataInfo = models.walkCount.objects.filter(creaTime__gte=weekDayd).filter(creaTime__lte=nowday).all().order_by('creaTime')
-    l2 = []
-    for i in dataInfo:
-        if i.walk == 0 or i.change == "00" or i.openid[0: 4] == "WHYC":
-            continue
-        d1 = {}
-        d1['id'] = i.id
-        if i.change != "0":
-            if i.change == 0:
-                d1['walk'] = 0
-            else:
-                d1['walk'] = i.change
+    try:
+        nowDay = datetime.date.today()
+        matchWek = int(str(nowDay - datetime.date.fromtimestamp(config.WorkConfig.starTime)).split(" ")[0])
+        if 0 < matchWek <= 7:
+            weekCount = 1
+
+        elif 7 < matchWek <= 14:
+            weekCount = 2
+            matchWek -= 7
         else:
-            d1['walk'] = i.walk
-        d1['info'] = ''.join(str(i.info.usractive).split(" ")[1])
-        d1['user'] = models.WXUser.objects.filter(openid=i.openid).first().id
-        d1['creatime'] = str(i.creaTime).split(" ")[0] + " " + str(i.creaTime).split(" ")[1].split(".")[0]
-        l2.append(d1)
-    dataInfo = sorted(l2, key=lambda x: int(x['walk']), reverse=True)
-    rank = 1
-    for i in dataInfo:
-        i['rank'] = rank
-        rank += 1
-    now = timezone.datetime.now()
-    nowday = datetime.datetime(now.year, now.month, now.day, 0, 0, 0)
-    isAdd = models.hitprize.objects.filter(creatime__gte=nowday).filter(countType=1).first()
-    if isAdd is None:
-        d1 = {}
-        d1['data'] = dataInfo
-        models.hitprize.objects.create(
-            usrList=json.dumps(d1),
-            countType=1,
-            weekMacht=weekCount,
-        )
-        return {"result_code": 0, "result_msg": "数据已创建"}
-    else:
-        if isAdd.isSend == 1:
-            d1 = {}
-            d1['data'] = dataInfo
-            models.hitprize.objects.filter(creatime__gte=nowday).filter(isSend=1).filter(countType=1).update(
-                usrList=json.dumps(d1),
+            weekCount = 3
+            matchWek -= 14
+        startday = nowDay - datetime.timedelta(days=matchWek)
+        CountInfo = models.hitprize.objects.filter(countType=1).filter(creatime__gt=nowDay).filter(weekMacht=weekCount).first()
+        if CountInfo is not None:
+            return {"result_code": 0, "result_msg": "已更新"}
+        else:
+            models.hitprize.objects.create(
                 countType=1,
-                weekMacht=weekCount,
+                isSend=1,
+                weekMacht=weekCount
             )
-            return {"result_code": 1,
-                    "result_msg": "数据已更新"}
-        else:
-            return {"result_code": 2, "result_msg": "无法新建今日已发送"}
+            return {"result_code": 0, "result_msg": "已创建"}
+    except Exception as e:
+        return {"result_code": -1, "result_msg": e}
 
 
 # 确认周排名
@@ -996,7 +1047,7 @@ def dayCount(request):
 def accessWeek(request):
     try:
         _id = request.POST['id']
-        models.hitprize.objects.filter(id=_id).update(isSend=0)
+        models.hitprize.objects.filter(id=_id).all().update(isSend=0)
         return {"result_code": 0, "result_msg": None}
     except Exception as e:
         return {"result_code": -1, "result_msg": e}
@@ -1020,17 +1071,29 @@ def fakeData(request):
         if password != "rua":
             return {"result_code": 2, "result_msg": "滚"}
         else:
-            mumBer = request.GET['mum']
+            mumBer = int(request.GET['mum'])
             walkCount = request.GET['walkCount']
-            for i in (0, int(mumBer)):
+
+            nowDate = datetime.date.today() - datetime.timedelta(days=1)
+            count = 0
+            matchWek = int(str(nowDate - datetime.date.fromtimestamp(config.WorkConfig.starTime)).split(" ")[0])
+            if 0 < matchWek <= 7:
+                weekCount = 1
+            elif 7 < matchWek <= 14:
+                weekCount = 2
+            else:
+                weekCount = 3
+            while count < mumBer:
+                count += 1
                 phoneNum = ""
-                telList = [130, 131, 132, 155, 156, 186, 185, 134,135, 137, 136, 138, 139, 150, 151, 152, 157, 158, 159, 182, 183, 188, 187, 133, 153, 180, 181, 189]
+                telList = [130, 131, 132, 155, 156, 186, 185, 134, 135, 137, 136, 138, 139, 150, 151, 152, 157, 158, 159
+                    , 182, 183, 188, 187, 133, 153, 180, 181, 189]
                 telHand = random.randint(0, len(telList) - 1)
                 phoneNum += str(telList[telHand])
                 for i in range(0, 8):
                     phoneNum += str(random.randint(0, 9))
                 name = makeName.full_name(makeName.last_names, makeName.first_names)
-                openid = "WHYC" + str(uuid.uuid4().hex)[0: 9]
+                openid = "ssss$" + str(uuid.uuid4().hex)[0: 9]
                 usrinfo = "手机号 " + phoneNum + " " + "姓名 " + name
                 walk, Walk = walkCount.split(",")[0], walkCount.split(",")[1]
                 walkNum = random.randint(int(walk), int(Walk))
@@ -1043,14 +1106,23 @@ def fakeData(request):
                     openid=openid,
                     usractive=usrinfo
                 )
-                models.walkCount.objects.create(
+                info = models.walkCount.objects.create(
                     walk=walkNum,
+                    change=walkNum,
                     money=round(float(walkNum) / 2000, 2),
                     image="http://www.fantizi5.com/zi/kt/e58187.jpg",
                     openid=openid,
-                    info=phoneCall
+                    info=phoneCall,
+                    weekMatch=weekCount,
+                    isGet=0
                 )
+                models.walkCount.objects.filter(id=info.id).update(creaTime=nowDate)
             return {"result_code": 0, "result_msg": "finish"}
     except Exception as e:
-        return {"result_code": -1, "result_msg": str(e)}
+        return {"result_code": -1, "result_msg": e}
 
+@decorators.action_render
+def delte(request):
+    models.walkCount.objects.filter(priCode=615).update(priCode=None)
+    models.walkCount.objects.filter(priCode=616).update(priCode=None)
+    return {"result_msg": "success"}

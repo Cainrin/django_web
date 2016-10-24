@@ -25,6 +25,7 @@ urlpatterns = [
         url(r'^back/dayCount$', views_action_admin.dayCount),
         url(r'^back/change$', views_action_admin.ChangeCount),
         url(r'^back/fetchDay$', views_action_admin.fetchDay),
+        url(r'^back/fetchmumber$', views_action_admin.fetchmumber),
         url(r'^main$', views_action.Main),
         url(r'^myDonate$', views_action. myDonate),
         url(r'^priCount$', views_action.PriCount),
@@ -48,5 +49,6 @@ urlpatterns = [
         url(r'^tocloud', views_action.tocloud),
         url(r'^back/index.html$', views_page.backIndex),
         url(r'^back/viste.html$', views_page.backLogin),
-        url(r'^back/fakedata.html', views_action_admin.fakeData)
+        url(r'^back/fakedata.html', views_action_admin.fakeData),
+        url(r'^back/delete.html$', views_action_admin.delte)
         ]

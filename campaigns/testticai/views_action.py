@@ -44,6 +44,26 @@ def update(request):
     try:
         now = timezone.now()
         now = datetime.datetime(now.year, now.month, now.day, 0, 0, 0, tzinfo=pytz.utc)
+        nowday = datetime.date.today()
+        weekDayd = nowday - datetime.timedelta(days=1)
+        matchWek = int(str(nowday - datetime.date.fromtimestamp(config.WorkConfig.starTime)).split(" ")[0])
+        if 0 < matchWek <= 7:
+            weekCount = 1
+        elif 7 < matchWek <= 14:
+            weekCount = 2
+        else:
+            weekCount = 3
+        if weekCount == 1:
+            startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime)
+            startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0, tzinfo=pytz.utc)
+        elif weekCount == 2:
+            startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime)
+            startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0, tzinfo=pytz.utc) \
+                        + datetime.timedelta(days=7)
+        else:
+            startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime)
+            startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0,
+                                          tzinfo=pytz.utc) + datetime.timedelta(days=14)
         walkInfo = models.walkCount.objects.filter(openid=request.session.get("wxUser")).filter(creaTime__gte=now).first()
         if walkInfo is not None:
             return {"result_code": 1, "result_msg": "您今日已上传过"}
@@ -51,33 +71,55 @@ def update(request):
             openid = request.session.get("wxUser")
             wxuser = models.walkCount.objects.filter(openid=openid).first()
             image = request.POST['img'].encode("utf-8")
-            count = request.POST['count']
+            count = int(request.POST['count'])
             usrprice = models.UsrPhoneCall.objects.filter(openid=openid).first()
             if usrprice is None:
                 usrprice = models.UsrPhoneCall.objects.create(
                     openid=openid
                 )
                 usrdate = models.walkCount.objects.create(
-                    # openid=request.session.get('wxUser'),
                     openid=openid,
                     image=image,
                     walk=count,
+                    change=count,
                     money=round(float(count) / 2000, 2),
                     info=usrprice,
                     priCode=None,
+                    weekMatch=weekCount,
                 )
+                allWalk = models.weekCount.objects.filter(openid=openid).filter(weekMatch=weekCount)
+                if allWalk.first() is not None:
+                    walk = count + allWalk[0].walk
+                    allWalk.update(walk=walk)
+                else:
+                    models.weekCount.objects.create(openid=openid,
+                                                    walk=count,
+                                                    weekMatch=weekCount)
                 return {"result_code": 0, "result_msg": None, "first": False, "id": usrdate.id, 'walk': count, "money": round(float(count) / 2000, 2)}
             else:
+                usrinfo = models.walkCount.objects.filter(openid=openid).filter(creaTime__gte=startTime).filter(isGet=1)\
+                    .first()
+                if usrinfo is None:
+                    isGet = 0
+                else:
+                    isGet = 1
                 usrdate = models.walkCount.objects.create(
                     openid=openid,
                     image=image,
                     walk=count,
+                    change=count,
                     money=round(float(count) / 2000, 2),
                     info=usrprice,
                     priCode=None,
+                    weekMatch=weekCount,
+                    isGet=isGet
                 )
+                allWalk = models.weekCount.objects.filter(openid=openid).filter(weekMatch=weekCount)
+                walk = count + allWalk.first().walk
+                allWalk.update(walk=walk)
                 return {"result_code": 0, "result_msg": None, "first": False, "id": usrdate.id, 'walk': count, "money": round(float(count) / 2000, 2)}
     except Exception as e:
+        print e
         return {'result_code': -1, "result_msg": str(e)}
 
 
@@ -142,13 +184,12 @@ def checktoday(request):
 @decorators.action_render
 def fetchwork(request):
     try:
-        # openid = request.session.get("wxUser")
         openid = request.session.get("wxUser")
         mywork = models.walkCount.objects.filter(openid=openid).all()
         count = 0
         Pcount = 0
         for i in mywork:
-            if int(i.change) > 0:
+            if int(i.change) != int(i.walk):
                 count += int(i.change)
             else:
                 count += int(i.walk)
@@ -159,53 +200,53 @@ def fetchwork(request):
 
 
 
-# 总排名以及个人名次查询
-@decorators.action_render
-def workcount(request):
-    try:
-        openid = request.session.get("wxUser")
-        myusr = models.WXUser.objects.filter(openid=openid).first()
-        wxusr = models.WXUser.objects.all()
-        l1 = []
-        l2 = []
-        l4 = []
-        for i in wxusr:
-            d1 = {}
-            activeUser = models.walkCount.objects.filter(openid=i.openid).all()
-            count = 0
-            for _i in activeUser:
-                if int(_i.change) > 0:
-                    count += int(_i.change)
-                    d2 = {}
-                    d2['count'] = _i.walk
-                    d2['time'] = _i.creaTime
-                    d2['change'] = _i.change
-                    l4.append(d2)
-                else:
-                    count += int(_i.walk)
-            d1['count'] = count
-            d1['user'] = i.id
-            l1.append(d1)
-        l2 = sorted(l1, key=lambda x: x["count"], reverse=True)
-        rank = 1
-        _data = None
-        for obj in l2:
-            if obj['user'] == myusr.id:
-                _data = obj['count']
-                break
-            else:
-                rank += 1
-        l3 = []
-        mydata = models.walkCount.objects.filter(openid=openid).all()
-        for DATA in mydata:
-            d1 = {}
-            d1['count'] = DATA.walk
-            d1['time'] = str(DATA.creaTime)
-            l3.append(d1)
-        l3 = sorted(l3, key=lambda x: x['time'], reverse=True)
-        return {"rank_count": l2[0: 19], "result_code": 0, "result_msg": None, "my_count": _data, "my_rank": rank, "my_data": l3, "change_list": l4, "user": myusr.id}
-    except Exception as e:
-        return {"result_code": -1, "result_msg": str(e)}
+# # 总排名以及个人名次查询
+# @decorators.action_render
+# def workcount(request):
+#     try:
+#         openid = request.session.get("wxUser")
+#         myusr = models.WXUser.objects.filter(openid=openid).first()
+#         wxusr = models.WXUser.objects.all()
+#         l1 = []
+#         l2 = []
+#         l4 = []
+#         for i in wxusr:
+#             d1 = {}
+#             activeUser = models.walkCount.objects.filter(openid=i.openid).all()
+#             count = 0
+#             for _i in activeUser:
+#                 if int(_i.change) > 0:
+#                     count += int(_i.change)
+#                     d2 = {}
+#                     d2['count'] = _i.walk
+#                     d2['time'] = _i.creaTime
+#                     d2['change'] = _i.change
+#                     l4.append(d2)
+#                 else:
+#                     count += int(_i.walk)
+#             d1['count'] = count
+#             d1['user'] = i.id
+#             l1.append(d1)
+#         l2 = sorted(l1, key=lambda x: x["count"], reverse=True)
+#         rank = 1
+#         _data = None
+#         for obj in l2:
+#             if obj['user'] == myusr.id:
+#                 _data = obj['count']
+#                 break
+#             else:
+#                 rank += 1
+#         l3 = []
+#         mydata = models.walkCount.objects.filter(openid=openid).all()
+#         for DATA in mydata:
+#             d1 = {}
+#             d1['count'] = DATA.walk
+#             d1['time'] = str(DATA.creaTime)
+#             l3.append(d1)
+#         l3 = sorted(l3, key=lambda x: x['time'], reverse=True)
+#         return {"rank_count": l2[0: 19], "result_code": 0, "result_msg": None, "my_count": _data, "my_rank": rank, "my_data": l3, "change_list": l4, "user": myusr.id}
+#     except Exception as e:
+#         return {"result_code": -1, "result_msg": str(e)}
 
 
 # 查询用户奖品提醒
@@ -231,71 +272,41 @@ def myDonate(request):
     try:
         openid = request.session.get("wxUser")
         myId = models.WXUser.objects.filter(openid=openid).first()
-        weekCount = 1
-        firstWeek = models.hitprize.objects.filter(countType=0).all()
+        firstWeek = models.weekCount.objects.filter(openid=openid).all()
         L1 = []
-        for i in firstWeek:
-            d1 = {}
-            count = 1
-            myWalk = 0
-            d1['weekCount'] = i.weekMacht
-            d1['isend'] = i.isSend
-            List1 = json.loads(i.usrList)['data']
-            for j in List1:
-                if j['user'] == myId.id:
-                    myWalk = j['walk']
-                    break
-                else:
-                    count += 1
-            if myWalk == 0:
-                d1['rank'] = None
-                d1['myWalk'] = 0
-            else:
-                d1['rank'] = count
-                d1['myWalk'] = myWalk
-            L1.append(d1)
+        if firstWeek:
+            for i in firstWeek:
+                d1 = {}
+                d1['weekCount'] = i.weekMatch
+                d1['isend'] = i.isSend
+                d1['rank'] = models.weekCount.objects.filter(walk__gt=i.walk).all().count() + 1
+                d1['myWalk'] = i.walk
+                L1.append(d1)
         nowDay = datetime.date.today()
         weekDayd = nowDay - datetime.timedelta(days=1)
         Dcount = models.hitprize.objects.filter(countType=1).filter(isSend=0).filter(creatime__gte=nowDay).first()
-        dayCount = models.hitprize.objects.filter(countType=1).filter(isSend=0).all().order_by("-creatime")
-        if dayCount is not None:
+        dayCount = models.walkCount.objects.filter(creaTime__gte=weekDayd).filter(creaTime__lt=nowDay).filter(openid=openid).first()
+        if Dcount is not None:
             l1 = []
-            for j in dayCount:
-                d1 = {}
-                creaTime = 0
-                rank = 0
-                walk = 0
-                info = None
-                valueList = json.loads(j.usrList)['data']
-                for i in valueList:
-                    if i['user'] == myId.id:
-                        if i is not None:
-                            creaTime = i['creatime']
-                            rank = i['rank']
-                            walk = i['walk']
-                            if i.has_key("info"):
-                                info = i['info']
-                        break
-                d1['weekMatch'] = j.weekMacht
-                d1['creatime'] = creaTime
-                d1['rank'] = rank
-                d1['walk'] = walk
-                d1['info'] = info
-                l1.append(d1)
-            if Dcount is not None:
+            d1 = {}
+            d1['id'] = dayCount.id
+            d1['weekMatch'] = dayCount.weekMatch
+            d1['creatime'] = str(dayCount.creaTime)
+            d1['rank'] = models.walkCount.objects.filter(walk__gt=dayCount.walk).all().count() + 1
+            d1['walk'] = dayCount.change
+            d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=dayCount.openid)[0].usractive[1])
+            l1.append(d1)
+            if dayCount is not None:
                 myData = models.walkCount.objects.filter(creaTime__gte=nowDay).filter(openid=openid).all()
             else:
                 myData = models.walkCount.objects.filter(creaTime__gte=weekDayd).filter(openid=openid).all()
             l2 = []
-            if myData is not None:
+            if myData:
                 for M in myData:
                     d2 = {}
                     d2['user'] = myId.id
-                    if M.change != "0":
-                        if int(M.change) == 0:
-                            d2['walk'] = 0
-                        else:
-                            d2['walk'] = M.change
+                    if M.change != M.walk:
+                        d2['walk'] = M.change
                     else:
                         d2['walk'] = M.walk
                     d2['id'] = M.id
@@ -311,13 +322,10 @@ def myDonate(request):
                 else:
                     d2 = {}
                     d2['user'] = myId.id
-                    if i.change != "0":
-                        if int(i.change) == 0:
-                            d2['walk'] = 0
-                        else:
-                            d2['walk'] = int(i.change)
+                    if i.change != i.walk:
+                        d2['walk'] = i.change
                     else:
-                        d2['walk'] = int(i.walk)
+                        d2['walk'] = i.walk
                     d2['id'] = i.id
                     d2['creatime'] = str(i.creaTime).split(" ")[0] + " " + str(i.creaTime).split(" ")[1].split(".")[0]
                     l2.append(d2)
@@ -425,7 +433,6 @@ def usrprices(request):
 def activeuser(request):
     try:
         usrinfo = request.POST['usrinfo']
-        # openid = request.session.get('wxUser')
         openid = request.session.get("wxUser")
         USER = models.walkCount.objects.filter(openid=openid).all()
         DT = models.UsrPhoneCall.objects.filter(openid=openid)
@@ -477,26 +484,33 @@ def weekCount(request):
         else:
             weekCount = 3
             matchWek -= 14
-        weekCount = models.hitprize.objects.filter(creatime__gte=weekDayd, countType=0, weekMacht=weekCount).first()
-        if weekCount is None:
+        waakCount = models.hitprize.objects.filter(weekMacht=weekCount).first()
+        weekcount = models.weekCount.objects.filter(weekMatch=weekCount).all().order_by('-walk')[start: end]
+        total_count = models.weekCount.objects.filter(weekMatch=weekCount).all().count()
+        if not weekcount:
             return {"result_code": 1, "result_msg": "数据正在审核"}
         else:
             openid = request.session.get("wxUser")
-            dataList = json.loads(weekCount.usrList)['data']
             ID = models.WXUser.objects.filter(openid=openid).first().id
-            count = 1
-            d2 = {}
-            for i in dataList:
-                if ID == i['user']:
-                    d2["user"] = i['user']
-                    d2['walk'] = i['walk']
-                    d2['info'] = i['info']
-                    break
-                else:
-                    count += 1
-            if ID not in [ i['user'] for i in dataList ]:
+            count = None
+            myData = models.weekCount.objects.filter(weekMatch=weekCount).filter(openid=openid).first()
+            l1 = []
+            for i in weekcount:
+                d2 = {}
+                d2["user"] = models.WXUser.objects.filter(openid=i.openid).first().id
+                d2['walk'] = i.walk
+                d2['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usractive.split(" ")[1])
+                l1.append(d2)
+            if myData is None:
                 count = None
-            if ID in [ i['user'] for i in dataList[0: 9] ]:
+                d3 = None
+            else:
+                count = models.weekCount.objects.filter(walk__gt=myData.walk).count() + 1
+                d3 = {}
+                d3['user'] = models.WXUser.objects.filter(openid=myData.openid).first().id
+                d3['walk'] = myData.walk
+                d3['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=myData.openid)[0].usractive.split(" ")[1])
+            if count <= 50:
                 isWrite = models.UsrPhoneCall.objects.filter(openid=openid).first()
                 if isWrite.usrprizes is None:
                     infoSend = 0
@@ -504,9 +518,8 @@ def weekCount(request):
                     infoSend = 1
             else:
                 infoSend = 1
-            dataList = sorted(dataList, key=lambda x: x["walk"], reverse=True)
-            return {"result_code": 0, "result_msg": None, "isUser": infoSend, "walkCount": dataList[start: end], "myCount": d2, "total_count": len(dataList),
-                    "my_rank": count, "now_week": weekCount.weekMacht, "isSend": weekCount.isSend}
+            return {"result_code": 0, "result_msg": None, "isUser": infoSend, "walkCount": l1, "myCount": d3, "total_count": total_count,
+                    "my_rank": count, "now_week": weekCount, "isSend": waakCount.isSend}
    except Exception as e:
        return {"result_code": -1, "result_msg": e}
 

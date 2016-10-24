@@ -46,6 +46,7 @@ class qrcount(models.Model):
     endtime = models.CharField(verbose_name=u'结束时间', max_length=200)
     isend = models.IntegerField(verbose_name=u'是否发出', choices=WorkConst.send_choice, default=1)
     addtime = models.DateTimeField(auto_now_add=True, verbose_name=u'增加时间')
+    openid = models.CharField(null=True, blank=True, verbose_name=u'获奖openid', max_length=300)
     sendTime = models.CharField(verbose_name=u'发卷时间', null=True, blank=True, max_length=100)
 
     class Meta:
@@ -62,7 +63,9 @@ class walkCount(models.Model):
     money = models.CharField(max_length=300, verbose_name=u'金额')
     image = models.ImageField(upload_to="", verbose_name=u'图片')
     openid = models.CharField(verbose_name=u'openid', max_length=100)
-    change = models.CharField(verbose_name=u'更改步数', default="0", max_length=300)
+    change = models.IntegerField(verbose_name=u'更改步数')
+    weekMatch = models.IntegerField(verbose_name=u'周次')
+    isGet = models.IntegerField(verbose_name=u'是否得过奖品',default=0)
     creaTime = models.DateTimeField(verbose_name=u'上传时间', auto_now_add=True)
     info = models.ForeignKey(UsrPhoneCall, verbose_name=u'联系方式')
     priCode = models.CharField(verbose_name=u'奖品码', null=True, blank=True, max_length=300)
@@ -89,13 +92,13 @@ class WXUser(models.Model):
         verbose_name_plural = WXUserConst.VN_TABLE_NAME
 
     def __unicode__(self):
-        return self.openid
+        return str(self.openid)
 
 
 
 class AdminLog(models.Model):
     usrname = models.CharField(verbose_name=u'管理员', max_length=100)
-    event = models.CharField(verbose_name=u'事件', max_length=100)
+    event = models.CharField(verbose_name=u'事件', max_length=300)
     eventime = models.DateTimeField(verbose_name=u'时间', auto_now_add=True)
 
     class Meta:
@@ -103,12 +106,11 @@ class AdminLog(models.Model):
         verbose_name_plural = u'行为日志'
 
     def __unicode__(self):
-        return self.usrname
+        return str(self.usrname)
 
 
 class hitprize(models.Model):
     creatime = models.DateTimeField(auto_now_add=True, verbose_name=u'生成时间')
-    usrList = models.TextField(verbose_name=u'奖品名单')
     countType = models.IntegerField(verbose_name=u'排名方式', choices=FoundationConst.COUNT_CHOICES)
     isSend = models.IntegerField(verbose_name=u'是否发出', choices=FoundationConst.SEND_CHOICES, default=FoundationConst.NO_SEND)
     weekMacht = models.IntegerField(verbose_name=u'周次', null=True, blank=True)
@@ -121,21 +123,16 @@ class hitprize(models.Model):
         return str(self.creatime)
 
 
-class hitsprize(models.Model):
-    creatime = models.DateTimeField(auto_now_add=True, verbose_name=u'生成时间')
-    usr = models.CharField(verbose_name=u'用户id', max_length=300)
-    walk = models.CharField(verbose_name=u'步数', max_length=300)
-    time = models.CharField(verbose_name=u'时间', max_length=300)
-    countType = models.IntegerField(verbose_name=u'排名方式', choices=FoundationConst.COUNT_CHOICES)
-    isSend = models.IntegerField(verbose_name=u'是否发出', choices=FoundationConst.SEND_CHOICES, default=FoundationConst.NO_SEND)
-    weekMacht = models.IntegerField(verbose_name=u'周次', null=True, blank=True)
+class weekCount(models.Model):
+    weekMatch = models.IntegerField(verbose_name=u'周次')
+    openid = models.CharField(verbose_name=u'用户openid', max_length=300)
+    walk = models.IntegerField(verbose_name=u'步数总数')
+    isSend = models.IntegerField(verbose_name=u'是否发奖', default=0)
 
     class Meta:
-        verbose_name = u'中奖信息2'
-        verbose_name_plural = u'中奖信息2'
+        verbose_name = u'周排行步数'
+        verbose_name_plural = u'周排行步数'
 
-    def __unicode__(self):
-        return str(self.creatime)
 
 
 class AdminUser(models.Model):
@@ -147,7 +144,7 @@ class AdminUser(models.Model):
         verbose_name_plural = u"后台管理员账户"
 
     def __unicode__(self):
-        return self.username
+        return str(self.username)
 
 
 

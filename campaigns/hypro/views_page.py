@@ -20,6 +20,6 @@ def zhPcindex(request):
     pass
 
 @auth_verification
-@page_render(ViewConfig.TEMPLATE_MOBILE_URL + "ticai.html")
+@page_render(ViewConfig.TEMPLATE_MOBILE_URL + "testticai.html")
 def ticaiIndex(request):
     pass
