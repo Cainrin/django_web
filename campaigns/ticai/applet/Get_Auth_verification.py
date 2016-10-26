@@ -2,10 +2,10 @@
 from campaigns.foundation.applet import decorators, utils, response
 from campaigns.foundation.const import FoundationConst, DisplayConst
 from campaigns.ticai.applet.uitls import generate_other_dict_data
-from campaigns.fenda201605 import app_id, models
+from campaigns.ticai import app_id, models
 from django.utils.http import urlquote
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseServerError, Http404
-from campaigns.fenda201605 import wechat_api
+from campaigns.ticai import wechat_api
 from django.utils.encoding import smart_unicode, smart_str
 import json
 

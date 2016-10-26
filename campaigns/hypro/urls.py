@@ -8,5 +8,10 @@ urlpatterns = [
     url(r'^zh/touch.html$', views_page.zhTouch),
     url(r'^zh/pc/index.html$', views_page.zhPcindex),
     url(r'^get_sign_package', views_action.get_sign_package),
-    url(r'^testticai/index.html', views_page.ticaiIndex)
+    url(r'^ticai/index.html', views_page.ticaiIndex),
+    url(r'^ticai/main.html', views_page.ticaizhuanti),
+    url(r'^ticai/new.html', views_page.ticainew),
+    url(r'^tocloud', views_action.tocloud),
+    url(r'^getlocation', views_action.getLocation),
+    url(r'^locta', views_page.locta)
 ]

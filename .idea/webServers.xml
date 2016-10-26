@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="734bccd2-3845-4789-8aa5-cfcbaffc19ae" name="django" url="http://115.159.77.117">
-        <fileTransfer host="115.159.77.117" port="22" rootFolder="/www/project/cmp" accessType="SFTP" password="dfe2dfd3dfc6dfc3dfc4dfc1df9bdf98df99" username="root">
+      <webServer id="734bccd2-3845-4789-8aa5-cfcbaffc19ae" name="django" url="http://123.206.202.155">
+        <fileTransfer host="123.206.202.155" port="22" rootFolder="/root" accessType="SFTP" password="dfe2dfd3dfc6dfc3dfc4dfc1df9bdf98df99" username="root">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

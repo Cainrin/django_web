@@ -2,13 +2,13 @@
 import time, StringIO, uuid, datetime
 from PIL import Image
 from django.conf import settings
-from campaigns.hypro.config import ViewConfig, WorkConfig
+from campaigns.ticai.config import ViewConfig, WorkConfig
 from campaigns.foundation.const import FoundationConst
 
 
 def generate_other_dict_data():
     odd = dict()
-    odd[FoundationConst.RN_STATIC_URL] = '{0}'.format("http://hypro-10030008.file.myqcloud.com/")
+    odd[FoundationConst.RN_STATIC_URL] = '{0}{1}'.format(settings.STATIC_URL, ViewConfig.STATIC_URL)
     if settings.DEBUG:
         odd[FoundationConst.RN_WEIXIN_DEBUG] = '?{0}'.format(int(time.time()))
     return odd
@@ -26,6 +26,21 @@ def save_work_image(http_chunk):
     filename = '{0}{1}.{2}'.format(WorkConfig.REL_PATH_IMAGE, uuid.uuid4().hex, ext)
     image.save(settings.MEDIA_ROOT + filename)
     return filename
+
+
+def save_work_file(http_chunk):
+    filename = http_chunk.name.encode(FoundationConst.ENCODE_UTF8)
+    if filename == 'blob':
+        filename = 'blob.txt'
+    mem_file = StringIO.StringIO()
+    for chunk in http_chunk.chunks():
+        mem_file.write(chunk)
+    image = Image.open(mem_file)
+    ext = filename.split('.')[-1]
+    filename = '{0}{1}.{2}'.format(WorkConfig.REL_PATH_IMAGE, uuid.uuid4().hex, ext)
+    image.save(settings.MEDIA_ROOT + filename)
+    return filename
+
 
 
 def fit_up_work(work):

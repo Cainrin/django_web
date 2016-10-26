@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9y(sg8a^!mo7cn#1bk$qx237z!w$emg6=4ne$c6zp00agrt680'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -39,13 +39,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     # 'django.contrib.staticfiles',
     'campaigns.foundation',
+    'campaigns.ticai',
+    'campaigns.hypro',
     'campaigns.fenda201605',
-    'campaigns.yiquan',
-    'campaigns.lottery',
     'DjangoUeditor',
-    'campaigns.management',
-    'campaigns.testproject',
-    'campaigns.nihuawocai',
     'campaigns.qiche',
     'campaigns.yh',
     'campaigns.picc'
@@ -147,8 +144,8 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 # end region
 
-STATIC_ROOT = 'C:/Users/cain/Desktop/cmp/static/'
-MEDIA_ROOT = 'C:/Users/cain/Desktop/cmp/media/'
+STATIC_ROOT = '/www/project/cmp/static/'
+MEDIA_ROOT = '/www/project/cmp/media/'
 # STATIC_ROOT = '/home/qgu/cmp/static/'
 # MEDIA_ROOT = '/home/qgu/cmp/media/'
 TINYMCE_JS_URL = MEDIA_URL + '/static/tiny_mce/tiny_mce_src.js'

@@ -10,6 +10,7 @@ from campaigns.foundation.applet import cos
 from django.utils import timezone
 from collections import Counter
 from campaigns.hypro.applet.Tcos import Auth
+from campaigns.hypro.applet.getLocation import txLocations
 
 
 
@@ -80,3 +81,15 @@ def tocloud(request):
             return {"code": 10001, "message": "未指定签名方式"}
     except Exception as e:
         return {"code": -1, "message": "内部错误reason：" + str(e)}
+
+
+
+@decorators.action_render
+def getLocation(request):
+    location = request.GET['location']
+    a = txLocations(location).getLocat()
+    if a['status'] == 0:
+        return str(a['result']['address_component']).replace('u\'', '\'').decode("unicode-escape") + a['result']['address']
+    else:
+        return a['message']
+
