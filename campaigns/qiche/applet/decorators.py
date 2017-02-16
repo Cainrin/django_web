@@ -4,10 +4,14 @@ from campaigns.foundation.applet import decorators, utils, response
 from campaigns.foundation.const import FoundationConst, DisplayConst
 from django.utils.http import urlquote
 from django.http import HttpResponseRedirect, HttpResponse, Http404, HttpResponseServerError
-from campaigns.qiche import wechat_api, models
+from campaigns.qiche import models
+from campaigns.foundation import wechat_api
 from campaigns.qiche.applet.uitls import generate_other_dict_data
 from django.utils.encoding import smart_unicode, smart_str
 import json
+from django.core.cache import cache
+
+
 
 
 def _record_pv(request):
@@ -75,7 +79,7 @@ def action_render(action_view):
 
 def _auth_url(redirect_uri, scope='snsapi_userinfo', state=None):
     url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect' % \
-          ('wxaacd74076c2a65ff', urlquote(redirect_uri, safe=''), scope, state if state else '')
+          (cache.get("appid"), urlquote(redirect_uri, safe=''), scope, state if state else '')
     return url
 
 
@@ -104,7 +108,7 @@ def _verify_auth(request, view, *args, **kwargs):
                 request.session[FoundationConst.PLATFORM_AUTH_STATE] = 'process'
                 url = _auth_url(_get_url(request), "snsapi_base")
                 return HttpResponseRedirect(url)
-            res = wechat_api.wechatAPI.get_auth_access_token(code)
+            res = wechat_api.WechatApi().get_auth_access_token(code)
             try:
                 openid = res['openid']
             except Exception as e:
@@ -114,7 +118,7 @@ def _verify_auth(request, view, *args, **kwargs):
             # 添加微信用户信息入库
             wx_user = models.WXUser.objects.filter(openid=openid).first()
             if wx_user is None:
-                subscriber = json.loads(json.dumps(wechat_api.wechatAPI.get_subscriber(openid)))
+                subscriber = json.loads(json.dumps(wechat_api.WechatApi().get_subscriber(openid)))
                 try:
                     sub_openid = subscriber['openid']
                     nickname = subscriber.get('nickname', None)

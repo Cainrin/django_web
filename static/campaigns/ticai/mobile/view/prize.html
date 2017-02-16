@@ -1,0 +1,48 @@
+<div id="prize">
+	<div class="no_prize" ng-show='priceLength'>
+		<em><img src="/static/campaigns/ticai/mobile/image/logo_new.png"/></em>
+		<i><img src="/static/campaigns/ticai/mobile/image/1/ico16.png"/></i>
+		<i><img src="/static/campaigns/ticai/mobile/image/1/ico18.png"/></i>
+		<i><img src="/static/campaigns/ticai/mobile/image/1/ico19.png"/></i>
+		<i><img src="/static/campaigns/ticai/mobile/image/1/ico17.png"/></i>
+	</div>
+	
+	<div class="prize_list" ng-hide='priceLength'>
+		<nav>
+			<i><img src="/static/campaigns/ticai/mobile/image/1/logo.png"/></i>
+			<i><img src="/static/campaigns/ticai/mobile/image/1/ico18.png"/></i>
+			<!--<p>累计奖励</p>-->
+		</nav>
+		<section>
+			<ul>
+				<li ng-repeat='data in pricelist'>
+					<div  ng-click='Show($index)'>
+						<em><img src="/static/campaigns/ticai/mobile/image/1/ico16.png"/></em>
+						<p>
+							<span>大乐透代金券</span>
+							<span>有效期至 {{data.endtime}}</span>
+						</p>
+						<p>请至体彩网点凭二维码兑换彩票  </p>
+					</div>
+					<p ng-if='Time>=data.endtime'>已过期</p>
+				</li>
+			
+				
+			</ul>
+		</section>
+	</div>
+</div>
+<!--弹框-->
+<div id="hy_diolag" ng-if='showbox'>
+	<div class="prize_diolag">
+		<em><img src="/static/campaigns/ticai/mobile/image/1/logo.png"/></em>
+		<p>体彩大乐透代金券 </p>
+		<em><img ng-src="{{IndexData.img}}"/></em>
+		<p>
+			<span>{{IndexData.price}}</span>
+			<span> 有效期：{{IndexData.endtime}}   24：00  </span>
+		</p>
+		<p>2元可中1000万，3元冲击1600万<br/>不记名、不挂失、不找零、不兑现<br/>咨询电话:025-84695086</p>
+		<em class="close" ng-click='showClose()'><img src="/static/campaigns/ticai/mobile/image/1/ico20.png"/></em>
+	</div>
+</div>	

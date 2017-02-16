@@ -1,0 +1,46 @@
+<div id="active">
+	<header>
+		<div class="calendar">
+			<div class="ta_date" id="div_date_demo3">
+				<span class="date_title" id="date_demo3"></span>
+				<a class="opt_sel" id="input_trigger_demo3">
+					<i class="i_orderd"></i>
+				</a>
+			</div>
+			<div id="datePicker"></div>
+		</div>
+		<span ng-click='See()' style="color:#000000;cursor: pointer;">查看</span>
+	</header>
+	<section id="active_table" class="user" ng-hide="addpro">
+		<table>
+			<thead>
+				<tr>
+					<th>pv</th>
+					<th>uv</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{data.pv}}</td>
+					<td>{{data.uv}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<!--<a class="addpro" ng-click="add()">添加奖池</a>-->
+	<section id="add" ng-show="addpro">
+		<form name="Form" novalidate>
+			<label>奖品名称:<input type="text" name="pricename" ng-model='add_pricename' required/></label>
+			<label>奖品类型:
+				<select name="pricetype" ng-model='add_pricetype' required >
+					<option value="0">0</option>
+					<option value="1">1</option>
+				</select>
+			</label>
+			<label ng-if="add_pricetype==0">奖品金额:<input type="tel" name="pricemoney" ng-model='add_pricemoney' required/></label>
+			<label>奖品数量:<input type="tel" name="pricecount" ng-model='add_pricecount' required/></label>
+			<label><button ng-disabled="Form.$invalid" ng-click="addData()">确定</button></label>
+		</form>
+	
+	</section>
+</div>

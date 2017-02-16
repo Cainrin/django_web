@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<script type="text/javascript" src="{{ static_url }}mobile/zhonghang/js/jquery-3.0.0.min.js" ></script>
+		<script type="text/javascript" src="{{ static_url }}mobile/zhonghang/js/font-size.js" ></script>
+		<link rel="stylesheet" type="text/css" href="{{ static_url }}mobile/zhonghang/css/animate.min.css"/>
+        <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="{{ static_url }}mobile/zhonghang/js/wx-share.js?time=111" ></script>
+    <title>是TA，从你的一天24小时路过</title>
+    
+    <style type="text/css">
+    	*{margin: 0px;padding: 0px;}
+    	html,body{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+    	.class1{
+    		background-image: url({{ static_url }}mobile/zhonghang/img/new-4-min.png);
+    		background-size:100% auto;
+				background-repeat: no-repeat;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+    	}
+    	.img1{
+    		width: 3.2rem;
+    		height: 0.62rem;
+    		position: absolute;
+    		top: 1.15rem;
+    		left: 2.12rem;
+    	}
+    	.img2{
+    		width: 0.74rem;
+    		height: 0.49rem;
+    		position: absolute;
+    		top: 10.35rem;
+    		left: 3.35rem;	
+    	}
+    	.img3{
+    		width: 3.1rem;
+    		height: 0.82rem;
+    		position: absolute;
+    		top: 4.1rem;
+    		right: 0rem;
+    	}
+    	.img4{
+    		width: 1.54rem;
+    		height: 0.37rem;
+    		position: absolute;
+    		top: 8.7rem;
+    		left: 0rem;
+    	}
+    	.bounceInLeft{
+    		animation-delay:1s;
+            -webkit-animation-delay:1s; 
+    	}
+    	.bounceInRight{
+    		animation-delay:1s;
+            -webkit-animation-delay:1s; 	
+    	}
+    	.bounce{
+    		animation-iteration-count:3;
+    		-webkit-animation-iteration-count: 3;
+    		animation-delay:1s;
+            -webkit-animation-delay:1s; 
+    	}
+    	
+    </style>
+</head>
+<body>
+	<div class="class1" id="huadong">
+		<img class="img1" src="{{ static_url }}mobile/zhonghang/img/new-1-min.png" />
+		<img class="img2 bounce animated"  src="{{ static_url }}mobile/zhonghang/img/1-7-min.png"/>
+		<img class="img3 bounceInRight animated"  src="{{ static_url }}mobile/zhonghang/img/new-2-min.png"/>
+		<img class="img4 bounceInLeft  animated"   src="{{ static_url }}mobile/zhonghang/img/new-3-min.png"/>
+		<script type="text/javascript">
+   			var n=0,x=0;
+   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+   			
+   			document.getElementById("huadong").ontouchstart=function(e){
+   				//isMove = true;  
+                e.preventDefault();  
+                //tx = parseInt($("#huadong").css('top'));  
+                x = e.touches[0].clientY; 
+                this.ontouchmove=function(e){
+                	//isMove = true;  
+                	e.preventDefault(); 
+            	 	n = e.touches[0].pageY -x; 
+                }
+                this.ontouchend=function(){
+                	 if(n<-30){
+                    	window.location.href='touch.html'
+                    }
+                }
+   			}
+   			
+    </script>
+		<audio src="{{ static_url }}mobile/zhonghang/img/FlorianBur-TheWay.mp3" autoplay="autoplay"  loop="3"></audio>
+	</div>
+	 
+</body>
+</html>

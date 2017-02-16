@@ -1,26 +1,30 @@
-# encoding=utf-8
+#encoding=utf-8
 from campaigns.foundation import models
-from campaigns.fenda201605 import app_id
 import requests
 import simplejson
 import urllib
+import logging
 from wechat_sdk import WechatConf, WechatBasic
 import time
 import random
 import string
-import hashlib
+import hashlib, json
 from django.utils.encoding import smart_str
+from django.core.cache import cache
 
-# campaign = models.Campaign.objects.get(pk=app_id)
-# appid = campaign.weixin.key
-# secret = campaign.weixin.secret
-appid = "wxaacd74076c2a65ff"
-secret = "812bb69266a141f20c281f8efb5fda47"
+
+log = logging.getLogger('django')
+appid = "wx1a0890012a1ca50c"
+secret = "abe11732cfcb13facab3352b6e311927"
+
 
 class APIError(object):
     def __init__(self, code, msg):
         self.code = code
         self.msg = msg
+
+def wx_log_error(APIError):
+    log.error('wechat api error: [%s], %s' % (APIError.code, APIError.msg))
 
 
 class WechatBaseApi(object):
@@ -29,17 +33,29 @@ class WechatBaseApi(object):
 
     def __init__(self, api_entry=None):
         conf = WechatConf(
-            token='hua_yang_link_589',
+            token='njcbebank',
             appid=appid,
             appsecret=secret,
+            jsapi_ticket=cache.get("jsapi_ticket"),
+            jsapi_ticket_expires_at=cache.get("jsapi_ticket_expires_at"),
+            access_token=cache.get("access_token"),
+            access_token_expires_at=cache.get("access_token_expires_at"),
             encrypt_mode='compatible',  # 可选项: normal/compatible/safe 分别对应 明文/兼容/安全 模式
         )
         self.we_chat = WechatBasic(conf=conf)
         self.appid = appid
         self.appsecret = secret
-        self._access_token = None
+        token_dict = self.we_chat.get_access_token()
+        self._access_token = token_dict['access_token']
+        if cache.get("access_token") is None or cache.get("access_token") != self._access_token:
+            cache.set("access_token", token_dict['access_token'], 60*60)
+            cache.set("access_token_expires_at", token_dict['access_token_expires_at'], 60*60)
         self.api_entry = api_entry or self.API_PREFIX
-        self.jsapi_ticket = self.we_chat.get_jsapi_ticket()
+        jsapi_ticket_dict = self.we_chat.get_jsapi_ticket()
+        self.jsapi_ticket = jsapi_ticket_dict['jsapi_ticket']
+        if cache.get("jsapi_ticket") is None or cache.get("jsapi_ticket") != self.jsapi_ticket:
+            cache.set('jsapi_ticket', jsapi_ticket_dict['jsapi_ticket'], 60*60)
+            cache.set('jsapi_ticket_expires_at', jsapi_ticket_dict['jsapi_ticket_expires_at'], 60*60)
 
     @property
     def access_token(self):
@@ -101,7 +117,7 @@ class WechatApi(WechatBaseApi):
     #返回授权url  scope有两种模式：snsapi_base为静默授权只获取openID；snsapi_userinfo为获取用户基本信息，需要用户手动同意
     def auth_url(self, redirect_uri, scope='snsapi_userinfo', state=None):
         url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect' % \
-              (self.appid, urllib.quote(redirect_uri), scope, state if state else '')
+              (self.appid, urllib.quote(redirect_uri), scope, state if state else "")
         return url
 
    # 获取网页授权的access_token,open_id
@@ -127,12 +143,12 @@ class WechatApi(WechatBaseApi):
         return self._process_response(requests.get(url, params=params))
 
     def get_subscriber(self, openid):
-        return self.we_chat.get_user_info(openid,lang='zh_CN')
+        return self.we_chat.get_user_info(openid, lang='zh_CN')
 
     def get_sign_package(self, url):
         ret = {
             'nonceStr': self.__create_nonce_str(),
-            'jsapi_ticket': self.we_chat.get_jsapi_ticket()['jsapi_ticket'],
+            'jsapi_ticket': self.jsapi_ticket,
             'timestamp': self.__create_timestamp(),
             'url': url
         }
@@ -157,6 +173,3 @@ class WechatApi(WechatBaseApi):
         url = 'http://%s%s' % \
               (request.get_host(), smart_str(request.get_full_path()))
         return url
-
-
-wechatAPI = WechatApi

@@ -1,0 +1,39 @@
+<div id="active">
+	
+	<section id="active_table" class="user" ng-hide="addpro">
+		<table>
+			<thead>
+				<tr>
+					<th>创建时间</th>
+					<th>是否生成</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<!--<tbody>
+				<tr id="number_1">
+					<td><input type="number"  ng-model='maxmon' ng-value="active.maxmon" disabled="disabled" >元</td>
+					<td ng-bind="active.sendmon+'元'" ></td>
+					<td><input type="number"  ng-model='prichance'  ng-value="active.prichance" disabled="disabled"></td>
+					<td><input type="number"  ng-model='FiChance' ng-value="active.FiChance" disabled="disabled"></td>
+					<td><input type="button" value="修改" data-num='number_1' class="buts"></td>
+				</tr>
+			</tbody>-->
+			<tbody>
+				<tr ng-repeat='datas in data'>
+					<td>{{datas.creatime}}</td>
+					<td ng-bind="datas.isSend==0?'已发送':'未发送'"></td>
+					<td><span ng-click='shengc(datas.id)'>发送</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<!--<a class="addpro" ng-click="add()" ng-hide="a">添加抽奖</a>-->
+	<section id="add" ng-show="addpro">
+		<form name="Form" novalidate>
+			<label>总金额:<input type="number" name="maxmon" ng-model='add_maxmon' required/>元</label>
+			<label>奖品几率:<input type="number" name="prichance" ng-model='add_prichance' required/>%</label>
+			<label>虚拟实物权重:<input type="number" name="FiChance" ng-model='add_FiChance' required/></label>
+			<label><button ng-disabled="Form.maxmon.$error.required || Form.prichance.$error.required || Form.FiChance.$error.required" ng-click="addData()">确定</button></label>
+		</form>
+	</section>
+</div>

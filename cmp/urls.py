@@ -3,6 +3,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.views.static import serve
+from views import wxVefive
+from views import sslVefive
+
+
 
 admin.site.site_title = '南京华扬活动管理平台'
 admin.site.site_header = '南京华扬活动管理平台'
@@ -22,6 +26,10 @@ urlpatterns = [
     url(r'^testticai/', include('campaigns.ticai.urls')),
     url(r'^qiche/', include('campaigns.qiche.urls')),
     url(r'^yh/', include('campaigns.yh.urls')),
-    url(r'^picc/', include('campaigns.picc.urls'))
+    url(r'^picc/', include('campaigns.picc.urls')),
+    url(r'^qc/', include('campaigns.qc.urls')),
+    url(r'^jsblank/', include('campaigns.jsblank.urls')),
+    url(r'^MP_verify_q5tfBJEQpcCbYIil.txt$', wxVefive),
+    url(r'^.well-known/pki-validation/fileauth.htm', sslVefive)
 
 ]

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import math, hashlib, json, base64
-from campaigns.yiquan.applet import wechat_api
+from campaigns.foundation import wechat_api
 from campaigns.foundation.applet import response, utils
 from campaigns.foundation.const import FoundationConst, DisplayConst
 from campaigns.yiquan import models, config, const

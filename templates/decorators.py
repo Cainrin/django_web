@@ -6,7 +6,7 @@ from campaigns.ticai.applet.uitls import generate_other_dict_data
 from campaigns.ticai import app_id, models
 from django.utils.http import urlquote
 from django.http import HttpResponseRedirect, HttpResponse, Http404, HttpResponseServerError
-from campaigns.ticai import wechat_api
+from campaigns.foundation import wechat_api
 from django.utils.encoding import smart_unicode, smart_str
 import json
 

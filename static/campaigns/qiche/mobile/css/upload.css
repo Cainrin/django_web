@@ -1,0 +1,41 @@
+  html{background: url(../image/di.png) no-repeat bottom;background-size: 100%;}
+  #upload_top{width: 100%; height: 4.43rem; background: url(../image/1/1.jpg) no-repeat; 
+  background-size: contain;position: absolute;left:0px; top:0px;}
+  .class2{width:100%;position: absolute; bottom: 0px; left:0px; height: 120px;background-color: #000; 
+  text-align: center;}
+  .class2 .outlined{display:block; width:80px;margin:10px auto 0px;padding:5px 10px;background-color: #fff;
+  border-radius: 5px;}
+  #File{ display: none;}
+  .file{transition: all 1s;transform-origin:top;position:relative;overflow:hidden;width:3.5rem; margin:0.3rem auto 0.4rem;height: 4.78rem;border:0.06rem solid #99D3D0;border-radius: 0.2rem;background-color:#fff;}
+  .label{width: 100%; height: 100%;display: -webkit-box;-webkit-box-align: center; -webkit-box-pack: center; }	
+  .label em{display:block;width: 1.5rem;}
+  .label em img{width: 100%;}
+  .tishi{display: block; width: 4.74rem;height: 0.63rem; margin:0px auto 0.5rem;background: url(../image/1/2.png) no-repeat; 
+  background-size: contain;}
+  .box_img{width:100%; height:100%;visibility:hidden;}
+  #step{text-align: center;color:#000000; font-size:14px; margin: 0px auto 0.2rem;color:#000000;font-size: 0.3rem;}
+  #step p{margin-bottom: 0.5rem;}
+  #step p input{margin-left:0.3rem;border:none;background:#fff;border-bottom: 1px solid #EFEFEF; 
+  height: 0.4rem; line-height: 0.3rem; text-align: center;font-size: 0.3rem; width: 2.3rem;}
+  #step p input:focus{outline: none;}
+  #Submit{ display:block;width: 3.59rem; height: 0.7rem;background: url('../image/1/4.png') no-repeat; 
+  background-size: contain;margin: auto;}
+  #uploadServer{position: absolute;left:0px; text-align: center; bottom: 0.4rem; width: 100%;}
+    .cancel{ display:block;width: 3.59rem; height: 0.7rem;background: url('../image/1/5.png') no-repeat; 
+  background-size: contain;margin:0px auto 0.2rem;}
+    .upServer{ display:block;width: 3.59rem; height: 0.7rem;background: url('../image/1/6.png') no-repeat; 
+  background-size: contain;margin: auto;}
+  canvas{ margin: auto;}
+  
+ .scale{ transform: scale(1.4);} 
+  
+  
+@media screen
+and (min-device-width : 320px)
+and (max-device-height : 480px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+	#step p{margin-bottom: 0.3rem;}
+	  .file{margin-bottom: 0.3rem;}
+	   .tishi{margin-bottom: 0.3rem;}
+}

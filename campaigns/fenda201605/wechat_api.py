@@ -164,5 +164,3 @@ class WechatApi(WechatBaseApi):
         url = 'http://%s%s' % \
               (request.get_host(), smart_str(request.get_full_path()))
         return url
-
-wechatAPI = WechatApi()

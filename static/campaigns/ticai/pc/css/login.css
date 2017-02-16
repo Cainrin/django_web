@@ -1,0 +1,88 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  min-width: 1400px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a img {
+  border: none;
+}
+
+li {
+  list-style: none;
+}
+
+input:focus, select:focus {
+  outline: none;
+}
+
+#login {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+#login .login_mask {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  top: 50%;
+  margin-top: -100px;
+  border: 1px solid #444444;
+  background-color: blanchedalmond;
+  box-shadow: 0px 0px 10px #000000;
+  border-radius: 10px;
+}
+
+#login .login_mask .login_box {
+  padding-top: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+#login .login_mask .login_box input[type=text], #login .login_mask .login_box input[type=password] {
+  width: 170px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #CCCCCC;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+#login .login_mask .login_box span {
+  color: red;
+  font-size: 12px;
+}
+
+#login .login_mask .login_box input[type=button]:disabled {
+  background-color: #fff;
+  color: #000000;
+}
+
+#login .login_mask .login_box input[type=button] {
+  margin-left: 100px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  background-color: #88AB4A;
+  color: #fff;
+}

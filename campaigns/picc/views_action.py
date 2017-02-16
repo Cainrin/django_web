@@ -3,7 +3,8 @@ import math
 from campaigns.picc.applet.REDIS import djangoCache
 from campaigns.foundation.applet import response, utils
 from campaigns.foundation.const import FoundationConst, DisplayConst
-from campaigns.picc import models, config, const, wechat_api
+from campaigns.picc import models, config, const
+from campaigns.foundation import wechat_api
 from campaigns.picc.applet import decorators
 from campaigns.picc.applet.vote import FendaVoteManager
 from campaigns.picc.applet.uitls import fit_up_work_list, save_work_image, fit_up_work

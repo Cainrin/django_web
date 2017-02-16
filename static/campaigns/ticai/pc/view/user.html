@@ -1,0 +1,50 @@
+<div id="active">
+	<header>
+		<div class="calendar">
+			<div class="ta_date" id="div_date_demo3">
+				<span class="date_title" id="date_demo3"></span>
+				<a class="opt_sel" id="input_trigger_demo3">
+					<i class="i_orderd"></i>
+				</a>
+			</div>
+			<div id="datePicker"></div>
+		</div>
+		<div id="pv_uv">
+			<p>PV:<span ng-bind='pv'></span></p>
+			<p>UV:<span ng-bind='uv'></span></p>
+		</div>
+		<div id="search">
+			<input type="text" placeholder="输入搜索的关键词"  ng-model='keyValue'/>
+			<input type="button" value="搜索"  ng-click='Search()'/>
+		</div>
+		<div id="buts">
+			<p class="p1"><span ng-click="GetAllEmployee('None')" ng-model="suchchoice">步数</span><span class="last" ng-click="GetAllEmployee('time')">时间</span></p>
+			<p class="p2" ng-click='extype()'>导出</p>
+		</div>
+	</header>
+	<section id="active_table" class="user">
+		<table>
+			<thead>
+				<tr>
+					<th>用户ID</th>
+					<th>手机号</th>
+					<th>步数</th>
+					<th>捐赠金额</th>
+					<th>参与天数</th>
+					<th>用户详情</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='data in active'>
+					<td>{{data.username}}</td>
+					<td>{{data.info}}</td>
+					<td>{{data.count}}</td>
+					<td>{{data.money}}</td>
+					<td>{{data.joincount}}</td>
+					<td><a href="#/actived/{{data.username}}">查看</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<tm-pagination conf="paginationConf"></tm-pagination>
+</div>

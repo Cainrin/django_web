@@ -5,7 +5,7 @@ from campaigns.fenda201605.applet.uitls import generate_other_dict_data
 from campaigns.fenda201605 import app_id, models
 from django.utils.http import urlquote
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseServerError, Http404
-from campaigns.fenda201605 import wechat_api
+from campaigns.foundation import wechat_api
 from django.utils.encoding import smart_unicode, smart_str
 import json
 
@@ -34,7 +34,7 @@ def Get_auth(request, view, *args, **kwargs):
     try:
         Access_token = token_data['access_token']
         Openid = token_data['openid']
-        usr_info =  wechat_api.WechatApi().get_user_info(Access_token, Openid)
+        usr_info = wechat_api.WechatApi().get_user_info(Access_token, Openid)
         subscriber = json.loads(json.dumps(usr_info))
     except Exception as e:
         return HttpResponseServerError(e)

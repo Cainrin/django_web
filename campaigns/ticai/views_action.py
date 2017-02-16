@@ -6,12 +6,14 @@ import time
 from django.utils import timezone
 from campaigns.foundation.applet import utils
 from campaigns.foundation.const import DisplayConst
-from campaigns.ticai import models, config, const, wechat_api
+from campaigns.ticai import models, config, const
+from campaigns.foundation import wechat_api
 from campaigns.ticai.applet.uitls import save_work_image
 from campaigns.ticai.applet import decorators
 from campaigns.ticai.applet.Tcos import Auth
 from django.core.cache import cache
 import requests
+from django.db.models import Q
 
 
 
@@ -19,6 +21,53 @@ import requests
 
 
 #主kv
+# @decorators.action_render
+# def Main(request):
+#     try:
+#         nowDay = datetime.date.today()
+#         matchWEEK = str(nowDay - datetime.date.fromtimestamp(config.WorkConfig.starTime)).split(" ")[0]
+#         if matchWEEK == '0:00:00':
+#             matchWek = 0
+#         else:
+#             matchWek = int(matchWEEK)
+#         if 0 <= matchWek < 7:
+#             weekCount = 1
+#             staticData = 0
+#         elif 7 <= matchWek < 14:
+#             weekCount = 2
+#             staticData = models.weekCount.objects.filter(~Q(weekMatch=weekCount)).all()
+#         else:
+#             weekCount = 3
+#             staticData = models.weekCount.objects.filter(~Q(weekMatch=weekCount)).all()
+#         if cache.get("weekCount") is None or cache.get("weekCount") == "1" or cache.get("weekCount") != weekCount or cache.get("nowData") is None:
+#             if staticData == 0:
+#                 activeinfo = models.weekCount.objects.all()
+#                 count = 0
+#                 for i in activeinfo:
+#                     count += i.walk
+#                 TotalMon = round(float(count) / 2000, 2)
+#             else:
+#                 Acount = 0
+#                 count = 0
+#                 for i in staticData:
+#                     count += i.walk
+#                 for i in models.weekCount.objects.filter(weekMatch=weekCount).all():
+#                     Acount += i.walk
+#                 cache.set("nowData", count, 24*60*60)
+#                 cache.set("weekCount", str(weekCount), 24*60*60)
+#                 count += Acount
+#                 TotalMon = round(float(count) / 2000, 2)
+#         else:
+#             nowWeek = int(cache.get("weekCount"))
+#             nowData = int(cache.get("nowData"))
+#             count = 0
+#             for i in models.weekCount.objects.filter(~Q(weekMatch=nowWeek)).all():
+#                 count += i.walk
+#             count += nowData
+#             TotalMon = round(float(count) / 2000, 2)
+#             return {"count": count, "money": TotalMon, "result_code": 0, "result_msg": None}
+#     except Exception as e:
+#         return {"result_code": -1, "result_msg": str(e)}
 @decorators.action_render
 def Main(request):
     try:
@@ -27,7 +76,8 @@ def Main(request):
         for i in activeinfo:
             count += i.walk
         TotalMon = round(float(count) / 2000, 2)
-
+        if TotalMon > 300000:
+            TotalMon = 300000
         return {"count": count, "money": TotalMon, "result_code": 0, "result_msg": None}
     except Exception as e:
         return {"result_code": -1, "result_msg": str(e)}
@@ -54,24 +104,31 @@ def update(request):
         else:
             weekCount = 3
         if weekCount == 1:
-            startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime)
+            startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime) + datetime.timedelta(hours=8)
             startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0, tzinfo=pytz.utc)
         elif weekCount == 2:
-            startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime)
+            startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime) + datetime.timedelta(hours=8)
             startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0, tzinfo=pytz.utc) \
                         + datetime.timedelta(days=7)
         else:
-            startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime)
+            startTime = datetime.datetime.utcfromtimestamp(config.WorkConfig.starTime) + datetime.timedelta(hours=8)
             startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0,
                                           tzinfo=pytz.utc) + datetime.timedelta(days=14)
-        walkInfo = models.walkCount.objects.filter(openid=request.session.get("wxUser")).filter(creaTime__gte=now).first()
+
+        walkInfo = models.walkCount.objects.filter(openid=request.session.get("wxUser")).filter(creaTime__gte=nowday).first()
         if walkInfo is not None:
             return {"result_code": 1, "result_msg": "您今日已上传过"}
+        elif int(time.strftime('%H', time.localtime())) < 9:
+            return {"result_code": 1, "result_msg": "请按指定时间上传"}
+        elif int("".join(str(datetime.date.today()).split("-"))) >= 20161116:
+            return {"result_code" : 0, "result_msg": "上传活动已结束"}
         else:
             openid = request.session.get("wxUser")
             wxuser = models.walkCount.objects.filter(openid=openid).first()
             image = request.POST['img'].encode("utf-8")
             count = int(request.POST['count'])
+            if count > 30000:
+                return {"result_code": -1, "result_msg": "您的数据有误"}
             usrprice = models.UsrPhoneCall.objects.filter(openid=openid).first()
             if usrprice is None:
                 usrprice = models.UsrPhoneCall.objects.create(
@@ -115,8 +172,15 @@ def update(request):
                     isGet=isGet
                 )
                 allWalk = models.weekCount.objects.filter(openid=openid).filter(weekMatch=weekCount)
-                walk = count + allWalk.first().walk
-                allWalk.update(walk=walk)
+                if allWalk.first() is not None:
+                    walk = count + allWalk.first().walk
+                    allWalk.update(walk=walk)
+                else:
+                    models.weekCount.objects.create(
+                        walk=count,
+                        openid=openid,
+                        weekMatch=weekCount
+                    )
                 return {"result_code": 0, "result_msg": None, "first": False, "id": usrdate.id, 'walk': count, "money": round(float(count) / 2000, 2)}
     except Exception as e:
         return {'result_code': -1, "result_msg": str(e)}
@@ -270,7 +334,6 @@ def PriCount(request):
 @decorators.action_render
 def myDonate(request):
     try:
-
         openid = request.session.get("wxUser")
         myId = models.WXUser.objects.filter(openid=openid).first()
         firstWeek = models.weekCount.objects.filter(openid=openid).all()
@@ -280,7 +343,7 @@ def myDonate(request):
                 d1 = {}
                 d1['weekCount'] = i.weekMatch
                 d1['isend'] = i.isSend
-                d1['rank'] = models.weekCount.objects.filter(walk__gt=i.walk).all().count() + 1
+                d1['rank'] = models.weekCount.objects.filter(walk__gt=i.walk, weekMatch=i.weekMatch).all().count() + 1
                 d1['myWalk'] = i.walk
                 L1.append(d1)
         nowDay = datetime.date.today()
@@ -291,10 +354,12 @@ def myDonate(request):
             l1 = []
             for i in dayCount:
                 d1 = {}
+                countday = datetime.date(i.creaTime.year, i.creaTime.month, i.creaTime.day)
+                creatDay = datetime.date(i.creaTime.year, i.creaTime.month, i.creaTime.day) + datetime.timedelta(days=1)
                 d1['id'] = i.id
                 d1['weekMatch'] = i.weekMatch
                 d1['creatime'] = str(i.creaTime)
-                d1['rank'] = models.walkCount.objects.filter(walk__gt=i.walk).all().count() + 1
+                d1['rank'] = models.walkCount.objects.filter(change__gt=i.change, creaTime__gte=countday, creaTime__lt=creatDay).all().count() + 1
                 d1['walk'] = i.change
                 d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usractive[1])
                 l1.append(d1)
@@ -316,24 +381,39 @@ def myDonate(request):
                     l2.append(d2)
         else:
             l1 = []
+            dayCount = models.walkCount.objects.filter(creaTime__lt=weekDayd).filter(openid=openid).all()
+            for i in dayCount:
+                d1 = {}
+                countday = datetime.date(i.creaTime.year, i.creaTime.month, i.creaTime.day)
+                creatDay = datetime.date(i.creaTime.year, i.creaTime.month, i.creaTime.day) + datetime.timedelta(days=1)
+                d1['id'] = i.id
+                d1['weekMatch'] = i.weekMatch
+                d1['creatime'] = str(i.creaTime)
+                d1['rank'] = models.walkCount.objects.filter(change__gt=i.change,
+                                                             creaTime__lt=creatDay,
+                                                             creaTime__gte=countday).all().count() + 1
+                d1['walk'] = i.change
+                d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usractive[1])
+                l1.append(d1)
             myData = models.walkCount.objects.filter(creaTime__gte=weekDayd).filter(openid=openid).all()
             l2 = []
-            for i in myData:
-                if i is None:
-                    continue
-                else:
-                    d2 = {}
-                    d2['user'] = myId.id
-                    if i.change != i.walk:
-                        d2['walk'] = i.change
+            if myData:
+                for i in myData:
+                    if i is None:
+                        continue
                     else:
-                        d2['walk'] = i.walk
-                    d2['id'] = i.id
-                    d2['creatime'] = str(i.creaTime).split(" ")[0] + " " + str(i.creaTime).split(" ")[1].split(".")[0]
-                    l2.append(d2)
+                        d2 = {}
+                        d2['user'] = myId.id
+                        if i.change != i.walk:
+                            d2['walk'] = i.change
+                        else:
+                            d2['walk'] = i.walk
+                        d2['id'] = i.id
+                        d2['creatime'] = str(i.creaTime).split(" ")[0] + " " + str(i.creaTime).split(" ")[1].split(".")[0]
+                        l2.append(d2)
         return {"week": L1, "day": l1, "result_code": 0, "result_msg": None, "no_check": l2}
     except Exception as e:
-        print e
+        print "mydonate:" + str(e)
         return {"result_code": -1, "result_msg": e}
 
 
@@ -370,31 +450,34 @@ def fetchprice(request):
 @decorators.action_render
 def signup(request):
     try:
-        usrinfo = request.POST['usrinfo']
-        # openid = request.session.get("wxUser")
-        openid = request.session.get("wxUser")
-        USER = models.walkCount.objects.filter(openid=openid).all()
-        DT = models.UsrPhoneCall.objects.filter(openid=openid)
-        if DT is None:
-            WT = models.UsrPhoneCall.objects.create(
-                openid=openid,
-                usrsignup=usrinfo,
-                signuptime=time.time()
-            )
-            l1 = []
-            for i in USER:
-                l1.append(i.id)
-            for i in l1:
-                models.walkCount.objects.filter(id=i).update(info=WT)
-            return {"result_code": 0, "result_msg": None}
+        if datetime.datetime.now() >= datetime.date.strptime('2016-11-10', "%Y-%m-%d"):
+            return {"result_code": -1, "result_msg": "报名时间已截止"}
         else:
-            DT.update(usrsignup=usrinfo, signuptime=time.time())
-            l1 = []
-            for i in USER:
-                l1.append(i.id)
-            for i in l1:
-                models.walkCount.objects.filter(id=i).update(info=DT[0])
-            return {"result_code": 0, "result_msg": None}
+            usrinfo = request.POST['usrinfo']
+            # openid = request.session.get("wxUser")
+            openid = request.session.get("wxUser")
+            USER = models.walkCount.objects.filter(openid=openid).all()
+            DT = models.UsrPhoneCall.objects.filter(openid=openid)
+            if DT is None:
+                WT = models.UsrPhoneCall.objects.create(
+                    openid=openid,
+                    usrsignup=usrinfo,
+                    signuptime=time.time()
+                )
+                l1 = []
+                for i in USER:
+                    l1.append(i.id)
+                for i in l1:
+                    models.walkCount.objects.filter(id=i).update(info=WT)
+                return {"result_code": 0, "result_msg": None}
+            else:
+                DT.update(usrsignup=usrinfo, signuptime=time.time())
+                l1 = []
+                for i in USER:
+                    l1.append(i.id)
+                for i in l1:
+                    models.walkCount.objects.filter(id=i).update(info=DT[0])
+                return {"result_code": 0, "result_msg": None}
     except Exception as e:
         return {"result_code": -1, "result_msg": e}
 
@@ -487,12 +570,13 @@ def weekCount(request):
         else:
             weekCount = 3
             matchWek -= 14
-        waakCount = models.hitprize.objects.filter(weekMacht=weekCount).first()
+        nowWeekCount = weekCount - 1
+        waakCount = models.hitprize.objects.filter(weekMacht=nowWeekCount, isSend=0, countType=0).first()
         if waakCount is None:
             ISSEND = 1
         else:
             ISSEND = waakCount.isSend
-        weekcount = models.weekCount.objects.filter(weekMatch=weekCount).all().order_by('-walk')[start: end]
+        weekcount = models.weekCount.objects.filter(weekMatch=weekCount).all().order_by('-walk', 'openid')[start: end]
         total_count = models.weekCount.objects.filter(weekMatch=weekCount).all().count()
         if not weekcount:
             return {"result_code": 1, "result_msg": "数据正在审核"}
@@ -514,7 +598,8 @@ def weekCount(request):
                 count = None
                 d3 = None
             else:
-                count = models.weekCount.objects.filter(walk__gt=myData.walk).count() + 1
+                nowCount = models.weekCount.objects.filter(walk__gt=myData.walk, weekMatch=weekCount)
+                count = models.weekCount.objects.filter(walk__gt=myData.walk, weekMatch=weekCount).count() + 1
                 d3 = {}
                 d3['user'] = models.WXUser.objects.filter(openid=myData.openid).first().id
                 d3['walk'] = myData.walk
@@ -522,11 +607,26 @@ def weekCount(request):
                     d3['info'] = None
                 else:
                     d3['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=myData.openid)[0].usractive.split(" ")[1])
-            if count <= 50:
-                isWrite = models.UsrPhoneCall.objects.filter(openid=openid).first()
-                if isWrite is not None:
-                    if isWrite.usrprizes is None:
-                        infoSend = 0
+            if weekCount > 1:
+                nowWek = 3
+                nowData = models.weekCount.objects.filter(weekMatch=nowWek, openid=openid).first()
+                if nowData is not None:
+                    myRank = models.weekCount.objects.filter(weekMatch=nowWek, walk__gt=nowData.walk).all().count() + 1
+                    if myRank <= 50:
+                        isWrite = models.UsrPhoneCall.objects.filter(openid=openid).first()
+                        infodata = "hitprice" + str(nowWek)
+                        if isWrite is not None:
+                            if isWrite.usrprizes is None:
+                                infoSend = 0
+                                request.session[infodata] = 1
+                            else:
+                                if request.session.get(infodata) is None:
+                                    infoSend = 0
+                                    request.session[infodata] = 1
+                                else:
+                                    infoSend = 1
+                        else:
+                            infoSend = 1
                     else:
                         infoSend = 1
                 else:
@@ -593,3 +693,4 @@ def tocloud(request):
             return {"code": 10001, "message": "未指定签名方式"}
     except Exception as e:
         return {"code": -1, "message": "内部错误reason：" + str(e)}
+

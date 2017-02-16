@@ -1,7 +1,7 @@
 from django.shortcuts import render, render_to_response
 from django.conf import settings
-from campaigns.fenda201605.applet.vote import FendaVoteManager
-from campaigns.fenda201605.applet import decorators
+from campaigns.picc.applet.vote import FendaVoteManager
+from campaigns.picc.applet import decorators
 from django.utils.encoding import smart_unicode, smart_str
 import urllib
 from django.utils.http import urlquote

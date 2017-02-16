@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<script type="text/javascript" src="{{ static_url }}mobile/js/app/fontSize.js" ></script>
+		<link rel="stylesheet" href="{{ static_url }}mobile/css/public.css" />
+		<link rel="stylesheet" href="{{ static_url }}mobile/css/index.css" />
+		<title>点亮孩子们的梦想星空</title>
+	</head>
+	<body>
+		<!--<div id="stars">
+		</div>-->
+		<audio class="none"  autoplay="autoplay"  id="music" loop="loop"  src="{{ static_url }}mobile/image/xx.mp3"></audio>
+			<i id="music_bj"><img id="music_img" src="{{ static_url }}mobile/image/kai.png"/></i>
+		<div style="width: 100%;height: 100%; overflow: hidden; position: relative;">
+		<div id="bj">
+			<img src="{{ static_url }}mobile/image/bj-min.jpg"/>
+		</div>
+		</div>
+		<div id="qiqiu" class="none">
+			<img src="{{ static_url }}mobile/image/wx-min.png"/>
+			<img src="{{ static_url }}mobile/image/log1-min.png" class="none"/>
+		</div>
+		<div id="text">
+			<p><img src="{{ static_url }}mobile/image/indexText1-min.png"/></p>
+			<p><img src="{{ static_url }}mobile/image/indexText2-min.png"/></p>
+			<p><img src="{{ static_url }}mobile/image/text3-min.png"/></p>
+		</div>
+		<div id="theme"  class="none">
+			<em><img src="{{ static_url }}mobile/image/2-min.png"/></em>
+			<em><img src="{{ static_url }}mobile/image/4-min.png"/></em>
+			<em><a href="list.html"><img src="{{ static_url }}mobile/image/3-min.png"/></a></em>
+			<em class="buts_active"><img src="{{ static_url }}mobile/image/shuom-min.png"/></em>
+		</div>
+		<a id="play"><img src="{{ static_url }}mobile/image/play-min.png"/></a>
+			<a id="play1" class="none"><img src="{{ static_url }}mobile/image/play-min.png"/></a>
+		<script type="text/javascript" src="{{ static_url }}mobile/js/plugins/zepto.min.js" ></script>
+	    <script type="text/javascript" src="{{ static_url }}mobile/js/plugins/zepto.selector.min.js" ></script>
+	    <script type="text/javascript" src="{{ static_url }}mobile/js/plugins/zepto.fx.min.js" ></script>
+	    <script type="text/javascript" src="{{ static_url }}mobile/js/plugins/zepto.cookie.min.js" ></script>
+	    <script type="text/javascript" src="{{ static_url }}mobile/js/plugins/common.js" ></script>
+	    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="{{ static_url }}mobile/js/plugins/wx-share.js?time=12"></script>
+	    <script type="text/javascript" src="{{ static_url }}mobile/js/app/index1.js" ></script>
+	</body>
+</html>

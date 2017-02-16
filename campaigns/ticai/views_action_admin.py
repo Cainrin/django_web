@@ -27,8 +27,6 @@ def priceInfo(request):
             d1 = {}
             wxObj = models.WXUser.objects.filter(openid=i.openid).first()
             d1['id'] = wxObj.id
-            usrphone = models.UsrPhoneCall.objects.get(openid=wxObj.openid)
-            d1['info'] = "".join(str(usrphone.usractive).split(" ")[1])
             inFo = models.qrcount.objects.filter(id=i.priCode).first()
             d1['pricode'] = str(inFo.code)
             d1['endtime'] = inFo.endtime
@@ -245,7 +243,10 @@ def ActiveData(request):
             l1 = []
             for i in activedata:
                 d2 = {}
-                d2['id'] = models.WXUser.objects.filter(openid=i.openid).first().id
+                info = models.WXUser.objects.filter(openid=i.openid).first()
+                if info is None:
+                    continue
+                d2['id'] = info.id
                 d2['cid'] = i.id
                 d2['picture'] = str(i.image)
                 d2['count'] = i.walk
@@ -253,7 +254,7 @@ def ActiveData(request):
                 d2['money'] = i.money
                 d2['pricesname'] = i.priCode
                 d2['update'] = str(i.creaTime)
-                d2['phonecall'] = i.info.usractive
+                d2['phonecall'] = models.UsrPhoneCall.objects.filter(openid=i.openid).first().usractive
                 l1.append(d2)
             excel = decorators.exportExcel(request, name="活动数据", dict1=l1)
             return excel
@@ -276,7 +277,7 @@ def ActiveData(request):
                     d1['money'] = i.money
                     d1['pricesname'] = i.priCode
                     d1['update'] = str(i.creaTime)
-                    d1['phonecall'] = i.info.usractive
+                    d1['phonecall'] = models.UsrPhoneCall.objects.filter(openid=i.openid).first().usractive
                     l1.append(d1)
             return {"acivedata": l1, "total_count": total_count, FoundationConst.RN_RCODE: 1, FoundationConst.RN_RMSG: None}
         else:
@@ -284,7 +285,7 @@ def ActiveData(request):
                 creaTime__gte=statime).filter(~Q(image="http://www.fantizi5.com/zi/kt/e58187.jpg")).order_by("creaTime").count()
             activedata = models.walkCount.objects.all().filter(creaTime__lte=endtime).filter(creaTime__gte=statime)\
             .filter(~Q(image="http://www.fantizi5.com/zi/kt/e58187.jpg"))\
-            .order_by("-change")[start: end]
+            .order_by("-change", 'creaTime')[start: end]
             l1 = []
             for i in activedata:
                 d1 = {}
@@ -296,7 +297,7 @@ def ActiveData(request):
                 d1['money'] = i.money
                 d1['pricesname'] = i.priCode
                 d1['update'] = str(i.creaTime)
-                d1['phonecall'] = i.info.usractive
+                d1['phonecall'] = models.UsrPhoneCall.objects.filter(openid=i.openid).first().usractive
                 l1.append(d1)
             return {"acivedata": l1, "total_count": total_count, FoundationConst.RN_RCODE: 1, FoundationConst.RN_RMSG: None}
     except Exception as e:
@@ -371,10 +372,10 @@ def SWPrices(request):
         start = (now_page - 1) * page_rows
         end = start + page_rows
         swcount = models.hitprize.objects.filter(isSend=0).filter(weekMacht=int(week)).filter(countType=0).first()
-        if swcount is None:
+        if not swcount:
             return {"result_code": 1, "result_msg": "暂无数据"}
         if Getype == "1":
-            dataCount = models.weekCount.objects.filter(weekMatch=week).order_by('-walk').all()
+            dataCount = models.weekCount.objects.filter(weekMatch=week).order_by('-walk', 'openid').all()
             l1 = []
             if dataCount.count() <= 50:
                 for j in dataCount[start: end]:
@@ -383,41 +384,44 @@ def SWPrices(request):
                     d1['user'] = models.WXUser.objects.filter(openid=j.openid).first().id
                     d1['rank'] = models.weekCount.objects.filter(walk__gt=j.walk).count() + 1
                     d1['walk'] = j.walk
-                    d1['weekCount'] = j.weekMacht
+                    d1['weekCount'] = j.weekMatch
                     l1.append(d1)
             else:
-                for j in swcount[0: 49]:
+                for j in dataCount[0: 50]:
                     d1 = {}
                     d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=j.openid)[0].usractive.split(" ")[1])
                     d1['user'] = models.WXUser.objects.filter(openid=j.openid).first().id
                     d1['rank'] = models.weekCount.objects.filter(walk__gt=j.walk).count() + 1
                     d1['walk'] = j.walk
-                    d1['weekCount'] = j.weekMacht
+                    d1['weekCount'] = j.weekMatch
                     l1.append(d1)
             excel = decorators.exportExcel(request, '实物奖品', l1)
             return excel
         else:
             l1 = []
-            if swcount.count() <= 50:
-                for j in swcount[start: end]:
+            dataCount = models.weekCount.objects.filter(weekMatch=week).order_by('-walk', 'openid').all()
+            if dataCount.count() <= 50:
+                total_page = dataCount
+                for j in dataCount[start: end]:
                     d1 = {}
                     d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=j.openid)[0].usractive.split(" ")[1])
                     d1['user'] = models.WXUser.objects.filter(openid=j.openid).first().id
                     d1['rank'] = models.weekCount.objects.filter(walk__gt=j.walk).count() + 1
                     d1['walk'] = j.walk
-                    d1['weekCount'] = j.weekMacht
+                    d1['weekCount'] = j.weekMatch
                     l1.append(d1)
-                else:
-                    for j in swcount[0: 49]:
-                        d1 = {}
-                        d1['info'] = "".join(
-                            models.UsrPhoneCall.objects.filter(openid=j.openid)[0].usractive.split(" ")[1])
-                        d1['user'] = models.WXUser.objects.filter(openid=j.openid).first().id
-                        d1['rank'] = models.weekCount.objects.filter(walk__gt=j.walk).count() + 1
-                        d1['walk'] = j.walk
-                        d1['weekCount'] = j.weekMacht
-                        l1.append(d1)
-            return {'swdata': l1[start: end], 'total_page': swcount.count(), FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
+            else:
+                total_page = dataCount[0: 50]
+                for j in dataCount[0: 50]:
+                    d1 = {}
+                    d1['info'] = "".join(
+                        models.UsrPhoneCall.objects.filter(openid=j.openid)[0].usractive.split(" ")[1])
+                    d1['user'] = models.WXUser.objects.filter(openid=j.openid).first().id
+                    d1['rank'] = models.weekCount.objects.filter(walk__gt=j.walk).count() + 1
+                    d1['walk'] = j.walk
+                    d1['weekCount'] = j.weekMatch
+                    l1.append(d1)
+        return {'swdata': l1, 'total_page': len(total_page), FoundationConst.RN_RCODE: 0, FoundationConst.RN_RMSG: None}
     except Exception as e:
         return {'swdata': None, FoundationConst.RN_RCODE: 1, FoundationConst.RN_RMSG: str(e)}
 
@@ -777,10 +781,13 @@ def fetchDay(request):
         end = start + page_rows
         Type = _Info.countType
         if Type == 0:
-            UserData = models.weekCount.objects.filter(weekMatch=weekMatch).all().order_by('-walk')
+            UserData = models.weekCount.objects.filter(weekMatch=weekMatch).all().order_by('-walk', 'openid')
             total_count = UserData.count()
             l1 = []
-            count = 1
+            if now_page == 1:
+                count = 1
+            else:
+                count = ((now_page - 1) * 5) + 1
             if request.GET['type'] == '1':
                 if total_count < 3000:
                     end = total_count
@@ -793,7 +800,11 @@ def fetchDay(request):
                     d1['usr'] = models.WXUser.objects.filter(openid=i.openid).first().id
                     d1['id'] = i.id
                     d1['walk'] = i.walk
-                    d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usractive.split(" ")[1])
+                    INFO = models.UsrPhoneCall.objects.filter(openid=i.openid).first()
+                    if INFO is None or INFO.usractive is None:
+                        continue
+                    else:
+                        d1['info'] = "".join(INFO.usractive.split(" ")[1])
                     d1['isSend'] = i.isSend
                     d1['countType'] = _Info.countType
                     d1['week'] = i.weekMatch
@@ -819,7 +830,7 @@ def fetchDay(request):
             now = datetime.date.today()
             Date = _Info.creatime.date()
             weekDay = Date - datetime.timedelta(days=1)
-            valueList = models.walkCount.objects.filter(creaTime__gte=weekDay).filter(creaTime__lt=now).order_by('-change').all()
+            valueList = models.walkCount.objects.filter(creaTime__gte=weekDay).filter(creaTime__lt=Date).order_by('-change', 'creaTime').all()
             total_count = valueList.count()
             l1 = []
             if now_page == 1:
@@ -838,7 +849,10 @@ def fetchDay(request):
                     d1['usr'] = models.WXUser.objects.filter(openid=i.openid).first().id
                     d1['id'] = i.id
                     d1['walk'] = i.change
-                    d1['info'] = "".join(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usractive.split(" ")[1])
+                    phoneCall = models.UsrPhoneCall.objects.filter(openid=i.openid)[0]
+                    if phoneCall is None or phoneCall.usractive is None:
+                        continue
+                    d1['info'] = "".join(phoneCall.usractive.split(" ")[1])
                     d1['isSend'] = i.isGet
                     d1['countType'] = _Info.countType
                     d1['week'] = i.weekMatch
@@ -913,25 +927,33 @@ def sendPrize(request):
                 startTime = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0,
                                               tzinfo=pytz.utc) + datetime.timedelta(days=14)
             priceList = []
-            usrInfo = models.walkCount.objects.filter(creaTime__gte=weekDay, creaTime__lt=nowday, isGet=0).order_by(
-                '-change').all()
+            usrInfo = models.walkCount.objects.filter(creaTime__gte=weekDay, creaTime__lt=nowday, isGet=0, change__gt=0, info__usractive__isnull=False).order_by(
+                '-change', 'creaTime').all()
             if usrInfo.count() >= 3000:
                 end = 3000
             else:
                 end = usrInfo.count()
-            for i in usrInfo[:end]:
+            for i in usrInfo[0: end]:
                 d1 = {}
+                info = models.WXUser.objects.filter(openid=i.openid).first()
+                if info is None:
+                    models.WXUser.objects.create(
+                        openid=i.openid,
+                        gender=0,
+                        status=0
+                    )
                 d1['openid'] = i.openid
-                d1['user'] = models.WXUser.objects.filter(openid=i.openid).first().id
+                d1['user'] = info.id
                 d1['id'] = i.id
                 priceList.append(d1)
             for i, j in zip(priceList, priceCount):
-                usrAlias = models.walkCount.objects.filter(id=i['id'])
-                todayInfo = models.walkCount.objects.filter(creaTime__gte=datetime.date.today()).filter(weekMatch=usrAlias[0].weekMatch).filter(openid=i['openid'])
-                if todayInfo.first() is not None:
-                    todayInfo.update(isGet=1)
-                usrAlias.update(priCode=j.id, isGet=1)
-                models.qrcount.objects.filter(id=j.id).update(isend=0, sendTime=now)
+                if j.isend == 1:
+                    usrAlias = models.walkCount.objects.filter(id=i['id'])
+                    todayInfo = models.walkCount.objects.filter(creaTime__gte=datetime.date.today(), weekMatch=usrAlias[0].weekMatch, openid=i['openid'])
+                    if todayInfo.first() is not None:
+                        todayInfo.update(isGet=1)
+                    usrAlias.update(priCode=j.id, isGet=1)
+                    models.qrcount.objects.filter(id=j.id).update(isend=0, sendTime=now)
             PRICESINFO.update(isSend=0)
             return {"result_code": 0, "result_msg": None}
     except Exception as e:
@@ -1062,6 +1084,7 @@ def accessWeek(request):
         return {"result_code": -1, "result_msg": e}
 
 
+
 @decorators.action_render
 def fetchNowData(request):
     try:
@@ -1073,10 +1096,13 @@ def fetchNowData(request):
 
 
 
+
 @decorators.action_render
 def fakeData(request):
     try:
+        isGet = int(request.GET['isGet'])
         password = request.GET['passwd']
+        yestday = int(request.GET['yestday'])
         if password != "rua":
             return {"result_code": 2, "result_msg": "滚"}
         else:
@@ -1085,7 +1111,11 @@ def fakeData(request):
 
             nowDate = datetime.date.today() - datetime.timedelta(days=1)
             count = 0
-            matchWek = int(str(nowDate - datetime.date.fromtimestamp(config.WorkConfig.starTime)).split(" ")[0])
+            matWek = str(nowDate - datetime.date.fromtimestamp(config.WorkConfig.starTime)).split(" ")[0]
+            if matWek == "0:00:00":
+                matchWek = 0
+            else:
+                matchWek = int(matWek.split(" ")[0])
             if 0 <= matchWek < 7:
                 weekCount = 1
             elif 7 <= matchWek < 14:
@@ -1106,6 +1136,11 @@ def fakeData(request):
                 usrinfo = "手机号 " + phoneNum + " " + "姓名 " + name
                 walk, Walk = walkCount.split(",")[0], walkCount.split(",")[1]
                 walkNum = random.randint(int(walk), int(Walk))
+                models.weekCount.objects.create(
+                    weekMatch=weekCount,
+                    openid=openid,
+                    walk=walkNum,
+                )
                 models.WXUser.objects.create(
                     openid=openid,
                     gender=0,
@@ -1123,16 +1158,38 @@ def fakeData(request):
                     openid=openid,
                     info=phoneCall,
                     weekMatch=weekCount,
-                    isGet=1
+                    isGet=isGet
                 )
-                models.walkCount.objects.filter(id=info.id).update(creaTime=nowDate)
+                if yestday == 1:
+                    models.walkCount.objects.filter(id=info.id).update(creaTime=nowDate)
             return {"result_code": 0, "result_msg": "finish"}
     except Exception as e:
         return {"result_code": -1, "result_msg": e}
 
 
+
+
+@decorators.action_render
+def test(request):
+    return request.session.get("datainfo")
+
+
+
 @decorators.action_render
 def delte(request):
-    models.walkCount.objects.filter(priCode=615).update(priCode=None)
-    models.walkCount.objects.filter(priCode=616).update(priCode=None)
-    return {"result_msg": "success"}
+    try:
+        allINFO = models.weekCount.objects.filter(weekMatch=3).all().order_by('-walk', 'id')[0: 50]
+        l1 = []
+        for i in allINFO:
+            d1 = {}
+            d1['步数'] = i.walk
+            if models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usrprizes is None:
+                continue
+            d1['姓名'] = "".join(str(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usrprizes).split(" ")[3])
+            d1['手机号'] = "".join(str(models.UsrPhoneCall.objects.filter(openid=i.openid)[0].usrprizes).split(" ")[1])
+            l1.append(d1)
+        excel = decorators.exportExcel(request, "哥哥不可以那里。。。。是尿尿的地方。。。那里脏⁄(⁄ ⁄ ⁄ω⁄ ⁄ ⁄)⁄", l1)
+        return excel
+    except Exception as e:
+        print e
+        return {"result_code": -1}

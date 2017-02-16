@@ -6,7 +6,7 @@ from campaigns.ticai.applet.uitls import generate_other_dict_data
 from campaigns.ticai import app_id, models
 from django.utils.http import urlquote
 from django.http import HttpResponseRedirect, HttpResponse, Http404, HttpResponseServerError
-from campaigns.ticai import wechat_api
+from campaigns.foundation import wechat_api
 from django.utils.encoding import smart_unicode, smart_str
 import json, datetime
 
@@ -252,6 +252,33 @@ def exportExcel(request, name, dict1):
     output.seek(0)
     response.write(output.getvalue())
     return response
+
+
+def antExcel(name, dict1):
+    response = HttpResponse(content_type='application/vnd.ms-excel', charset='UTF-8')
+    filename = 'attachment;filename=' + str(name) + ".xls"
+    response['Content-Disposition'] = filename
+    wb = xlwt.Workbook(encoding='utf-8')
+    _lenght = len(dict1[0])                             # 获取传入dict长度
+    sheet = wb.add_sheet(u"数据表")
+    for i, t in zip(range(0, _lenght), dict1[0]):            # 获取dict key个数 以及键填写
+        sheet.write(0, i, t)
+    row = 1
+    count = 0
+    Len = len(dict1)
+    while count < Len:
+        _LENT = len(dict1[count].values())
+        for i, t in zip(range(0, _LENT), dict1[count].values()):
+            sheet.write(row, i, t)
+        count += 1
+        row += 1
+    DateName = "{0}.{1}".format(str(datetime.datetime.now()), "xls")
+    wb.save('/www/project/cmp/media/excel/' + str(DateName))
+    return 'excel/' + str(DateName)
+
+
+
+
 
 # 授权验证
 def auth_verification(view):

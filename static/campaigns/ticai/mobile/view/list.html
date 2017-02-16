@@ -1,0 +1,70 @@
+<div id="list">
+	<nav id="list_title">
+		<p ng-class="Active?'active':''" ng-click='listBox1()'>我的排行<span class="list_date"  ng-hide='result_code'>(第1周)</span><span class="list_date"  ng-show='result_code'>(第{{data.now_week}}周)</span></p>
+		<p ng-click='listBox2()' ng-class="Active?'':'active'">我的步捐</p>
+	</nav>
+	<article class="art1" ng-show='Active'>
+		<div id="wrapper">
+			<aside>
+				<ul>
+					<li ng-show='result_code'>
+						<span>{{data.my_rank}}</span>
+						<span><img src="/static/campaigns/ticai/mobile/image/1/b1.png"/></span>
+						<span ng-bind="data.myCount.info|Hidden"></span>
+						<span>{{data.myCount.walk||0}}<i>步</i></span>
+					</li>
+				</ul>
+			</aside>
+		</div>
+		<div id="response">上拉加载</div>
+		<div id="footer"></div>
+	</article>
+	
+	<article class="art2" ng-hide='Active'>
+		<nav>
+			<p>时间</p>
+			<p>步数</p>
+			<p>日排名</p>
+		</nav>
+		<aside>
+			<div class="ul">
+				<div class="li" ng-if='noCheck.length>0' ng-repeat='no_Check in noCheck'>
+						<p ng-bind-html='no_Check.creatime|TimeFile'></p>
+						<p>{{no_Check.walk}}<span>步</span></p>
+						<p>(正在审核)</p>
+					</div>
+				<div class="ul_wrap" ng-repeat='weekList in week' ng-init='wrapIndex=$index+1'>
+					<ol ng-hide='weekList==1'>
+						<p>第{{weekList.weekCount}}周<span ng-show='weekList.rank!=null'>(当周总步数{{weekList.myWalk}}步,总排名{{weekList.rank}}名)</span></p>
+					</ol>
+					
+					<!--<div class="li" ng-repeat='weekdata in day| filter:{weekMatch:wrapIndex}'>-->
+					<div class="li" ng-repeat='weekdata in day| filter:{"weekMatch":weekList.weekCount}' ng-hide='weekdata.creatime==0'>
+						<p ng-bind-html='weekdata.creatime|TimeFile'></p>
+						<p>{{weekdata.walk}}<span>步</span></p>
+						<p>{{weekdata.rank}}</p>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</article>
+</div>
+<div id="hy_diolag" ng-hide='usrprices'>
+	<div class="diolag_wrap">
+		<i><img src="/static/campaigns/ticai/mobile/image/1/logo.png"/></i>
+		<p>恭喜 您获得了<span>运动手环</span></p>
+		<p>每周前10名都有特别奖励哦</p>
+		<div class="frome">
+			<label>
+				我的姓名<input type="text" placeholder="请填写姓名" ng-value="Name" ng-model='Name' ng-disabled="disAb" />
+			</label>
+			<label>
+				手机号码<input type="tel" placeholder="请填写联系方式" ng-value="Phone" ng-model='Phone' ng-disabled="disAb"/>
+			</label>
+		</div>
+		<p>请确认您的姓名和联系方式<br/>将会有专人联系您告知领奖方式</p>
+		<i ng-click='Reset()'><img src="/static/campaigns/ticai/mobile/image/1/ico14.png"/></i>
+		<i ng-click='Submit()'><img src="/static/campaigns/ticai/mobile/image/1/ico15.png"/></i>
+	</div>
+</div>
+

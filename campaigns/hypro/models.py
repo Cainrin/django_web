@@ -143,3 +143,61 @@ class UniqueVisitor(models.Model):
     def __unicode__(self):
         return str(self.id)
 
+class msgCode(models.Model):
+    creatime = models.DateTimeField(verbose_name=u'创建时间', auto_now_add=True)
+    verifyCode = models.CharField(verbose_name=u'返回状态码', max_length=300)
+    phone = models.CharField(verbose_name=u'验证手机号', max_length=200)
+
+    class Meta:
+        verbose_name = u'返回码暂存日志'
+        verbose_name_plural = u'返回码暂存日志'
+
+    def __unicode__(self):
+        return self.creatime
+
+
+class saveCout(models.Model):
+    creatime = models.DateTimeField(verbose_name=u'创建日期', auto_now_add=True)
+    mark = models.CharField(verbose_name=u'备注', max_length=100)
+
+    class Meta:
+        verbose_name = u'点击次数'
+        verbose_name_plural = u'点击次数'
+
+    def __unicode__(self):
+        return str(self.id)
+
+class ycBank2(models.Model):
+    Dcreatime = models.DateField(verbose_name=u'创建日期', auto_now_add=True)
+    Tcreatime = models.TimeField(verbose_name=u'创建时间', auto_now_add=True)
+    name = models.CharField(verbose_name=u'姓名', max_length=300)
+    phoneNum = models.CharField(verbose_name=u'电话', max_length=300)
+    location = models.CharField(verbose_name=u'网店', max_length=300)
+    resultChoice = models.CharField(verbose_name=u'选择结果', max_length=600)
+    isVerify = models.BooleanField(verbose_name=u'验证是否通过', default=True)
+    openid = models.CharField(verbose_name=u'openid', max_length=300)
+
+    class Meta:
+        verbose_name = u'邮储银行短信验证'
+        verbose_name_plural = u'邮储银行短信验证'
+
+    def __unicode__(self):
+        return self.name
+
+
+
+
+class ycBlank(models.Model):
+    Dcreatime = models.DateField(verbose_name=u'创建日期', auto_now_add=True)
+    Tcreatime = models.TimeField(verbose_name=u'创建时间', auto_now_add=True)
+    name = models.CharField(verbose_name=u'姓名', max_length=300)
+    phoneNum = models.CharField(verbose_name=u'电话', max_length=300)
+    location = models.CharField(verbose_name=u'网店', max_length=300)
+    resultChoice = models.CharField(verbose_name=u'选择结果', max_length=600)
+
+    class Meta:
+        verbose_name = u'邮储银行'
+        verbose_name_plural = u'邮储银行'
+
+    def __unicode__(self):
+        return self.name

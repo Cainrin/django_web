@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<script type="text/javascript" src="{{ static_url }}mobile/js/app/fontSize.js" ></script>
+		<link rel="stylesheet" href="{{ static_url }}mobile/css/public.css" />
+		<link rel="stylesheet" href="{{ static_url }}mobile/css/upload.css" />
+		<title>体彩爱行走</title>
+		<script type="text/javascript" src="{{ static_url }}mobile/js/plugins/Jquery-min-1.12.js" ></script>
+	    <script type="text/javascript" src="{{ static_url }}mobile/js/plugins/FabricCustom.js" ></script>
+	    <script type="text/javascript" src="{{ static_url }}mobile/js/plugins/exif.js" ></script>
+	    <script type="text/javascript" src="{{ static_url }}mobile/js/plugins/PhotoCanvas.js" ></script>
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="{{ static_url }}mobile/js/plugins/wx-share.js"></script>
+			<script type="text/javascript" src="{{ static_url }}mobile/js/plugins/qcloud_sdk.js"></script>
+	    <script type="text/javascript" src="{{ static_url }}mobile/js/app/update.js" ></script>
+	</head>
+	<script>
+		$(function(){
+			
+//			$.ajax({
+//				type:"get",
+//				url:"http://fanta.kuh5.net/testticai/getCache",
+//				success:function(resopnse){
+//					var access_token=resopnse.access_token;
+//					$.ajax({
+//						dataType:'jsonp',
+//						
+//						type:"get",
+//						url:"https://api.weixin.qq.com/hardware/snstransfer/bracelet/getstep?access_token="+access_token,
+//						success:function(welk){
+//							alert(JSON.stringify(welk)+"--成功")
+//						},
+//						error:function(er){
+//							alert(JSON.stringify(er)+"--获取步数失败")
+//						}
+//					})
+//					
+//				},
+//				error:function(b){
+//					alert(JSON.stringify(b)+"--失败")
+//				}
+//			});
+			
+//			$.get('http://115.159.77.117/testticai/getCache',function(response){
+//				//var access_token=response.access_token;
+//				alert(JSON.stringify(response))
+//				$.get('https://api.weixin.qq.com/hardware/snstransfer/bracelet/ getstep?access_token='+access_token,function(responses){
+//					alert(JSON.stringify(responses))
+//				})
+//				
+//			},function(er){
+//				alert(JSON.stringify(er))
+//			})
+		})
+		
+		
+	</script>
+	
+	<body>
+		<div id="upload_top">
+			<i></i>
+		</div>
+		<div class="file">
+			<label class="label">
+				<em><img src="{{ static_url }}mobile/image/1/3.png"></em>
+				<input type="file" id="File"/>
+			</label>
+			<div class="box_img" id="box_canvas">
+				<img src="{{ static_url }}mobile/image/jiazai.png" id="loadingImage" class="loadingIcon">
+				<canvas id="canvas" width="640" height="1236"></canvas>
+			</div>
+		</div>
+		<div id="step">
+			<i class="tishi"></i>
+			<p>我的步数<input type="tel" placeholder="输入截图步数" id="step_but"/></p>
+			<p>我的姓名<input type="text" placeholder="输入您的姓名" id="name_but" /></p>
+			<p>手机号码<input type="tel" placeholder="输入联系方式" id="phone_but"/></p>
+			<span style="color:red;font-size: 0.24rem;">请准确填写信息，用于奖品发放</span>
+			<p id="Submit"></p>
+		</div>
+		<div id="uploadServer"  class="none">
+			<i class="cancel"></i>
+			<i class="upServer"></i>
+		</div>
+	</body>
+</html>

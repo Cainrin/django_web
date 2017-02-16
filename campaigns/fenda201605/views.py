@@ -7,7 +7,7 @@ from django.utils.encoding import smart_unicode, smart_str
 import urllib
 from django.utils.http import urlquote
 from campaigns.foundation.const import FoundationConst
-import wechat_api
+from campaigns.foundation import wechat_api
 import json
 from django.http import HttpResponse
 

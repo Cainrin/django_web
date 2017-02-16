@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+		<script type="text/javascript" src="{{ static_url }}pc/fugai/jquery.min.js" ></script>
+		<script type="text/javascript" src="{{ static_url }}pc/fugai/fugai.js" ></script>
+		<script type="text/javascript" src="{{ static_url }}pc/fugai/sazhong.js" ></script>
+		<title>一汽-大众</title>
+		<style type="text/css">
+		*{margin: 0;padding: 0;}
+		/*body, button, input, select, textarea {font: 12px/1.5 "\5FAE\8F6F\96C5\9ED1",tahoma,arial,"Hiragino Sans GB","\5B8B\4F53",sans-serif;}*/
+        ul, ol {list-style: none outside none;}
+        img{display:block;border:none}
+        a{color:#000;text-decoration: none;}
+        a img{ border:none}
+        body{background-color: #020709;}
+        #footer{ width: 100%; height: 30px; text-align: center; font-size: 12px; color:#fff}
+        .header{width: 100%;height: 115px;background-color: #ffffff;margin: auto;}
+        #id1{position: absolute;left: 235px;top: 30px;}
+        #id2{position: absolute;right: 310px;top: 30px;}
+        .showimg{background-image: url({{ static_url }}pc/fugai/1-2.png);width: 100%;height: 800px;background-position: center top;
+                 background-repeat: no-repeat;  text-align: center;}
+        #id3{position: absolute;left: 40px;top: 623px;}	
+        .enrol{width: 100%;height: 450px; background-image: url({{ static_url }}pc/fugai/1-3.png);background-position: center  center;
+         background-repeat: no-repeat;}
+         .enrol h1{font-size: 44px;font-family: "黑体";font-style: normal;color: #FFFFFF;line-height: 2.5;text-align: center;}
+         .enrol table{width: auto;height: 225px;position: relative;top: 0px;margin: auto;}
+         .enrol tr{width: 400px;height: 55px;} 
+         .enrol td{ width: auto;height: 55px;font-size: 30px; font-family: "黑体";font-style: normal;color: #FFFFFF;
+                    padding: 0 20px 0 20px;overflow: hidden;}
+         .enrol td input{height: 51px;width: 250px;}
+         .enrol td select{width: 156px;height: 51px;float: left; margin-right: 5px;}
+         .enrol td select.six{height: 51px;width: 250px;}
+         .enrol td select.jxs{width: 317px; height: 51px;}
+         .select_width{width: 82px;height: 44px;}
+         .class1{text-align: center; padding-top: 10px;}
+         .class1 button{font-size: 30px; font-family: "黑体";font-style: normal; width: 204px; height: 58px; background-color: #fff; line-height: 50px;border-radius: 8px;}
+         .cheimg{width: 100%; height: 530px;background-image: url({{ static_url }}pc/fugai/1-5.png);background-position: center top;
+         background-repeat: no-repeat;}
+         .cheimg h1{font-size: 44px;font-family: "黑体";font-style: normal;color: #FFFFFF;line-height: 3;text-align: center;}
+         #pic{position:relative;left:-55px;top:-40px;overflow:hidden;z-index:2;width: 900px;height: 520px;margin: auto;}
+         #pic ul{width:100%;height:100%;position:absolute;top:0;left:0;}
+         #pic ul li{position:absolute;}
+         #pic ul img{position:relative;top:0;left:0;}
+         /*图片位置*/
+         #pic ul .pic1{top:-80px;left:2px;z-index:1;}
+         #pic ul .pic2{top:110px;left:88px;z-index:2;}
+         #pic ul .pic3{top:80px;left:174px;z-index:3;}
+         #pic ul .pic4{top:50px;left:260px;z-index:4;}
+         #pic ul .pic5{top:80px;left:436px;z-index:3;}
+         #pic ul .pic6{top:110px;left:700px;z-index:2;}
+         #pic ul .pic7{top:-180px;left:696px;z-index:1;}
+         /*图片明暗*/
+         #pic ul li.pic1{opacity:0.2;filter:alpha(opacity:20);}
+         #pic ul li.pic2{opacity:0.6;filter:alpha(opacity:60);}
+         #pic ul li.pic3{opacity:0.9;filter:alpha(opacity:90);}
+         #pic ul li.pic4{opacity:1;filter:alpha(opacity:100);}
+         #pic ul li.pic5{opacity:0.9;filter:alpha(opacity:90);}
+         #pic ul li.pic6{opacity:0.6;filter:alpha(opacity:60);}
+         #pic ul li.pic7{opacity:0.2;filter:alpha(opacity:20);}
+        /*图片width*/
+        #pic ul li.pic1 img{width:96px;}
+        #pic ul li.pic2 img{width:288px;}
+        #pic ul li.pic3 img{width:384px;}
+        #pic ul li.pic4 img{width:480px;}
+        #pic ul li.pic5 img{width:384px;}
+        #pic ul li.pic6 img{width:288px;}
+        #pic ul li.pic7 img{width:288px;}
+        /*箭头部分*/
+        #pic span{display:inline-block;*display:inline;*zoom:1;width:80px;height:80px;position:absolute;top:143px;z-index:30;cursor:pointer;opacity:0.7;filter:alpha(opacity=70);}
+        #pic:hover span{opacity:1;filter:alpha(opacity=100);}
+        #pic span img{width:80px;height:80px;display:block;}
+        #pic span.prev{left:196px;}
+        #pic span.next{right:95px;}
+         .videos{width: 100%;height:590px;background-image: url({{ static_url }}pc/fugai/1-9.png);background-position: center; top;
+                background-repeat: no-repeat;}
+         .videos h1{font-size: 44px;font-family: "黑体";font-style: normal;color: #FFFFFF;line-height: 3;text-align: center;}
+         .class6 {width: 730px;height: 410px;position: relative;left: 0px;top 0px;margin: auto;}
+         .class6 embed{width: 730px;height: 410px;}
+         .picture{width: 100%;height: 670px;background-image: url({{ static_url }}pc/fugai/1-10.png);background-position: center top;
+                  background-repeat: no-repeat; }
+          .picture h1{font-size: 44px;font-family: "黑体";font-style: normal;color: #FFFFFF;line-height: 3;text-align: center;}
+          .picture li{width: auto;float: left;margin: 0 16px 20px 0;} 
+          .picture li a{display: block;}
+          .picture ul{width: 990px;height: 450px;position: relative;top: 0px;left: 18px;margin: auto;} 
+          .distributor{width: 1052px; margin:auto;} 
+          .top{ width: 100%; height: 42px; background: url({{ static_url }}pc/fugai/2016-08-17_145301.png) no-repeat center;}
+          
+          .middle{width: 100%;height:100%; background-image: url({{ static_url }}pc/fugai/2016-08-17_145406.png);background-position: -1px;
+          	    background-repeat: repeat-y}
+          .middle h1{font-size: 44px;font-family: "黑体";font-style: normal;color: #FFFFFF;line-height: 3;text-align: center;}	    
+          .bottom{ width: 100%; height:42px; background: url({{ static_url }}pc/fugai/2016-08-17_145507.png) no-repeat center;}
+          .class2{width: 950px; margin: auto;}
+          .class2 button{cursor:pointer;width: 175px;height: 55px;border-radius: 10px;margin-left: 39px;font-size: 24px;font-family: "黑体";border:none;background-color: #fff;}
+          .tab{width: 1000px; margin: auto;}
+          button:focus{outline: none;}
+          button{cursor:pointer;}
+          .tab table{width: 1000px; margin: auto;font-size: 12px;position: relative; left:34px;top:24px}	
+          .class5{width: 680px;height: 50px;font-size: 22px;font-family: "黑体";border-right: 180px solid #001a30;
+                  color: #FFFFFF;} 
+          .class3{width: 1080px;height: 44px;font-size: 22px;font-family: "黑体";border-right: 240px solid #001a30;
+                  color: #FFFFFF;} 
+          .class4{width: 480px;height: 44px;font-size: 22px;font-family: "黑体";border-right: 100px solid #001a30;
+                  color: #FFFFFF;}             
+          .tab td{width: 400px;height: 40px;font-size: 18px;font-family: "黑体";color: #FFFFFF;}   
+          .tab table{ display:none} 
+          #tab_box{ height: 752px;width: 950px; overflow: hidden; overflow-y: auto;margin-top: 20px;}     	        
+		</style>
+		<script type="text/javascript">
+         window.onload=function()
+          {
+	        var oPic=document.getElementById('pic');
+	        var oPrev=getByClass(oPic,'prev')[0];
+	        var oNext=getByClass(oPic,'next')[0];
+	 
+	        var aLi=oPic.getElementsByTagName('li');
+	 
+	       var arr=[];
+	 
+	 for(var i=0;i<aLi.length;i++)
+	 {
+	   var oImg=aLi[i].getElementsByTagName('img')[0];
+	   
+	 	 arr.push([parseInt(getStyle(aLi[i],'left')),parseInt(getStyle(aLi[i],'top')),
+		           getStyle(aLi[i],'zIndex'),oImg.width,parseFloat(getStyle(aLi[i],'opacity')*100)]);
+	 }
+	 
+	 
+	 oPrev.onclick=function()
+	 {
+	     arr.push(arr[0]);
+		 arr.shift();
+		     for(var i=0;i<aLi.length;i++)
+	         {
+			     var oImg=aLi[i].getElementsByTagName('img')[0];
+					
+					aLi[i].style.zIndex=arr[i][2];
+					startMove(aLi[i],{left:arr[i][0],top:arr[i][1],opacity:arr[i][4]});
+					startMove(oImg,{width:arr[i][3]});
+			 }
+			
+	 }
+	 
+	oNext.onclick=function()
+	 {
+	      arr.unshift(arr[arr.length-1]);
+		  arr.pop();
+		     for(var i=0;i<aLi.length;i++)
+	         {
+			     var oImg=aLi[i].getElementsByTagName('img')[0];
+					
+					aLi[i].style.zIndex=arr[i][2];
+					startMove(aLi[i],{left:arr[i][0],top:arr[i][1],opacity:arr[i][4]});
+					startMove(oImg,{width:arr[i][3]});
+			 }
+	 }
+	 
+	 function getStyle(obj,name)
+	 {
+	       if(obj.currentStyle){ return obj.currentStyle[name]; }
+		   else{ return getComputedStyle(obj,false)[name]; }
+	 }
+	 console.log(js.length)
+	 function Add(element,arr){
+	 	var Html='';
+	 	for(var i=0;i<arr.length;i++){
+		 	Html+="<tr><td>"+arr[i].jxs+"</td><td>"+arr[i].dizhi+"</td><td>"+arr[i].phone+"<td></tr>";
+		 }
+		 $(element).append(Html)
+	 }
+	 
+	 
+	Add('#table1',js)
+	Add('#table2',zj)
+	Add('#table3',sh)
+	Add('#table4',ah)
+	 
+	 
+	 
+  }
+  
+function getByClass(oParent,sClass)
+  {
+      var aResult=[];
+	  var aEle=oParent.getElementsByTagName('*');
+	  
+		  for(var i=0;i<aEle.length;i++)
+		  {
+			 if(aEle[i].className==sClass)
+			 {
+				aResult.push(aEle[i]);
+			 }
+		  }
+	  return aResult;
+  }
+   function getStyle(obj,name)
+  {
+       if(obj.currentStyle)
+	   {
+	       return obj.currentStyle[name];
+	   }
+       
+	   else
+	   {
+	       return getComputedStyle(obj,false)[name];
+	   }
+  }
+
+  function startMove(obj,json,fnEnd)
+  {
+       clearInterval(obj.timer);
+       obj.timer=setInterval(function()
+	   {
+		 var bStop=true;
+		 for(var attr in json)
+	     {	
+			   var cur=0;
+	
+			   if(attr=='opacity')
+			   {
+					cur=Math.round(parseFloat(getStyle(obj,attr))*100);
+			   }
+			   else
+			   {
+					cur=parseInt(getStyle(obj,attr));
+			   }
+		  
+			   var  speed=(json[attr]-cur)/6;
+			   speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		   
+			   if(cur!=json[attr]) bStop=false;
+			 
+			   if(attr=='opacity')
+			   {
+				   obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+				   obj.style.opacity=(cur+speed)/100;
+			   }
+			   else
+			   {
+				   obj.style[attr]=cur+speed+'px';
+			   }
+		 }
+		 
+		 if(bStop)
+		 {
+		     clearInterval(obj.timer);
+			 if(fnEnd) fnEnd();
+		 }
+		 
+	   },30)
+	 
+  }
+     function mychange(id,This)
+    {
+    	console.log(This)
+    var abox=document.getElementById('box').getElementsByTagName('button');
+    var tab_box=document.getElementById('tab_box').getElementsByTagName('table');
+    var DataId=This.getAttribute('data-id');
+    console.log(DataId)
+    for(var i=0;i<abox.length;i++ ){
+    	abox[i].value='on'
+        abox[i].style.backgroundColor= "#FFFFFF";
+         abox[i].style.color='#21344F';
+        tab_box[i].style.display='none';
+    }
+    tab_box[DataId].style.display='block';
+     var color = document.getElementById(id).value;
+      if(color == "on")
+       {
+       	document.getElementById(id).value='off'
+         document.getElementById(id).style.backgroundColor= "#044766";
+         document.getElementById(id).style.color='#fff'
+        }
+      else if(color == "off")
+      {
+      	document.getElementById(id).value='on'
+        document.getElementById(id).style.backgroundColor= "#FFFFFF";
+        document.getElementById(id).style.color='#21344F';
+      }
+    }
+ 
+</script>
+	</head>
+	<body>
+		<div class="header">
+
+			       <img id="id1" src="{{ static_url }}pc/fugai/1-6.png"/>
+			       <img id="id2" src="{{ static_url }}pc/fugai/1-7.png"/>
+		</div>
+		<div class="showimg">
+			<div style=" width: 1000px; margin: auto; position: relative; height: 800px;">
+				<img id="id3" src="{{ static_url }}pc/fugai/1-1.png"/>
+			</div>
+		</div>
+		<div class="enrol">
+			<h1>预约试驾</h1>
+			<form name="form2">
+			<table>
+				<tr>
+					<td>* 姓名</td>
+					<td><input type="text" name="name" id="username" placeholder="请填写姓名"/></td>
+					<td>* 所在城市</td>
+					<td>
+						<select class="select_width sf" name='s1' onChange="changeselect2(this.value)">
+							<option>==请选择==</option>
+							<option value="13" id="13">江苏</option>
+							<option value="27" id="27">浙江</option>
+							<option value="16" id="16">安徽</option>
+							<option value="21" id="21">上海</option>
+						</select>
+						<select class="select_width cs" name='s2' onChange="changeselect3(this.value)">
+							<option>==请选择==</option>
+					</td>
+				</tr>
+				<tr>
+					<td>* 性别</td>
+					<td><select class="six">
+						<option>==请选择==</option>
+						<option value="0">男</option>
+						<option value="1">女</option>
+					</select></td>
+					<td>* 试驾车型</td>
+					<td>
+						<select class="select_width cx" name='s5' onChange="changeselect1(this.value)">
+							<option>==请选择==</option>
+							<!--<option value="2">高尔夫</option>
+							<option value="7">GTI</option>-->
+							<option value="8">迈腾</option>
+							<!--<option value="9">速腾</option>
+							<option value="10">宝来</option>
+							<option value="13">全新捷达</option>
+							<option value="15">新CC</option>
+							<option value="16">全新高尔夫</option>
+							<option value="20">新速腾</option>
+							<option value="21">全新宝来</option>-->
+							<option value="24">全新一代迈腾</option>
+						</select>
+						<select class="select_width cxx" name="s4">
+							<option>==请选择==</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>* 手机</td>
+					<td><input type="tel" name="sex" id="phone" placeholder="请输入手机号"/></td>
+					<td>* 经销商</td>
+					<td>
+						<select name='s3' class="jxs">
+						   <option>==请选择==</option>
+					    </select>
+					</td>
+				</tr>
+			</table>
+			</form>
+			<div class="class1">
+			 <button class="button">提交报名</button>
+			</div>
+			
+		</div>
+		<div class="cheimg">
+			<h1>精美车图</h1>
+			<div class="pic" id="pic">
+	         <span class="prev"><img src="{{ static_url }}pc/fugai/1-16.png" alt="arrow" /></span>
+	         <span class="next"><img src="{{ static_url }}pc/fugai/1-17.png" alt="arrow" /></span>
+			 <ul>
+		       <li class="pic1"><img src="{{ static_url }}pc/fugai/10.jpg" alt="旋转木马" /></li>
+		       <li class="pic2"><img src="{{ static_url }}pc/fugai/11.jpg" alt="旋转木马" /></li>
+		       <li class="pic3"><img src="{{ static_url }}pc/fugai/12.jpg" alt="旋转木马" /></li>
+		       <li class="pic4"><img src="{{ static_url }}pc/fugai/1.jpg" alt="旋转木马" /></li>
+		       <li class="pic5"><img src="{{ static_url }}pc/fugai/2.jpg" alt="旋转木马" /></li>
+		       <li class="pic6"><img src="{{ static_url }}pc/fugai/3.jpg" alt="旋转木马" /></li>
+		       <li class="pic7"><img src="{{ static_url }}pc/fugai/4.jpg" alt="旋转木马" /></li>
+		       <li class="pic7"><img src="{{ static_url }}pc/fugai/5.jpg" alt="旋转木马" /></li>
+		       <li class="pic7"><img src="{{ static_url }}pc/fugai/6.jpg" alt="旋转木马" /></li>
+		       <li class="pic7"><img src="{{ static_url }}pc/fugai/7.jpg" alt="旋转木马" /></li>
+		       <li class="pic7"><img src="{{ static_url }}pc/fugai/8.jpg" alt="旋转木马" /></li>
+		       <li class="pic7"><img src="{{ static_url }}pc/fugai/9.jpg" alt="旋转木马" /></li>
+			 </ul>
+			</div> 
+		</div>
+		<div class="videos">
+			<h1>视频</h1>
+			<div class="class6">
+		      <embed src="http://static.video.qq.com/TPout.swf?vid=m032163yu8m&auto=0" allowFullScreen="true" quality="high" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
+		      </embed>
+		    </div>
+		</div>
+		<div class="picture">
+			<h1>全新一代迈腾热讯</h1>
+			<ul>
+				<li>
+					<a href="http://vw.faw-vw.com/brandreport/17568/"><img src="{{ static_url }}pc/fugai/1-11.png" /></a>
+				</li>
+				<li>
+					<a href="http://vw.faw-vw.com/brandreport/17542/"><img src="{{ static_url }}pc/fugai/1-12.png" /></a>
+				</li>
+				<li>
+					<a href="http://mp.weixin.qq.com/s?__biz=MjM5MDAwODk0NA==&mid=2655836111&idx=1&sn=993342e95e6e3e2659c85d4b9469b74f&scene=4#wechat_redirect"><img src="{{ static_url }}pc/fugai/1-13.png" /></a>
+				</li>
+				<li>
+					<a href="http://mp.weixin.qq.com/s?__biz=MjM5MDAwODk0NA==&mid=2655836111&idx=2&sn=5d1c648864a6905cab8d53ca0985ad35&scene=4#wechat_redirect"><img src="{{ static_url }}pc/fugai/1-14.png" /></a>
+				</li>
+				<li>
+					<a href="http://mp.weixin.qq.com/s?__biz=MjM5MDAwODk0NA==&mid=2655836136&idx=1&sn=94cf9f42a912560891acca38b4a8d2db&scene=4#wechat_redirect"><img src="{{ static_url }}pc/fugai/1-15.png" /></a>
+				</li>
+			</ul>
+		</div>
+		<div class="distributor">
+			<div class="top">
+			</div>
+			<div class="middle">
+				<h1>经销商信息</h1>
+				<div class="class2" id="box">
+					<button style="background-color: #044766;color: #fff;" type="button" id="colorType" value="on" data-id='0' onclick="mychange('colorType',this)">江苏</button>
+					<button type="button" id="colorType1" value="on" data-id='1' onclick="mychange('colorType1',this)">浙江</button>
+					<button type="button" id="colorType2" value="on" data-id='2' onclick="mychange('colorType2',this)">上海</button>
+					<button type="button" id="colorType3" value="on" data-id='3' onclick="mychange('colorType3',this)">安徽</button>
+				</div>
+				<div class="tab" id="tab_box">
+					<table id="table1" style="display: block;">
+						<tr>
+							<th class="class5">经销商名称</th>
+							<th class="class3">联系地址</th>
+							<th class="class4">电话</th>
+						</tr>
+						
+					</table>
+					<table id="table2">
+						<tr>
+							<th class="class5">经销商名称</th>
+							<th class="class3">联系地址</th>
+							<th class="class4">电话</th>
+						</tr>
+						
+					</table>
+					<table id="table3">
+						<tr>
+							<th class="class5">经销商名称</th>
+							<th class="class3">联系地址</th>
+							<th class="class4">电话</th>
+						</tr>
+						
+					</table>
+					<table id="table4">
+						<tr>
+							<th class="class5">经销商名称</th>
+							<th class="class3">联系地址</th>
+							<th class="class4">电话</th>
+						</tr>
+						
+					</table>
+				</div>
+			</div>
+			<div class="bottom">
+			</div>	
+			
+			
+		</div>
+	<div id="footer">苏ICP备16007333号-1</div>	
+	</body>
+</html>

@@ -186,3 +186,36 @@ class UniqueVisitor(models.Model):
 
     def __unicode__(self):
         return str(self.id)
+
+
+class VoteCheat(models.Model):
+    comment = models.CharField(max_length=100, verbose_name=FoundationConst.VN_COMMENT)
+    minute = models.IntegerField(verbose_name=FoundationConst.VN_MINUTE)
+    totalCount = models.IntegerField(verbose_name=FoundationConst.VN_TOTAL_COUNT, null=True, blank=True)
+    nowCount = models.IntegerField(null=True, blank=True, verbose_name=FoundationConst.VN_NOW_COUNT, default=0)
+    hasFinished = models.BooleanField(verbose_name=FoundationConst.VN_HAS_FINISHED, default=False)
+    FinishedReason = models.CharField(verbose_name=u'结束状态', null=True, blank=True, max_length=300)
+    creationTime = models.DateTimeField(auto_now_add=True, verbose_name=FoundationConst.VN_CREATION_TIME)
+    updateTime = models.DateTimeField(auto_now=True, verbose_name=FoundationConst.VN_UPDATE_TIME)
+
+    class Meta:
+        verbose_name = VoteCheatConst.VN_TABLE_NAME
+        verbose_name_plural = VoteCheatConst.VN_TABLE_NAME
+
+    def __unicode__(self):
+        return self.comment
+
+
+class ExcelMode(models.Model):
+    comment = models.CharField(max_length=100, verbose_name=FoundationConst.VN_COMMENT)
+    excelUrl = models.FileField(verbose_name=u'excel路径', null=True, blank=True)
+    hasFinished = models.BooleanField(verbose_name=FoundationConst.VN_HAS_FINISHED, default=False)
+    creationTime = models.DateTimeField(auto_now_add=True, verbose_name=FoundationConst.VN_CREATION_TIME)
+    updateTime = models.DateTimeField(auto_now=True, verbose_name=FoundationConst.VN_UPDATE_TIME)
+
+    class Meta:
+        verbose_name = VoteCheatConst.VN_EXCEL_NAME
+        verbose_name_plural = VoteCheatConst.VN_EXCEL_NAME
+
+    def __unicode__(self):
+        return self.comment

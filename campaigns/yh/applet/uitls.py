@@ -8,7 +8,7 @@ from campaigns.foundation.const import FoundationConst
 
 def generate_other_dict_data():
     odd = dict()
-    odd[FoundationConst.RN_STATIC_URL] = '{0}{1}'.format(settings.STATIC_URL, ViewConfig.STATIC_URL)
+    odd[FoundationConst.RN_STATIC_URL] = '{0}'.format("http://yanghe-10030008.file.myqcloud.com/")
     if settings.DEBUG:
         odd[FoundationConst.RN_WEIXIN_DEBUG] = '?{0}'.format(int(time.time()))
     return odd

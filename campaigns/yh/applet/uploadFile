@@ -1,0 +1,21 @@
+# -*- encoding: utf-8 -*-
+from qcloud_cos import Cos
+from qcloud_cos import auth
+import os
+import time
+import requests
+
+
+testUpload = Cos(appid="10030008", secret_id="AKIDLMiPp9s40iDyGlzsULO6izGZICDuujJw", secret_key="DvpK3udaFkI9XaBxshirtgTGEma6A26N")
+root = r'C:\Users\Cain\Desktop\testFile'
+for rt, dirs, files in os.walk(root):
+    for i in files:
+        a = testUpload.upload(srcpath=i, bucket='test', dstpath=i)
+        url = a['data']['access_url']
+        # rank = int(i.split(".")[0])
+        rank = int(str(i.split(".")[0]).split("-")[0]) + 30
+        time.sleep(2)
+        data = {'url': url, "rank": rank, 'passwd': 'RUARUARUA'}
+        response = requests.get(url="http://www.hylinknj.com/yh/addwork", params=data)
+        print response.text
+

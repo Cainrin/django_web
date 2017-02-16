@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<script type="text/javascript" src="{{ static_url }}mobile/zhonghang/js/font-size.js"></script>
+		<link rel="stylesheet" href="{{ static_url }}mobile/zhonghang/css/animate.min.css" />
+		<link rel="stylesheet" type="text/css" href="{{ static_url }}mobile/zhonghang/css/touch.css"/>
+		<script type="text/javascript" src="{{ static_url }}mobile/zhonghang/js/jquery-3.0.0.min.js" ></script>
+        <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="{{ static_url }}mobile/zhonghang/js/wx-share.js"></script>
+		<title>是TA，从你的一天24小时路过</title>
+		<script>
+	//	alert('{{ static_url }}mobile/zhonghang/img/bj.jpg')
+		window.onload=function(){
+			var onloadImg=new Image();
+			onloadImg.onerror=function(){alert("error!")};
+				onloadImg.src='{{ static_url }}mobile/zhonghang/img/bj.jpg';
+				onloadImg.onload=function(){
+					setTimeout(function(){
+						$('body').css('opacity',1);
+					},100)
+          var Time;
+          var d=$('#back img');
+          var arr=[],Windheight=$(window).height();
+          var W=$('#bj').height();
+          $('#back').height(W);
+          $('.shuoming02').click(function(){
+          	$(this).parent('div').hide()
+          })
+           var  isMove=true,tx=0,x=0,cha=0;
+          document.getElementById('dowebok25').onclick=function(){
+				document.getElementsByClassName('activity_description')[0].style.display='block'
+			}
+          var divLength=$('.time_img');
+          for(var i=0;i<divLength.length;i++){
+          	arr.push(divLength[i].offsetTop)
+          }
+          var OffsetTop=1;
+          var Img1=document.getElementById("img1");
+           var This=document.getElementById("back")
+          document.querySelector('#ding').addEventListener("touchstart",function(event){
+          	event.preventDefault();
+          	clearInterval(Time);
+          	if($('.time_img').hasClass('none') && OffsetTop<(arr[7]+Windheight)){
+			  	$('.time_img').removeClass('none');
+			  }
+          	document.getElementById('click1').style.display='none';
+	      Time=setInterval(function(){
+		  OffsetTop+=5;
+		  if(OffsetTop<(W-Windheight-10)){
+		  	 This.style.webkitTransform='translateY(-'+OffsetTop+'px)'
+		  }else{
+		  	This.style.webkitTransform='translateY(-'+W-Windheight+'px)'
+		  }
+		  if(OffsetTop>arr[0] && OffsetTop<arr[1] && Img1.getAttribute('src')!='{{ static_url }}mobile/zhonghang/img/11-5.png'){
+		  	Img1.setAttribute('src','{{ static_url }}mobile/zhonghang/img/11-5.png');
+		  }
+		  if(OffsetTop>arr[1] && OffsetTop<arr[2] && Img1.getAttribute('src')=='{{ static_url }}mobile/zhonghang/img/11-5.png'){
+		  	Img1.setAttribute('src','{{ static_url }}mobile/zhonghang/img/time-1.gif');
+		  }
+		  else if(OffsetTop>arr[2] && OffsetTop<arr[3] && Img1.getAttribute('src')=='{{ static_url }}mobile/zhonghang/img/time-1.gif'){
+		  	Img1.setAttribute('src','{{ static_url }}mobile/zhonghang/img/time-2.gif');
+		  }
+		  else if(OffsetTop>arr[3] && OffsetTop<arr[4] && Img1.getAttribute('src')=='{{ static_url }}mobile/zhonghang/img/time-2.gif'){
+		  	Img1.setAttribute('src','{{ static_url }}mobile/zhonghang/img/time-3.gif');
+		  }
+		  else if(OffsetTop>arr[4] && OffsetTop<arr[5] && Img1.getAttribute('src')=='{{ static_url }}mobile/zhonghang/img/time-3.gif'){
+		  	Img1.setAttribute('src','{{ static_url }}mobile/zhonghang/img/time-4.gif');
+		  }
+		  else if(OffsetTop>arr[5] && OffsetTop<arr[6] && Img1.getAttribute('src')=='{{ static_url }}mobile/zhonghang/img/time-4.gif'){
+		  	Img1.setAttribute('src','{{ static_url }}mobile/zhonghang/img/time-5.gif');
+		  }
+		  else if(OffsetTop>arr[6] && OffsetTop<arr[7] && Img1.getAttribute('src')=='{{ static_url }}mobile/zhonghang/img/time-5.gif'){
+		  	Img1.setAttribute('src','{{ static_url }}mobile/zhonghang/img/time-6.gif');
+		  }
+		  else if(OffsetTop>arr[7] && Img1.getAttribute('src')=='{{ static_url }}mobile/zhonghang/img/time-6.gif'){
+		  	Img1.setAttribute('src','{{ static_url }}mobile/zhonghang/img/time-7.gif');
+		  }
+		  else if(OffsetTop>(arr[7]+Windheight)){
+		 	 $('.time_img').addClass('none');
+		  }
+		  for (var i=0;i<d.length;i++) {
+            	(function(i){
+            		var em=d[i];
+            	 	var a = em.offsetTop;
+			      if ( a < ( OffsetTop+Windheight-200 )) {
+			          em.style.webkitAnimationPlayState="running";
+			          em.style.animationPlayState="running";
+			         }
+            	})(i)
+            }
+		   },30)
+         }, false);
+	     document.querySelector('#ding').addEventListener("touchend",function(event){
+	     clearInterval(Time)
+        }, false);
+       tag_num = $(".background_img >backgroundimage").length; 
+                nav_heightx = document.body.clientHeight; //获取可视区域高度  
+                max_height = (tag_num *- nav_heightx + 100) * 1; //获取下滑最大距离  
+                var This;
+                document.getElementById("back").ontouchstart=function(e){
+	                  This=this;   
+	                x = e.touches[0].clientY; 
+	                this.ontouchmove=function(e){
+	                	e.preventDefault();
+	                	$('.time_img').addClass('none');
+		                    var n = e.touches[0].pageY -x; 
+		                    if (n >=0 ) {
+		                    	 cha=OffsetTop-n;
+		                        $("#back").css('webkitTransform','translateY(-'+cha+'px)'); 
+		                         $("#back").css('transform','translateY(-'+cha+'px)');
+		                    }  
+	                };
+	                this.ontouchend=function(){
+	                	OffsetTop=cha;
+	                	This.ontouchmove=null;
+	                	This.ontouchend=null;
+	                };
+	                
+                };
+            document.getElementById('dowebok28').onclick=function(){
+				//document.getElementsByClassName('choujiang')[0].style.display='block';
+				//console.log(1111)
+				$('.choujiang').addClass('choujiang_active');
+			}
+            document.getElementsByClassName('t2')[0].onclick=function(){
+				$('.choujiang').removeClass('choujiang_active');
+			}
+           } 
+		}
+	</script>
+	</head>
+	<body style="opacity: 0; -webkit-transition: opacity 0.5s;transition: opacity 0.5s;">
+		<div id="bj">
+			<em><img src="{{ static_url }}mobile/zhonghang/img/bj.jpg" style="opacity: 0;"/></em>
+		</div>
+		<div id="wrap" style="width: 100%; height: 100%;overflow: auto;">
+		<div id="wrap_div" style="overflow: auto;">	
+		<div  id="back" class="background_img">
+			  <img  id="dowebok1" src="{{ static_url }}mobile/zhonghang/img/new-5-min.png" />
+			  <img  id="dowebok2" src="{{ static_url }}mobile/zhonghang/img/new-6-min.png" />
+			  <a  onclick="MtaH5.clickStat('click1',{'click':'true'})" href="http://m.0-interest.com/laomi/item.html?itemid=132&storeid=7911" target="_blank"><img   id="dowebok17" src="{{ static_url }}mobile/zhonghang/img/2-4-min.png" /></a>
+				<img class="bounceInLeft animated" id="dowebok3" src="{{ static_url }}mobile/zhonghang/img/new-9-min.png" />
+				<img class="bounceInRight animated" id="dowebok4" src="{{ static_url }}mobile/zhonghang/img/new-8-min.png" />
+			  <a onclick="MtaH5.clickStat('click2',{'click':'true'})" href="http://m.0-interest.com/laomi/item.html?itemid=70&storeid=7911" target="_blank"><img class="bounceInRight animated"   id="dowebok18" src="{{ static_url }}mobile/zhonghang/img/2-4-min.png" /></a>
+				<img class="bounceInLeft animated"   id="dowebok5" src="{{ static_url }}mobile/zhonghang/img/4-2-min.png" />
+				<img class="bounceInRight animated"   id="dowebok6" src="{{ static_url }}mobile/zhonghang/img/4-3-min.png" />
+				 <a onclick="MtaH5.clickStat('click3',{'click':'true'})" href="http://m.0-interest.com/laomi/item.html?itemid=77&storeid=7911" target="_blank"><img class="bounceInLeft animated"   id="dowebok19" src="{{ static_url }}mobile/zhonghang/img/2-4-min.png" /></a>
+				<img class="bounceInLeft animated"    id="dowebok7" src="{{ static_url }}mobile/zhonghang/img/new-14-min.png" />
+				<img class="bounceInRight animated" id="dowebok8" src="{{ static_url }}mobile/zhonghang/img/new-12-min.png"/>
+				 <a onclick="MtaH5.clickStat('click4',{'click':'true'})" href="http://m.0-interest.com/laomi/act_item.html?actid=104&itemid=108&storeid=7911" target="_blank"><img class="bounceInRight animated"   id="dowebok20" src="{{ static_url }}mobile/zhonghang/img/2-4-min.png" /></a>
+				<img class="bounceInLeft animated"  id="dowebok9"  src="{{ static_url }}mobile/zhonghang/img/new-15-min.png" />
+				<img  class="bounceInRight animated"  id="dowebok10" src="{{ static_url }}mobile/zhonghang/img/new-16-min.png"/>
+				 <a onclick="MtaH5.clickStat('click5',{'click':'true'})" href="http://m.0-interest.com/laomi/item.html?itemid=71&storeid=7911"  target="_blank"><img class="bounceInLeft animated"   id="dowebok21" src="{{ static_url }}mobile/zhonghang/img/2-4-min.png" /></a>
+				<img  class="bounceInLeft animated" id="dowebok11" src="{{ static_url }}mobile/zhonghang/img/new-19-min.png"/>
+				<img   class="bounceInRight animated" id="dowebok12" src="{{ static_url }}mobile/zhonghang/img/new-18-min.png"/>
+				 <a onclick="MtaH5.clickStat('click6',{'click':'true'})" href="http://m.0-interest.com/laomi/item.html?itemid=74&storeid=7911" target="_blank"><img class="bounceInLeft animated"   id="dowebok22" src="{{ static_url }}mobile/zhonghang/img/2-4-min.png" /></a>
+				<img   class="bounceInLeft animated" id="dowebok13" src="{{ static_url }}mobile/zhonghang/img/8-2-min.png" />  
+				<img  class="bounceInRight animated"  id="dowebok14" src="{{ static_url }}mobile/zhonghang/img/8-3-min.png" />
+				 <a onclick="MtaH5.clickStat('click7',{'click':'true'})" href="http://m.0-interest.com/laomi/item.html?itemid=90&storeid=7911"  target="_blank"><img class="bounceInLeft animated"   id="dowebok23" src="{{ static_url }}mobile/zhonghang/img/2-4-min.png" /></a>
+				<img class="bounceInLeft animated"  id="dowebok15"   src="{{ static_url }}mobile/zhonghang/img/9-3-min.png" />
+				<img class="bounceInRight animated"  id="dowebok16"   src="{{ static_url }}mobile/zhonghang/img/9-2-min.png" />
+				<a onclick="MtaH5.clickStat('click8',{'click':'true'})" href="http://m.0-interest.com/laomi/item.html?itemid=19&storeid=7911"  target="_blank"><img class="bounceInRight animated"   id="dowebok24" src="{{ static_url }}mobile/zhonghang/img/2-4-min.png" /></a>
+	            <a><img class="zoomIn animated" id="dowebok25" src="{{ static_url }}mobile/zhonghang/img/11-7-min.png"/></a>
+	            <img class="zoomIn animated" id="dowebok26" src="{{ static_url }}mobile/zhonghang/img/11-6.png" />
+	            <img class="zoomIn animated" id="dowebok27" src="{{ static_url }}mobile/zhonghang/img/11-8-min.png"/>
+	            <img class="zoomIn animated" id="dowebok28"  src="{{ static_url }}mobile/zhonghang/img/11-9-min.png"/>
+	            <a href="https://apply.mcard.boc.cn/apply/mobile/index?shortId=6N3Mjq&channelSource=1" target="_blank"><img class="zoomIn animated" id="dowebok29"  src="{{ static_url }}mobile/zhonghang/img/11-10-min.png" /></a>
+	            <img  id="dowebok30"  src="{{ static_url }}mobile/zhonghang/img/new-7-min.png"/>	
+	            <img class="bounceInRight animated" id="dowebok31"  src="{{ static_url }}mobile/zhonghang/img/new-10-min.png"/>	
+	            <img class="bounceInLeft animated" id="dowebok32"  src="{{ static_url }}mobile/zhonghang/img/new-11-min.png"/>
+	            <img class="bounceInRight animated" id="dowebok33"   src="{{ static_url }}mobile/zhonghang/img/new-13-min.png"/>
+	            <img class="bounceInLeft  animated"  id="dowebok34"  src="{{ static_url }}mobile/zhonghang/img/new-17-min.png"/>
+	            <img class="bounceInLeft animated" id="dowebok35"  src="{{ static_url }}mobile/zhonghang/img/new-20-min.png"/>
+	            <img class="bounceInLeft animated" id="dowebok36"   src="{{ static_url }}mobile/zhonghang/img/new-21-min.png"/>
+	            <img class="bounceInRight animated" id="dowebok37" src="{{ static_url }}mobile/zhonghang/img/new-22-min.png"/>
+	            <a href="http://aifish.oicp.net/zhwx/boc_mb/activityEntranceDaSu/toZxGift" target="_blank"><img class="zoomIn animated" id="dowebok38"  src="{{ static_url }}mobile/zhonghang/img/13-1.png"/></a>
+		</div>
+		</div>
+		</div>
+		 <div class="time_img" id="id1">
+	            	<img src="{{ static_url }}mobile/zhonghang/img/11-5.png" id="img1"/>
+	     </div>	
+	     <div class="time_img" id="id2"></div>
+	     <div class="time_img" id="id3"></div>
+	     <div class="time_img" id="id4"></div>
+	     <div class="time_img" id="id5"></div>
+	     <div class="time_img" id="id6"></div>
+	     <div class="time_img" id="id7"></div>
+	     <div class="time_img" id="id8"></div>
+	     <div class="activity_description">
+	     	<img id="shuoming" src="{{ static_url }}mobile/zhonghang/img/shuoming01.jpg"/>
+	     	<img class="shuoming02"  src="{{ static_url }}mobile/zhonghang/img/shuoming02.png"/>
+	     </div>
+	     <div class="choujiang">
+	     	<img class="t1" src="{{ static_url }}mobile/zhonghang/img/12-1-min.png"/>
+	     	<img class="t2"  src="{{ static_url }}mobile/zhonghang/img/12-2-min.png" />
+		    <div id="gua1">
+				<!--
+                	作者：1132326158@qq.com
+                	时间：2016-10-17
+                	描述：
+                	<img  id="gua1_img" class="t3" src="img/2016-10-25.png"/>
+                -->
+				<canvas id="front"  style="position: absolute;top: 6.13rem;left: 1.41rem; width: 4.6rem; height: 1.56rem;"></canvas>
+			</div>	
+	     </div>
+		<div class="ding_img" id="ding">
+			<img id="click1" class="fadeIn" src="{{ static_url }}mobile/zhonghang/img/click-1.png"/>
+		</div>
+	    <audio src="{{ static_url }}mobile/zhonghang/img/FlorianBur-TheWay.mp3" autoplay="autoplay"  loop="3"></audio>
+		<script type="text/javascript" src="{{ static_url }}mobile/zhonghang/js/yiru.js" ></script>
+        <script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500332553" cid="500332557" ></script>
+	</body>
+	</body>
+</html>

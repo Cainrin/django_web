@@ -13,7 +13,7 @@ class addQRCODE(object):
                 for i in f.readlines():
                     code = i.split(",")[0]
                     passwd = code[-4: ]
-                    startime = i.split(',')[1]
+                    startime = i.split(',')[2]
                     endtime = i.split(',')[3]
                     str1 = "2A" + code
                     img = qrcode.make(str1)

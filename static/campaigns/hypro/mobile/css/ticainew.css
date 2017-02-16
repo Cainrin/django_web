@@ -1,0 +1,526 @@
+*{margin: 0;padding: 0;}
+			html,body{
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+
+			body{
+				position: relative;
+			}
+.background{
+				background-image: url('http://hypro-10030008.file.myqcloud.com/mobile/ticai/ticaiimg/bj-min.jpg');
+				background-size:100% auto;
+				background-repeat: no-repeat;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+}
+#wrap{
+				height: 100%;
+				width: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+			#back{
+				position: absolute;top: 0px;left: 0px;
+				width: 100%;
+			}
+			#dowebok1{
+				position: absolute;
+				top: 1.25rem;
+				left: 1.6rem;
+				width: 4.36rem;
+				height:0.42rem;
+				animation-play-state: running;
+				-webkit-animation-play-state: running;
+			}
+			#dowebok3{
+				position: absolute;
+				top: 2.2rem;
+				left: 1.05rem;
+				width: 5.62rem;
+				height:4.85rem;
+				animation-delay: 0.5s;
+				animation-play-state: running;
+				-webkit-animation-play-state: running;	
+			}
+			#dowebok2{
+				position: absolute;
+				top: 3.7rem;
+				left: 1.35rem;
+				width: 4.50rem;
+				height:1.93rem;
+				animation-delay: 0.25s;
+				animation-play-state: running;
+				-webkit-animation-play-state: running;
+			}
+			#dowebok4{
+				position: absolute;
+				top: 7.6rem;
+				left: 0.6rem;
+				width: 2.52rem;
+				height:1.5rem;
+				animation-play-state: running;
+				-webkit-animation-play-state: running;
+			}
+			#dowebok5{
+				position: absolute;
+				top: 7.4rem;
+				right: 1rem;
+				width: 1.44rem;
+				height:2.17rem;
+				animation-play-state: running;
+				-webkit-animation-play-state: running;
+			}
+			#dowebok6{
+				position: absolute;
+				top: 7.5rem;
+				left: 2.1rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok7{
+				position: absolute;
+				top: 10.6rem;
+				right: 0rem;
+				width: 4.94rem;
+				height:6.08rem;
+			}
+			#dowebok8{
+				position: absolute;
+				top:11.4rem;
+				left: 0.6rem;
+				width: 2.8rem;
+				height:5rem;
+			}
+			.ding_img{
+				width: 2.78rem;
+				height: 2.99rem;
+				position: absolute;
+				bottom: 0rem;
+				left: 2.1rem;
+				background: url("http://hypro-10030008.file.myqcloud.com/mobile/ticai/ticaiimg/1-6-min.png") no-repeat;
+				background-size: contain;
+				z-index: 300;
+				text-indent: -9999px;
+			
+			}
+			#bj{
+				width: 100%;
+				display: none;
+			}
+			#bj img{
+				width: 100%;
+				vertical-align: middle;
+			}
+			#dowebok9{
+				/*position: absolute;
+				top:10.60rem;
+				right: 0rem;*/
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok10{
+				/*position: absolute;
+				top:10.60rem;
+				right: 0rem;*/
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok11{
+				position: absolute;
+				top:18.6rem;
+				left: 0rem;
+				width: 5.1rem;
+				height:5.88rem;
+			}
+			#dowebok12{
+				position: absolute;
+				top:18.5rem;
+				right: 0.4rem;
+				width: 2.72rem;
+				height:4.36rem;
+			}
+			#dowebok13{
+				position: absolute;
+				top:25.8rem;
+				left: 0.2rem;
+				width: 3.51rem;
+				height:5.02rem;
+			}
+			#dowebok14{
+				position: absolute;
+				top:26.5rem;
+				right: 0.2rem;
+				width: 3.96rem;
+				height:4.72rem;
+			}
+			#dowebok15{
+				position: absolute;
+				top:33.7rem;
+				left: 0.4rem;
+				width: 3.73rem;
+				height:5.48rem;
+			}
+			#dowebok16{
+				position: absolute;
+				top:34.35rem;
+				right: 0.4rem;
+				width: 3.5rem;
+				height:5.08rem;
+			}
+			#dowebok17{
+				position: absolute;
+				top:42.6rem;
+				left: 0.6rem;
+				width: 4.03rem;
+				height:4.93rem;
+			}
+			#dowebok18{
+				position: absolute;
+				top:42.6rem;
+				right: 0rem;
+				width: 4.06rem;
+				height:5.91rem;
+			}
+			#dowebok19{
+				position: absolute;
+				top:49.4rem;
+			    right: 1rem;
+				width: 5.43rem;
+				height:6.35rem;
+			}
+			#dowebok20{
+				position: absolute;
+				top:56.3rem;
+				right: 1rem;
+				width: 5.55rem;
+				height:5.89rem;
+			}
+			#dowebok21{
+				position: absolute;
+				top:62.7rem;
+				right: 1rem;
+				width: 5.94rem;
+				height:2.81rem;
+			}
+			#dowebok22{
+				position: absolute;
+				top:70.2rem;
+				right: 0.3rem;
+				width: 6.27rem;
+				height:3.58rem;
+			}
+			#dowebok23{
+				position: absolute;
+				top:74rem;
+				left: 0rem;
+				width: 7.4rem;
+				height:7.47rem;
+			}
+			
+			#dowebok24{
+				position: absolute;
+				top:79.1rem;
+				left: 0.55rem;
+				width: 2.3rem;
+				height:0.74rem;
+			}#dowebok25{
+				position: absolute;
+				top:79.1rem;
+				right: 0.55rem;
+				width: 2.3rem;
+				height:0.74rem;
+			}
+			/*.bounceIn{
+				animation-delay: 0.25s;
+			}*/
+			.fadeInLeft{
+				animation-delay: 0.75s;
+				-webkit-animation-delay: 0.75s;
+			}
+			.fadeInRight{
+				animation-delay: 0.75s;
+				-webkit-animation-delay: 0.75s;
+			}
+			.location{
+				position: absolute;
+				top: 7rem;
+				left: 0rem;
+				width: 0.5rem;
+				height: 0.5rem;
+			}
+			.animated{
+				animation-play-state: paused;
+				-webkit-animation-play-state: paused;
+			}
+			#dowebok26{
+				position: absolute;
+				top: 10.5rem;
+				left: 3.5rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok27{
+				position: absolute;
+				top: 11.5rem;
+				left: 3.2rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok28{
+				position: absolute;
+				top: 14rem;
+				left: 3.7rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok29{
+				position: absolute;
+				top: 15.4rem;
+				left: 3.5rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok30{
+				position: absolute;
+				top: 16.65rem;
+				left: 3.2rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok31{
+				position: absolute;
+				top: 17.9rem;
+				left: 3.5rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok32{
+				position: absolute;
+				top: 19.4rem;
+				left: 3.7rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok33{
+				position: absolute;
+				top: 22.2rem;
+				left: 4rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok34{
+				position: absolute;
+				top: 23.3rem;
+				left: 3.6rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok35{
+				position: absolute;
+				top: 24.6rem;
+				left: 3.7rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok36{
+				position: absolute;
+				top: 25.7rem;
+				left: 4.2rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok37{
+				position: absolute;
+				top: 31rem;
+				left: 3.3rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok38{
+				position: absolute;
+				top: 34.25rem;
+				left: 3.2rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok39{
+				position: absolute;
+				top: 39.35rem;
+				left: 3.7rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok40{
+				position: absolute;
+				top: 40.6rem;
+				left: 4rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok41{
+				position: absolute;
+				top: 41.65rem;
+				left: 4rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok42{
+				position: absolute;
+				top: 48.1rem;
+				left: 3.3rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok43{
+				position: absolute;
+				top: 49.3rem;
+				left: 3.1rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok44{
+				position: absolute;
+				top: 50.5rem;
+				left: 3.5rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok45{
+				position: absolute;
+				top: 51.7rem;
+				left: 3.6rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok46{
+				position: absolute;
+				top: 56rem;
+				left: 3.8rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok47{
+				position: absolute;
+				top: 57.2rem;
+				left: 4rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok49{
+				position: absolute;
+				top: 58.2rem;
+				left: 3.8rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok50{
+				position: absolute;
+				top: 62.6rem;
+				left: 3.4rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok51{
+				position: absolute;
+				top: 63.6rem;
+				left: 3.4rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok52{
+				position: absolute;
+				top: 66.2rem;
+				left: 3.4rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok53{
+				position: absolute;
+				top: 67.4rem;
+				left: 3.8rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok54{
+				position: absolute;
+				top: 68.6rem;
+				left: 3.5rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok55{
+				position: absolute;
+				top: 32.2rem;
+				left: 3.8rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			#dowebok56{
+				position: absolute;
+				top: 33.3rem;
+				left: 3.7rem;
+				width: 0.37rem;
+				height:0.6rem;
+			}
+			.tankuang{
+				position: absolute;
+				top: 0;
+				left: 0.7rem;
+				width: 100%;
+				height: 100%;
+				display: none;
+				overflow: auto;
+				z-index: 10000;
+			}
+			div.tankuang_active{
+				display: block !important;
+			}
+			#t1{
+				position: absolute;
+				top: 0.95rem;
+				left: 0;
+				width: 6.07rem;
+				height: 8.43rem;
+			}
+			#t2{
+				position: absolute;
+				top: 7.5rem;
+				left: 2.1rem;
+				width: 1.84rem;
+				height: 0.5rem;
+			}
+			.fuceng{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color:rgba(0,0,0,0.4);
+				display: none;
+			}
+			#fuceng{
+				position: absolute;
+				top: 0.15rem;
+				right: 0.2rem;
+				width: 3.56rem;
+				height: 2.04rem;
+			}
+			.fuceng_active{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				z-index: 20003;
+				background-color:rgba(0,0,0,0.7);
+				display: block !important;
+			}
+			.ding_img{
+				opacity: 1;
+			}

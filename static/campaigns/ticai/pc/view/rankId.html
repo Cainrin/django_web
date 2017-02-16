@@ -1,0 +1,53 @@
+<div id="active">
+	<header>
+		<div class="calendar">
+			<div class="ta_date" id="div_date_demo3">
+				<span class="date_title" id="date_demo3"></span>
+				<a class="opt_sel" id="input_trigger_demo3">
+					<i class="i_orderd"></i>
+				</a>
+			</div>
+			<div id="datePicker"></div>
+		</div>
+		<div id="pv_uv">
+			<p>PV:<span ng-bind='pv'></span></p>
+			<p>UV:<span ng-bind='uv'></span></p>
+		</div>
+		<div id="search">
+			<input type="text" placeholder="输入搜索的关键词"  ng-model='keyValue'/>
+			<input type="button" value="搜索"  ng-click='Search()'/>
+			<!--<select id="float_s" ng-model='Selsct'>
+				<option value="1" selected="selected">周排行</option>
+				<option value="0">日排行</option>
+			</select>-->
+			<p id="cj1">
+				<span ng-show='countType==1' ng-click='sendPrize()'>确认日排名</span>
+				<span ng-show='countType==0' ng-click='accessToken()'>确认周排名</span>	
+			</p>
+		</div>
+		<div id="buts" class="buts_w">
+			<p class="p2" ng-click='extype()'>导出</p>
+		</div>
+	</header>
+	<section id="active_table" class="user">
+		<table>
+			<thead>
+				<tr>
+					<th>用户</th>
+					<th>手机号</th>
+					<th>步数</th>
+					<th>排行</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='data in priceList' >
+					<td>{{data.usr}}</td>
+					<td >{{data.info}}</td>
+					<td >{{data.walk}}步</td>
+					<td>{{data.rank}}名</td>
+				</tr>
+			</tbody>
+		</table>
+		<tm-pagination conf="paginationConf"></tm-pagination>
+	</section>
+</div>

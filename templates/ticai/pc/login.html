@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>体彩登录首页</title>
+		<link rel="stylesheet" type="text/css" href="{{ static_url }}pc/css/login.css"/>
+		<script type="text/javascript" src="{{ static_url }}pc/js/jquery.min.js" ></script>
+		<script type="text/javascript" src="{{ static_url }}pc/js/angular.js" ></script>
+		<script type="text/javascript" src="{{ static_url }}pc/js/login.js" ></script>
+	</head>
+	<body ng-app='login'>
+		<div id="login" ng-hide="cookie" ng-controller="log">
+		<div class="login_mask">
+			<div class="login_box">
+				<form name="form" novalidate>
+					<p>
+						<input type="text" placeholder="请输入用户名" name='username' ng-model='username' required />
+					    <span ng-show='form.username.$dirty && form.username.$error.required'>用户名不能为空</span>
+					</p>
+					<p>
+						<input type="password" placeholder="请输入密码" name="passwd" ng-model='passwd' required />
+						<span ng-show='form.passwd.$dirty && form.passwd.$error.required'>密码不能为空</span>
+					</p>
+					<input type="button" ng-disabled="form.username.$error.required || form.passwd.$error.required"  value="登录" ng-click='Login()'/>
+					<p ng-model='msg' ng-bind="msg"></p>
+				</form>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

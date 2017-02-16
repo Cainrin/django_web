@@ -6,7 +6,7 @@ from campaigns.meeting.applet.uitls import generate_other_dict_data
 from campaigns.meeting import app_id, models
 from django.utils.http import urlquote
 from django.http import HttpResponseRedirect, HttpResponse, Http404, HttpResponseServerError
-from campaigns.foundation import wechat_api
+from campaigns.meeting import wechat_api
 from django.utils.encoding import smart_unicode, smart_str
 from django.utils import timezone
 import json
@@ -101,7 +101,7 @@ def action_render(action_view):
 
 def _auth_url(redirect_uri, scope='snsapi_userinfo', state=None):
     url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect' % \
-          (cache.get("appid"), urlquote(redirect_uri, safe=''), scope, state if state else '')
+          ("wx09a6ae929e7445a8", urlquote(redirect_uri, safe=''), scope, state if state else '')
     return url
 
 
@@ -175,6 +175,8 @@ def _verify_auth(request, view, *args, **kwargs):
         url = _auth_url(_get_url(request), "snsapi_base")
         return HttpResponseRedirect(url)
     return view(request, *args, **kwargs)
+
+
 
 
 

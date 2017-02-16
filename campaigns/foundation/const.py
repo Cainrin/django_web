@@ -138,6 +138,21 @@ class FoundationConst(object):
         (GENDER_FEMALE, '女性'),
     )
 
+    SINGLE = 0
+    ALL = 1
+    EXPORT_CHOICE = (
+        (SINGLE, '前一天参数'),
+        (ALL, '所有参数')
+    )
+
+    read = 0
+    unread = 1
+    READ_CHOICES = (
+        (read, '已读'),
+        (unread, '未读')
+    )
+
+
     XN = 0
     SW = 1
     TYPE_CHOICES = (
@@ -215,6 +230,13 @@ class FoundationConst(object):
         (IS_SEND, "已发"),
         (NO_SEND, "未发")
     )
+    TRUE = 0
+    FALSE = 1
+    LT_CHOICE = (
+        (TRUE, '联通'),
+        (FALSE, '其他')
+    )
+
     #colors
     black = 0
     white = 3
@@ -233,6 +255,16 @@ class FoundationConst(object):
         (UNFIX, '未完成'),
         (FIX, '已完成')
     )
+
+    golden = 1
+    silver = 0
+    IPHONE = 2
+    PEAS_CHOICES = (
+        (golden, '金豆子'),
+        (silver, '银豆子'),
+        (IPHONE, 'iphone')
+    )
+
     # 是否领取
     DOLE = 0
     UNDOLE = 1

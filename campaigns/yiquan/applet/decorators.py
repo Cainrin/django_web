@@ -6,8 +6,8 @@ from campaigns.foundation.applet import utils, response, access
 from campaigns.yiquan import models
 from django.utils.http import urlquote
 from django.http import HttpResponseRedirect, HttpResponse
-import wechat_api
-import Get_Auth_verification
+from campaigns.foundation import wechat_api
+from Get_Auth_verification import *
 
 def _record_pv(request):
     creation_time = int(time.time())
@@ -184,7 +184,6 @@ def Power_verify_auth(request, view, *args, **kwargs):
             url = Auth_url(Get_url(request), "snsapi_userinfo")
             return HttpResponseRedirect(url)
         res = wechat_api.wechatAPI.get_auth_access_token(code)
-        print res
         try:
             Access_token = res['access_token']
             Openid = res['openid']

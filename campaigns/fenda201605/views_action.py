@@ -2,7 +2,8 @@
 import math
 from campaigns.foundation.applet import response, utils
 from campaigns.foundation.const import FoundationConst, DisplayConst
-from campaigns.fenda201605 import models, config, const, wechat_api
+from campaigns.fenda201605 import models, config, const
+from campaigns.foundation import wechat_api
 from campaigns.fenda201605.applet import decorators
 from campaigns.fenda201605.applet.vote import FendaVoteManager
 from campaigns.fenda201605.applet.uitls import fit_up_work_list, save_work_image, fit_up_work

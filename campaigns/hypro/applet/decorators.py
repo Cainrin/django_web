@@ -6,25 +6,30 @@ from campaigns.hypro.applet.uitls import generate_other_dict_data
 from campaigns.hypro import app_id, models
 from django.utils.http import urlquote
 from django.http import HttpResponseRedirect, HttpResponse, Http404, HttpResponseServerError
-from campaigns.hypro import wechat_api
+from campaigns.foundation import wechat_api
 from django.utils.encoding import smart_unicode, smart_str
 from django.utils import timezone
 import json
+from django.core.cache import cache
+
+
+
 
 def _record_uv(request):
-    openid = request.session.get("wxUser")
     url = request.path
     ip = utils.get_ip_from_request(request)
-    now = timezone.now()
-    nowTime = datetime.datetime(now.year, now.month, now.day, tzinfo=pytz.utc)
-    suchUv = models.UniqueVisitor.objects.filter(wxUser__openid=openid).filter(creationTime=nowTime).first()
-    if suchUv is None:
-        wxUser = models.WXUser.objects.filter(openid=openid).first()
+    now = datetime.date.today()
+    usrinfo = models.UniqueVisitor.objects.filter(
+        creationTime=str(now),
+        ip=ip,
+        url=url
+    )
+    if usrinfo.first() is None:
         models.UniqueVisitor.objects.create(
             ip=ip,
             url=url,
-            wxUser=wxUser
         )
+
 
 
 def _record_pv(request):
@@ -98,7 +103,7 @@ def action_render(action_view):
 
 def _auth_url(redirect_uri, scope='snsapi_userinfo', state=None):
     url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect' % \
-          ('wx09a6ae929e7445a8', urlquote(redirect_uri, safe=''), scope, state if state else '')
+          ("wx1a0890012a1ca50c", urlquote(redirect_uri, safe=''), scope, state if state else '')
     return url
 
 

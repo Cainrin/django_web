@@ -2,7 +2,7 @@
 import random
 from campaigns.foundation.applet import cheat
 from campaigns.foundation.const import FoundationConst
-from campaigns.fenda201605 import const, models
+from campaigns.yh import const, models
 
 
 class VoteCheatProcess(cheat.CheatProcess):
@@ -12,12 +12,6 @@ class VoteCheatProcess(cheat.CheatProcess):
             self.work_id_list = [self.vote_cheat.work.id for x in xrange(self.vote_cheat.totalCount)]
         else:
             total_id_list = models.Work.objects.values_list('id', flat=True).filter(status=FoundationConst.STATUS_ONLINE)
-            if 201 in total_id_list:
-                total_id_list = list(total_id_list)
-                total_id_list.remove(201)
-            if 202 in total_id_list:
-                total_id_list = list(total_id_list)
-                total_id_list.remove(202)
             self.work_id_list = [random.choice(total_id_list) for x in xrange(self.vote_cheat.totalCount)]
         interval_seconds = float(self.vote_cheat.minute) * 60 / float(self.vote_cheat.totalCount)
         super(VoteCheatProcess, self).__init__(interval_seconds, self.vote_cheat.totalCount)
@@ -29,8 +23,6 @@ class VoteCheatProcess(cheat.CheatProcess):
             return
         models.Vote.objects.create(
             work=work,
-            platform=FoundationConst.PLATFORM_DESKTOP,
-            ip=self.vote_cheat.ip,
             status=FoundationConst.STATUS_ONLINE
         )
         self.vote_cheat.nowCount += 1

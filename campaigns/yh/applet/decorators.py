@@ -10,15 +10,20 @@ from campaigns.yh import wechat_api
 from django.utils.encoding import smart_unicode, smart_str
 from django.utils import timezone
 import json
+from django.core.cache import cache
+
+
+
+
 
 def _record_uv(request):
+    time = request.session.get("vistime")
     openid = request.session.get("wxUser")
     url = request.path
     ip = utils.get_ip_from_request(request)
-    now = timezone.now()
-    nowTime = datetime.datetime(now.year, now.month, now.day, tzinfo=pytz.utc)
-    suchUv = models.UniqueVisitor.objects.filter(wxUser__openid=openid).filter(creationTime=nowTime).first()
-    if suchUv is None:
+    nowTime = str(datetime.date.today())
+    if time != nowTime:
+        request.session['vistime'] = nowTime
         wxUser = models.WXUser.objects.filter(openid=openid).first()
         models.UniqueVisitor.objects.create(
             ip=ip,
@@ -98,7 +103,7 @@ def action_render(action_view):
 
 def _auth_url(redirect_uri, scope='snsapi_userinfo', state=None):
     url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=%s&state=%s#wechat_redirect' % \
-          ('wxaacd74076c2a65ff', urlquote(redirect_uri, safe=''), scope, state if state else '')
+          ("wx1a0890012a1ca50c", urlquote(redirect_uri, safe=''), scope, state if state else '')
     return url
 
 
@@ -127,9 +132,11 @@ def _verify_auth(request, view, *args, **kwargs):
                 request.session[FoundationConst.PLATFORM_AUTH_STATE] = 'process'
                 url = _auth_url(_get_url(request), "snsapi_base")
                 return HttpResponseRedirect(url)
-            res = wechat_api.wechatAPI.get_auth_access_token(code)
+            ces = wechat_api
+            rcs = ces.WechatApi()
+            rds = rcs.get_auth_access_token(code)
             try:
-                openid = res['openid']
+                openid = rds['openid']
             except Exception as e:
                 raise utils.ClientException('{0}:{1}'.format(DisplayConst.EXCEPTION_AUTH_OPENID_WEIXIN, str(e)))
             # 将openid存入session
@@ -137,21 +144,22 @@ def _verify_auth(request, view, *args, **kwargs):
             # 添加微信用户信息入库
             wx_user = models.WXUser.objects.filter(openid=openid).first()
             if wx_user is None:
-                subscriber = json.loads(json.dumps(wechat_api.wechatAPI.get_subscriber(openid)))
+                subscriber = json.loads(json.dumps(rcs.get_subscriber(openid)))
                 try:
-                    sub_openid = subscriber['openid']
-                    nickname = subscriber.get('nickname', None)
-                    city = subscriber.get('city', None)
-                    gender = int(subscriber.get('sex', 0))
-                    status = int(subscriber.get('subscribe', 0))
+                    sub_openid = openid
+                    nickname = None
+                    city = None
+                    gender = 0
+                    status = 0
                 except Exception as e:
                     raise utils.ClientException('{0}:{1}'.format(DisplayConst.EXCEPTION_CLIENT_INCOMPLETE_INFORMATION, str(e)))
 
                 models.WXUser.objects.create(
-                    openid=sub_openid,
-                    gender=gender,
-                    status=status
+                    openid=openid,
+                    gender=0,
+                    status=10
                 )
+
             request.session[FoundationConst.PLATFORM_AUTH_STATE] = 'finish'
         else:
             wx_user_openid = request.session.get(FoundationConst.PLATFORM_WEIXIN_NAME)
@@ -165,7 +173,12 @@ def _verify_auth(request, view, *args, **kwargs):
                     request.session[FoundationConst.PLATFORM_AUTH_STATE] = 'process'
                     url = _auth_url(_get_url(request), "snsapi_base")
                     return HttpResponseRedirect(url)
+    else:
+        url = _auth_url(_get_url(request), "snsapi_base")
+        return HttpResponseRedirect(url)
     return view(request, *args, **kwargs)
+
+
 
 
 

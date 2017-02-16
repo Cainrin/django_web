@@ -3,7 +3,7 @@ import json, time
 from django import http
 from campaigns.foundation.const import DisplayConst, FoundationConst
 from campaigns.foundation.applet import utils, response, access
-from campaigns.test import wechat_api
+from campaigns.foundation import wechat_api
 import requests
 
 

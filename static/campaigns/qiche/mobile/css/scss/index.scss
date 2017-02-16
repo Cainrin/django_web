@@ -1,0 +1,310 @@
+$fontSizt:0.5rem;
+$Color:#fff;
+//底部导航
+#main_wrap{
+   width: 100%;
+   height: 100%;
+    overflow: hidden;
+  position: relative;
+  z-index: 4; 
+  background-color: #fff; 
+}
+#main_footer{
+    background:url(../image/1/ico8.jpg) no-repeat;
+    background-size:100% 100%;
+    width: 100%;
+    height: 1rem;
+    overflow: hidden;
+    position: absolute;
+    left:0px;
+    bottom: 0px;
+    a{
+        display: block;
+        float: left;
+        text-align: center;
+        width: 18%;
+        height: 100%;
+        padding-top: 0.07rem;
+        box-sizing: border-box;
+        color:$Color;
+        font-size: 0.24rem;
+        &.active{
+            background-color: #0E91B6;
+        }
+         &:nth-of-type(3){
+             width: 28%;
+             position: relative;
+             em{
+                 position: absolute;
+                 right:17px;
+                 top:5px;
+                 width: 14px;
+                 height: 14px;
+                 border-radius: 7px;
+                 font-style: normal;
+                 background-color: red;
+                 text-align: center;
+                 line-height: 14px;
+                 color:#fff;
+                 font-size: 12px;
+             }
+         }
+        &:nth-of-type(1) span{
+            background:url('../image/2/ico1.png') no-repeat center;
+            background-size: contain;
+            width: 0.45rem;
+            
+        }
+         &:nth-of-type(2) span{
+            background:url('../image/2/ico2.png') no-repeat center;
+            background-size: contain;
+            width: 0.40rem;
+        
+        }
+        &:nth-of-type(3) span{
+            background:url('../image/2/ico3.png') no-repeat center;
+            background-size: contain;
+             width: 0.45rem;
+        
+        }
+        &:nth-of-type(4) span{
+            background:url('../image/2/ico4.png') no-repeat center;
+            background-size: contain;
+        
+        }
+        &:nth-of-type(5) span{
+            background:url('../image/2/ico5.png') no-repeat center;
+            background-size: contain;
+            width: 0.45rem;
+        
+        }
+        
+    }
+    span{
+        display: block;
+        margin:0px auto 0.04rem;
+        text-align: center;
+        width: 0.34rem;
+        height: 0.5rem;
+        }
+}
+#index_top{
+    width: 100%;
+    overflow: hidden;
+    height: 4.4rem;
+    .index_bj{
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: url('../image/2/top.jpg') no-repeat center;
+        background-size: 100%;
+    }
+    .index_bj1{
+        display: block;
+        height: 100%;
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+#index_center{
+    width: 100%;
+    padding-top: 0.26rem;
+    height: 2.3rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    div{
+        width: 50%;
+        height: 100%;
+        i{
+           margin:0px auto 0.1rem;
+        }
+        p{
+            text-align: center;
+            font-size: 0.32rem;
+            margin-bottom: 0.1rem;
+            &:last-child{
+                color:#7D7D7D;
+            }
+            span{
+                font-size: 0.5rem;
+                color:#12C4E2;
+                font-weight:bold;
+            }
+        }
+        &:first-child{
+            float: left;
+            i{
+                display: block;
+                width: 1.28rem;
+                height: 0.46rem;
+                background: url('../image/1/ico6.png') no-repeat center;
+                background-size: contain;
+            }
+        }
+        &:last-child{
+            float: right;
+            i{
+                display: block;
+                width: 1.68rem;
+                height: 0.46rem;
+                background: url('../image/1/ico7.png') no-repeat center;
+                background-size: contain;
+            }
+        }
+    }
+}
+#scoll{
+    width: 100%;
+    overflow: hidden;
+    height: 0.74rem;
+    background-color: #EEEEEE;
+    line-height: 0.74rem;
+    font-size:0.25rem;
+    color:#969696;
+    margin-bottom: 0.25rem;   
+}
+.donation{ 
+    margin:0px auto 0.25rem;
+    display: block;
+    width: 3rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.25rem;
+    text-align: center;
+    color:#4A5283;
+    border:0.04rem solid #6C6FA5;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.shake{
+    display: block;
+    width: 1.4rem;
+    text-align: center;
+    margin: auto;
+    color:#1B1B1B;
+    font-size: 0.25rem;
+   text-decoration: underline;
+}
+//头部
+#logo{
+    position: absolute;
+    z-index: 2;
+    left:0px;
+    top:0.2rem;
+    width: 100%;
+    text-align: center;
+    i{
+        display: block;
+        margin: auto;
+        &:nth-of-type(1){
+            width: 1.8rem;
+            margin-bottom: 0.15rem;
+        }
+        &:nth-of-type(2){
+            width: 3.7rem;
+        }
+        img{
+            width: 100%;
+        }
+    }
+}
+.envelope{
+    opacity: 1 !important;
+    transform: translateY(0px) !important;
+}
+#envelope1{
+    opacity: 0;
+    transform: translateY(100%);
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width: 100%;
+    height: 6.8rem;
+    z-index: 3;
+    .envelopebj{
+        position: absolute;
+        z-index: 0;
+        top:0px;
+        left:0px;
+        width: 100%;
+        height: 4.9rem;
+        background: url('../image/envelopebj.png') no-repeat;
+        background-size: contain;
+    }
+}
+#envelope{
+    opacity: 0;
+    transform: translateY(100%);
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width: 100%;
+    height: 6.8rem;
+    z-index: 5;
+    .envelopeup{
+        position: absolute;
+        bottom:0px;
+        left:0px;
+        width: 100%;
+        height:4.43rem;
+        background: url('../image/envelopeup.png') no-repeat;
+        background-size: contain;
+    }
+    span{
+        position: absolute;
+        text-align: center;
+        bottom: 1.1rem;
+        width: 1.4rem;
+        left:50%;
+        font-size: 0.3rem;
+        color:#1B1B1B;
+        text-decoration: underline;
+        margin-left: -0.7rem;
+    }
+}
+.mainAnim{
+    transform: scale(0.8) translateY(1rem);
+}
+#about{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.successShake{
+    width: 3.59rem;
+    height: 0.71rem;
+    display: block;
+    margin:0.4rem auto 0px;
+    background: url(../image/1/10.png) no-repeat;
+    background-size: contain;
+}
+@-webkit-keyframes scoll{
+  
+}
+@media screen
+and (min-device-width : 320px)
+and (max-device-height : 480px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+    #index_center{
+        height: 2rem;
+        padding-top: 0.2rem;
+    }
+    #index_center i{
+        height: 0.4rem !important;
+        margin-bottom: 0.1rem !important;
+    }
+    .donation{
+        width: 3rem;
+        height: 0.6rem;
+        font-size:0.25rem;
+        margin-bottom: 0.1rem;
+    }
+    #scoll{
+        margin-bottom: 0.2rem;
+    }
+}
+   

@@ -6,7 +6,7 @@ from campaigns.management.applet.utils import generate_other_dict_data
 from campaigns.management import app_id, models
 from django.utils.http import urlquote
 from django.http import HttpResponseRedirect, HttpResponse, Http404, HttpResponseServerError
-from campaigns.management import wechat_api
+from campaigns.foundation import wechat_api
 from django.utils.encoding import smart_unicode, smart_str
 import json
 

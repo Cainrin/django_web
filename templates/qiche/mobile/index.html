@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<script type="text/javascript" src="{{ static_url }}mobile/js/app/fontSize.js" ></script>
+		<script type="text/javascript" src="{{ static_url }}mobile/js/plugins/Jquery-min-1.12.js" ></script>
+		<script type="text/javascript" src="{{ static_url }}mobile/js/app/index.js" ></script>
+		<title>体彩</title>
+		<link rel="stylesheet" href="{{ static_url }}mobile/css/public.css" />
+		<link rel="stylesheet" href="{{ static_url }}mobile/css/index.css" />
+	</head>
+	<body>
+		<div id="logo">
+			<i><img src="{{ static_url }}mobile/image/logo.png"/></i>
+			<i><img src="{{ static_url }}mobile/image/logo1.png"/></i>
+		</div>
+		<section id="main_wrap">
+			<div id="app">
+				<!-- <div ng-view></div> -->
+				<section id="index_top">
+					<i class="index_bj"></i>
+				</section>
+				<section id="index_center">
+					<div>
+						<i></i>
+						<p><span class="step">1111233</span>步</p>
+						<p>总捐赠步数</p>
+					</div>
+					<div>
+						<i></i>
+						<p><span class="money">4</span>元</p>
+						<p>总捐赠步数</p>
+					</div>
+				</section>
+				<article id="scoll">
+					<marquee >
+						活动开始啦～ 每日前3000名可获得大乐透代金券，每个IP每周限领一次！坚持运动，“金”喜给你
+					</marquee>
+				</article>
+				<a class="donation" href="about.html" ></a>
+				<p class="shake" id='shake'>分享好友</p>
+			</div>
+			<footer id="main_footer">
+				<a href="index.html" class="active"><span></span>首页</a>
+				<a href="#/list"><span></span>排行榜</a>
+				<a href="#/lotter"><span></span>大乐透代金券<em>1</em></a>
+				<a href="#/offline"><span></span>线下报名</a>
+				<a href="#/activity"><span></span>活动说明</a>
+			</footer>
+		</section>
+		<div id="envelope1" >
+			<div class="envelopebj"></div>
+		</div>
+		<div id="envelope">
+			<div class="envelopeup"></div>
+			<span id="Enve">返回首页</span>
+		</div>
+	</body>
+</html>

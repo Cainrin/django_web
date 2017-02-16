@@ -34,7 +34,7 @@ class met_hitprice(models.Model):
         verbose_name_plural = u'中将人员'
 
     def __unicode__(self):
-        return self.priceid
+        return self.openid
 
 
 class met_Author(models.Model):

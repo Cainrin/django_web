@@ -26,7 +26,8 @@ import random, os
 import math
 from campaigns.foundation.applet import response, utils
 from campaigns.foundation.const import FoundationConst, DisplayConst
-from campaigns.nihuawocai import models, config, const, wechat_api
+from campaigns.nihuawocai import models, config, const
+from campaigns.foundation import wechat_api
 from campaigns.nihuawocai.applet import decorators
 from campaigns.nihuawocai.const import Guess
 from dwebsocket import accept_websocket, require_websocket

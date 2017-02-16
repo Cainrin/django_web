@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 import time, datetime
-from campaigns.ticai.applet.decorators import exportExcel
+from campaigns.ticai.applet.decorators import auth_verification, antExcel, exportExcel
 from campaigns.ticai import models
 
 
 class countDay(object):
-    def __init__(self, request):
+    def __init__(self, request=None):
         self.request = request
 
 
@@ -16,7 +16,7 @@ class countDay(object):
             d1 = {}
             d1["creatime"] = str(str(i.creaTime).split(" ")[0])
             d1['openid'] = i.openid
-            if i.change == "0":
+            if i.change == i.change:
                 d1['walk'] = i.walk
             else:
                 d1['walk'] = i.change
@@ -33,7 +33,6 @@ class countDay(object):
         l1 = []
         l1.append(dataList[0])
         d2 = {}
-        count = 0
         for i in dataList:
             l2 = [ j['openid'] for j in l1 ]
             if i['openid'] not in l2:
@@ -56,10 +55,7 @@ class countDay(object):
             walk = 0
             money = 0
             for l in nowday:
-                if l.change == "0":
-                    walk += int(l.walk)
-                else:
-                    walk += int(l.change)
+                walk += int(l.change)
             d1 = {}
             money += round(float(walk) / 2000, 2)
             d1['当天PV'] = models.PageView.objects.filter(creationTime__gte=i).filter(creationTime__lt=tomorrow).all().count()
@@ -74,6 +70,9 @@ class countDay(object):
 
     def startDraw(self):
         valueList = self.finishCount()
-        pushExcel = exportExcel(self.request, "数据单", valueList)
+        if self.request is None:
+            pushExcel = antExcel("数据单", valueList)
+        else:
+            pushExcel = exportExcel(self.request, "数据单", valueList)
         return pushExcel
 

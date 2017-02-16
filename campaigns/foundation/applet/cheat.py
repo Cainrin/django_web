@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import multiprocessing, time
-from django.db import connection
+from django.db import close_old_connections, connection
 
 
 class CheatProcess(multiprocessing.Process):
@@ -11,8 +11,11 @@ class CheatProcess(multiprocessing.Process):
         super(CheatProcess, self).__init__()
 
     def run(self):
-        connection.connection.close()
-        connection.connection = None
+        try:
+            connection.connection.close()
+            connection.connection = None
+        except:
+            print 111
         while True:
             start_seconds = time.time()
             self.cheat()

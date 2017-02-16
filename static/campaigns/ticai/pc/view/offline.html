@@ -1,0 +1,43 @@
+<div id="active">
+	<header>
+		<div class="calendar">
+			<div class="ta_date" id="div_date_demo3">
+				<span class="date_title" id="date_demo3"></span>
+				<a class="opt_sel" id="input_trigger_demo3">
+					<i class="i_orderd"></i>
+				</a>
+			</div>
+			<div id="datePicker"></div>
+		</div>
+		<div id="pv_uv">
+			<p>PV:<span ng-bind='pv'></span></p>
+			<p>UV:<span ng-bind='uv'></span></p>
+		</div>
+		<div id="search">
+			<input type="text" placeholder="输入搜索的关键词"  ng-model='keyValue'/>
+			<input type="button" value="搜索"  ng-click='Search()'/>
+		</div>
+		<div id="buts">
+			<p class="p2" ng-click='extype()'>导出</p>
+		</div>
+	</header>
+	<section id="active_table" class="user offline">
+		<table>
+			<thead>
+				<tr>
+					<th>用户</th>
+					<th>报名时间</th>
+					<th>联系方式</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="data in active">
+					<td ng-bind='data.userid'></td>
+					<td ng-bind='data.updatetime'></td>
+					<td ng-bind='data.phonecall'></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<tm-pagination conf="paginationConf"></tm-pagination>
+</div>

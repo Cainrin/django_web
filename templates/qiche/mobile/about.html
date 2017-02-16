@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<script type="text/javascript" src="{{ static_url }}mobile/js/app/fontSize.js" ></script>
+		<title>体彩</title>
+	</head>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		#about{
+			width: 100%;
+			height: 100%;
+			padding-top: 1rem;
+			box-sizing: border-box;
+			position: relative;
+			text-align: center;
+		}
+		#about i{
+			display: block;
+			margin: auto;
+		}
+		#about i img{
+			width: 100%;
+			display: block;
+			vertical-align: bottom;
+		}
+		#about i:nth-of-type(1){
+			width: 4.26rem;
+			height: 4.09rem;
+			background: url('{{ static_url }}mobile/image/renw.png') no-repeat center;
+			background-size: contain;
+			display: -webkit-box;
+			-webkit-box-align: center;
+			-webkit-box-pack: center;
+			margin-bottom: 0.5rem;
+		}
+		#about i:nth-of-type(1) img{
+			width: 1.3rem;
+		}
+		#about i:nth-of-type(2){
+			width: 3.5rem;
+			margin-bottom: 0.5rem;
+		}
+		#about i:nth-of-type(3){
+			width: 3.8rem;
+			margin-bottom: 0.75rem;
+		}
+		#about i:nth-of-type(4){
+			width: 3.6rem;
+			
+		}
+		#about i:nth-of-type(5){
+			width: 100%;
+			position: absolute;
+			bottom:0px;
+			left:0px;
+		}
+	</style>
+	<body>
+		<section id="about">
+			<i><img src="{{ static_url }}mobile/image/ren.png"/></i>
+			<i><img src="{{ static_url }}mobile/image/text.png"/></i>
+			<i><img src="{{ static_url }}mobile/image/text1.png"/></i>
+			<i class="but"><a href="indexSuccess.html"><img src="{{ static_url }}mobile/image/upload.png"/></a></i>
+			<i><img src="{{ static_url }}mobile/image/di.png"/></i>
+		</section>
+	</body>
+</html>

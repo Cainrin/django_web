@@ -75,7 +75,8 @@ class VoteConst(object):
 
 class VoteCheatConst(object):
     # verbose name
-    VN_TABLE_NAME = u'刷票任务'
+    VN_TABLE_NAME = u'发奖卷'
+    VN_EXCEL_NAME = u'表名'
     TYPE_ALL = 0
     TYPE_ONE = 10
     TYPE_CHOICES = (

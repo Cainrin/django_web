@@ -1,0 +1,41 @@
+<div id="sign_up">
+	<i><img src="/static/campaigns/ticai/mobile/image/1/ico9-1.jpg"/></i>
+	<i><img src="/static/campaigns/ticai/mobile/image/1/ico21.png"/></i>
+	<p>11月12日<span>南京玄武湖</span>为爱行走</p>
+	<p>用脚步印证爱心力量<br/>用行动延续体彩公益</p>
+	<div class="frome">
+			<label>
+				我的姓名<input type="text" ng-value="cjName" placeholder="输入你的姓名" ng-model="Name" ng-disabled="disaBled"/>
+			</label>
+			<label>
+				手机号码<input type="tel" ng-value="cjPhone" placeholder="输入手机号码" ng-model="Phone" ng-disabled="disaBled"/>
+			</label>
+	</div>
+	<i id="sign_up_submit" ng-click='Submit()'><img id="cj_1" src="/static/campaigns/ticai/mobile/image/1/6.png" /></i>
+	<p ng-click='shuom()'>线下活动说明</p>
+</div>
+<!--线下报名活动说明-->
+
+<div id="hy_diolag" ng-if='sm'>
+	<div class="siguup_wrap">
+		<i><img src="/static/campaigns/ticai/mobile/image/1/ico22.png" alt="" /></i>
+		<article>
+			<aside>
+				<h3>一、活动时间</h3>
+				<p>11月12日 8:30-12:00</p>
+				<h3>二、地点及路线</h3>
+				<p>南京玄武湖。</p>
+				<h3>三、参与方式</h3>
+				<p>本次线下活动参与者年龄段为18-60周岁，人数为100人，有意向参与线下活动者，可在官方微信活动平台相关页面报名，最终参与者将在活动前通过电话联系。</p>
+				<h3>四、奖项设置</h3>
+				<p>成功报名参加线下活动，并且按照线下活动规则完成行走路线的人员，可获得一张价值50元(含卡成本费)公交卡。<br/><br/><b style=" display:block:padding-top: 0.4rem !important;">活动咨询电话:025-58800321转分机号8025<br/>(工作时间:9:30~12:00,13:00~18:00)</b></p>
+			</aside>
+		</article>
+		<i ng-click='shuomClose()'><img src="/static/campaigns/ticai/mobile/image/1/ico20.png" alt="" /></i>
+	</div>
+</div>
+
+<!--提交成功弹框-->
+<div id="hy_diolag1" ng-if='activeText'>
+	<i class="submit_success"><img src="/static/campaigns/ticai/mobile/image/1/ico23.png"><i/>
+</div>	

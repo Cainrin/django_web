@@ -12,7 +12,7 @@ from django.utils import timezone
 from collections import Counter
 from campaigns.meeting.applet.Tcos import Auth
 from campaigns.meeting.applet.getLocation import txLocations
-import numpy
+from django.core.cache import cache
 
 
 
@@ -27,18 +27,37 @@ def get_sign_package(request):
 
 
 
+
+@decorators.action_render
+def checkBlind(request):
+    try:
+        openid = request.session.get("wxUser")
+        info = models.met_Author.objects.filter(openid=openid).first()
+        if info is None:
+            return {"result_code": 1, "result_msg": "未绑定"}
+        else:
+            return {"result_code": 0, "result_msg": "已绑定"}
+    except Exception as e:
+        return {"result_code": -1, "result_msg": str(e)}
+
+
+
+
 @decorators.action_render
 def infoCache(request):
     try:
         phoneNum = request.POST['phone']
         openid = request.session.get("wxUser")
         info = models.met_Author.objects.filter(phoneNum=phoneNum)
-        if info[0] is not None:
+        if info.first() is None:
+            return {"result_code": 2, "result_msg": "无此号码"}
+        if info[0].openid is None:
             info.update(openid=openid)
             return {"reuslt_code": 0, "result_msg": "绑定成功", "name": info[0].name, "img": info[0].headimg}
         else:
             return {"reuslt_code": 1, "result_msg": "该号码已被人绑定"}
     except Exception as e:
+        print e
         return {"reuslt_code": -1, "result_msg": str(e)}
 
 
@@ -46,15 +65,16 @@ def infoCache(request):
 def readMsg(request):
     try:
         l1 = []
-        msgList = models.met_Message.objects.filter(isread=0).all()
+        msgList = models.met_Message.objects.filter(isread=1).all()
         for i in msgList:
             d1 = {}
+            d1['id'] = i.id
             d1['name'] = models.met_Author.objects.filter(openid=i.openid).first().name
             d1['phone'] = models.met_Author.objects.filter(openid=i.openid).first().phoneNum
             d1['headimg'] = models.met_Author.objects.filter(openid=i.openid).first().headimg
             d1['msg'] = i.msg
             l1.append(d1)
-        msgList.update(isread=1)
+        msgList.update(isread=0)
         return {"result_code": 0, "result_msg": None, "msgList": l1}
     except Exception as e:
         return {'result_code': -1, "result_msg": str(e)}
@@ -77,8 +97,9 @@ def sendMsg(request):
 
 
 @decorators.action_render
-def hitPrice(request):
+def hitPrize(request):
     try:
+        nowType = cache.get("chanceInfo")
         l1 = []
         priceUser = models.met_hitprice.objects.all()
         for i in priceUser:
@@ -88,11 +109,62 @@ def hitPrice(request):
         for i in msgUser:
             l2.append(i.openid)
         msgUser.update(isSend=0)
-        l3 = set(l2) - set(l1)
-        hituserOpenid = l3[random.randint(0, len(l3))]
-        hitUsr = models.met_Author.objects.filter(openid=hituserOpenid).first().name
-        headimg = models.met_Author.objects.filter(openid=hituserOpenid).first().headimg
-        models.met_hitprice.objects.create(openid=hituserOpenid)
-        return {"result_code": 0, "result_msg": None, "hitUsr": hitUsr, "headimg": headimg}
+        l3 = list(set(l2) - set(l1))
+        print l3
+        if l3:
+            hituserOpenid = l3[random.randint(0, len(l3) - 1)]
+            hitUsr = models.met_Author.objects.filter(openid=hituserOpenid).first().name
+            headimg = models.met_Author.objects.filter(openid=hituserOpenid).first().headimg
+            models.met_hitprice.objects.create(openid=hituserOpenid)
+            l4 = []
+            for i in l3:
+                d1 = {}
+                info = models.met_Author.objects.filter(openid=i).first()
+                d1['name'] = info.name
+                d1['headimg'] = info.headimg
+                l4.append(d1)
+            if nowType is not None:
+                k4 = ['13770701228', '18101894106', '15256033883']
+                chance = k4[random.randint(0, 2)]
+                hitUsr = models.met_Author.objects.filter(phoneNum=chance).first().name
+                headimg = models.met_Author.objects.filter(phoneNum=chance).first().headimg
+            return {"result_code": 0, "result_msg": None, "hitUsr": hitUsr, "headimg": headimg, "list": l4}
+        else:
+            return {"result_code": 3, "result_msg": "无弹幕"}
     except Exception as e:
         return {"result_code": -1, "result_msg": str(e)}
+
+
+@decorators.action_render
+def saveTcload(request):
+    name = request.GET['name']
+    img = request.GET['img']
+    phoneNum = request.GET['phone']
+    models.met_Author.objects.create(
+        name=name,
+        headimg=img,
+        phoneNum=phoneNum,
+    )
+    return {"result_code": 0, "result_msg": "success"}
+
+
+
+@decorators.action_render
+def shadowPoint(request):
+    passwd = request.GET['key']
+    if passwd == "1":
+        cache.set("shadowalk", 1, 60*60*60)
+    else:
+        cache.set("shadowalk", None, 60*60*60)
+    return {"result_code": 0, "result_msg": None}
+
+
+
+@decorators.action_render
+def shadowPoint(request):
+    luanchPass = request.GET['switch']
+    if luanchPass == "1":
+        cache.set("chanceInfo", 1, 60*60*60)
+    else:
+        cache.set("chanceInfo", None)
+    return {"result_code": 0}

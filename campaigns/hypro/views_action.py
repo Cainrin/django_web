@@ -2,7 +2,8 @@
 import math, datetime, pytz, random
 from campaigns.foundation.applet import response, utils
 from campaigns.foundation.const import FoundationConst, DisplayConst
-from campaigns.hypro import models, config, const, wechat_api
+from campaigns.hypro import models, config, const
+from campaigns.foundation import wechat_api
 from campaigns.hypro.applet import decorators
 from campaigns.hypro.applet.vote import FendaVoteManager
 from campaigns.hypro.applet.uitls import fit_up_work_list, save_work_image, fit_up_work
@@ -11,6 +12,9 @@ from django.utils import timezone
 from collections import Counter
 from campaigns.hypro.applet.Tcos import Auth
 from campaigns.hypro.applet.getLocation import txLocations
+from django.core.cache import cache
+import requests, hashlib
+from urllib import quote
 
 
 
@@ -24,6 +28,17 @@ def get_sign_package(request):
     sign_package = wechat_api.WechatApi().get_sign_package(url)
     return sign_package
 
+
+
+
+
+@decorators.action_render
+def save_ynd(request):
+    try:
+        models.saveCout.objects.create(mark="111")
+        return {"result_code": 0, "result_msg": None}
+    except Exception as e:
+        return {"result_code": -1, "result_msg": str(e)}
 
 
 
@@ -92,4 +107,76 @@ def getLocation(request):
         return str(a['result']['address_component']).replace('u\'', '\'').decode("unicode-escape") + a['result']['address']
     else:
         return a['message']
+
+
+@decorators.action_render
+def sendMessage(request):
+    phoneNum = request.GET['phone']
+    username = 'ofei001'
+    passwd = hashlib.md5('ofei001' + hashlib.md5('1sn44xc6').hexdigest()).hexdigest()
+    verifyCode = str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(0, 9)) + str(random.randint(0, 9))
+    cache.set(str(phoneNum), verifyCode, 60*2)
+    print str(phoneNum)
+    content = quote('短信验证码内容：您正在预约申请中邮消费金融信用贷款产品，验证码是{0}，请勿泄露。【中邮消费金融公司】'.format(verifyCode))
+    data = {'username': username, "password": passwd, "content": content, 'mobile': phoneNum}
+    url = 'http://182.92.23.38/smsSend.do'
+    reSponse = requests.post(url=url, params=data)
+    models.msgCode.objects.create(
+        phone=phoneNum,
+        verifyCode=str(reSponse.text)
+    )
+    return {"result_code": 0, "result_msg": reSponse.text}
+
+
+
+@decorators.action_render
+def getVerify(request):
+    openid = request.session.get("wxUser")
+    if openid is not None:
+        nowday = datetime.date.today()
+        dailyUpdate = models.ycBank2.objects.filter(openid=openid).filter(Dcreatime=nowday).all().count()
+        if dailyUpdate > 5:
+            return {"result_code": 1, "result_msg": "now more update"}
+    if openid is None:
+        openid = "pc"
+    name = request.POST['name']
+    phone = request.POST['phone']
+    result = request.POST['result']
+    location = request.POST['location']
+    code = request.POST['code']
+    if code == cache.get(int(phone)):
+        models.ycBank2.objects.create(
+            name=name,
+            phoneNum=phone,
+            resultChoice=result,
+            location=location,
+            openid=openid
+        )
+        return {"result_code": 0, "result_msg": 'Done'}
+    else:
+        models.ycBank2.objects.create(
+            name=name,
+            phoneNum=phone,
+            resultChoice=result,
+            location=location,
+            isVerify=False,
+            openid=openid
+        )
+        return {"result_code": 2, "result_msg": "not verify"}
+
+
+
+@decorators.action_render
+def ycBlank(request):
+    name = request.POST['name']
+    phone = request.POST['phone']
+    result = request.POST['result']
+    location = request.POST['location']
+    models.ycBlank.objects.create(
+        name=name,
+        phoneNum=phone,
+        resultChoice=result,
+        location=location
+    )
+    return {"result_code": 0, "result_msg": "done"}
 

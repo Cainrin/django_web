@@ -1,0 +1,48 @@
+<div id="active">
+	<header>
+		<div class="calendar" style="opacity: 0;">
+			<div class="ta_date" id="div_date_demo3">
+				<span class="date_title" id="date_demo3"></span>
+				<a class="opt_sel" id="input_trigger_demo3">
+					<i class="i_orderd"></i>
+				</a>
+			</div>
+			<div id="datePicker"></div>
+		</div>
+		<div id="pv_uv">
+			<p>PV:<span ng-bind='pv'></span></p>
+			<p>UV:<span ng-bind='uv'></span></p>
+		</div>
+		<!--<div id="search">
+			<input type="text" placeholder="输入搜索的关键词"  ng-model='keyValue'/>
+			<input type="button" value="搜索"  ng-click='Search()'/>
+		</div>-->
+		<div id="buts">
+			<p class="p2" ng-click='extype()'>导出</p>
+		</div>
+	</header>
+	<span class='zhou' ng-class='{active:week==1}' ng-click="showList(1)">第一周</span>
+	<span class='zhou' ng-class='{active:week==2}' ng-click="showList(2)">第二周</span>
+	<span class='zhou' ng-class='{active:week==3}' ng-click="showList(3)">第三周</span>
+	<section id="active_table" class="user">
+		<table>
+			<thead>
+				<tr>
+					<th>用户ID</th>
+					<th>排名</th>
+					<th>周期</th>
+					<th>联系方式</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='data in active'>
+					<td ng-bind='data.user'></td>
+					<td ng-bind='data.rank'></td>
+					<td>第{{data.weekCount}}周</td>
+					<td ng-bind='data.info'></td>
+				</tr>
+			</tbody>
+		</table>
+		<tm-pagination conf="paginationConf"></tm-pagination>
+	</section>
+</div>

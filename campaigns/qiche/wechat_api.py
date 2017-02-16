@@ -1,6 +1,6 @@
 #encoding=utf-8
 from campaigns.foundation import models
-from campaigns.fenda201605 import app_id
+from campaigns.qiche import app_id
 import requests
 import simplejson
 import urllib
@@ -165,4 +165,3 @@ class WechatApi(WechatBaseApi):
               (request.get_host(), smart_str(request.get_full_path()))
         return url
 
-wechatAPI = WechatApi()

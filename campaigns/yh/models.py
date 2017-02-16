@@ -53,7 +53,7 @@ class Work(models.Model):
         verbose_name_plural = WorkConst.VN_TABLE_NAME
 
     def __unicode__(self):
-        return ""
+        return str(self.id)
 
 
 class Share(models.Model):
@@ -143,3 +143,11 @@ class UniqueVisitor(models.Model):
     def __unicode__(self):
         return str(self.id)
 
+
+class ranDomWork(models.Model):
+    imageurl = models.ImageField(upload_to="", verbose_name=FoundationConst.VN_IMAGE)
+    rank = models.IntegerField(verbose_name=u'排序')
+    crreaTime = models.DateField(auto_now_add=True, verbose_name=FoundationConst.VN_CREATION_TIME)
+
+    def __unicode__(self):
+        return str(self.id)

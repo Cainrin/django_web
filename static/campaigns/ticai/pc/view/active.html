@@ -1,0 +1,61 @@
+<div id="active">
+	<header>
+		<div class="calendar">
+			<div class="ta_date" id="div_date_demo3">
+				<span class="date_title" id="date_demo3"></span>
+				<a class="opt_sel" id="input_trigger_demo3">
+					<i class="i_orderd"></i>
+				</a>
+			</div>
+			<div id="datePicker"></div>
+		</div>
+		<div id="pv_uv">
+			<p>PV:<span ng-bind='pv'></span></p>
+			<p>UV:<span ng-bind='uv'></span></p>
+		</div>
+		<div id="search">
+			<input type="text" placeholder="输入搜索的关键词"  ng-model='keyValue'/>
+			<!--<select>
+				<option value="金额">金额</option>
+				<option value="奖品">奖品</option>
+			</select>-->
+			<input type="button" value="搜索"  ng-disabled="!keyValue"  ng-click='Search()'/>
+		</div>
+		<div id="buts">
+			<p class="p1"><span ng-click="GetAllEmployee('None')" ng-model="suchchoice">步数</span><span class="last" ng-click="GetAllEmployee('time')">时间</span></p>
+			<p class="p2" ng-click='extype()'>导出</p>
+		</div>
+	</header>
+	<section id="active_table">
+		<table>
+			<thead>
+				<tr>
+					<th>用户ID</th>
+					<th>截图</th>
+					<th>原始步数</th>
+					<th>修改后步数</th>
+					<th>操作</th>
+					<th>捐赠金额</th>
+					<th>奖品</th>
+					<th>上传时间</th>
+					<th>联系方式</th>
+				</tr>
+			</thead>
+			<tbody id="tbody">
+				<tr ng-repeat="data in active" data-id='{{data.id|| data.usrid}}'>
+					<td ng-init="Disabled_$index=true" ng-bind='data.id || data.usrid'></td>
+					<td><img ng-src="{{data.picture}}"></td>
+					<!--<td><input type="number" ng-value="data.change=='0'?data.count:data.change" id="number_{{$index}}" disabled="disabled"></td>-->
+					<td>{{data.count}}</td>
+					<td><input type="number" ng-value="data.change" id="number_{{$index}}" disabled="disabled"></td>
+					<td><input type="button" value="修改" data-num='number_{{$index}}' data-cid='{{data.Cid}}' class="but"></td>
+					<td ng-bind='data.money'></td>
+					<td ng-bind='data.pricesname'></td>
+					<td ng-bind='data.update||data.updatetime'></td>
+					<td ng-bind-html='data.phonecall||data.username'></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<tm-pagination conf="paginationConf"></tm-pagination>
+</div>
