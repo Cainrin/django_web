@@ -351,3 +351,10 @@ def wo1223(request):
 @page_render(ViewConfig.TEMPLATE_MOBILE_URL + "yh_app.html")
 def yh_app(request):
     pass
+
+
+@pv
+@uv
+@page_render(ViewConfig.TEMPLATE_MOBILE_URL + "lt_new.html")
+def lt_new(request):
+    pass

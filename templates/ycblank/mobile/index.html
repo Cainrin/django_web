@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+	    <title>全民拆红包</title>
+	    <script type="text/javascript" src="http://lbs-10030008.file.myqcloud.com/mobile/js/fontSize.js" ></script>
+	    <link rel="stylesheet" href="http://lbs-10030008.file.myqcloud.com/mobile/css/index.css" />
+	    <!--<script src="http://cdn.bootcss.com/vue/2.0.2/vue.min.js"></script>-->
+	    <script type="text/javascript" src="http://lbs-10030008.file.myqcloud.com/mobile/js/vue.js" ></script>
+	    <script type="text/javascript" src="http://lbs-10030008.file.myqcloud.com/js/zepto.min.js" ></script>
+	    <script type="text/javascript" src="http://lbs-10030008.file.myqcloud.com/js/zepto.fx.min.js" ></script>
+	    <script type="text/javascript" src="http://lbs-10030008.file.myqcloud.com/mobile/js/common.js" ></script>
+	    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	    <script type="text/javascript" src="http://lbs-10030008.file.myqcloud.com/mobile/js/wx-share.js?trime=336" ></script>
+	    <style>
+	    	[v-cloak]{
+				display: none;
+			}
+	    </style>
+	    <!--统计代码-->
+	    <script>
+		  	var _mtac = {"performanceMonitor":1};
+		  	(function() {
+		  		var mta = document.createElement("script");
+		  		mta.src = "http://pingjs.qq.com/h5/stats.js?v2.0.2";
+		  		mta.setAttribute("name", "MTAH5");
+		  		mta.setAttribute("sid", "500162967");
+		  		mta.setAttribute("cid", "500162971");
+		  		var s = document.getElementsByTagName("script")[0];
+		  		s.parentNode.insertBefore(mta, s);
+		  	})();
+		</script>
+	</head>
+	<body id="body_app" style="opacity: 0;">
+		<div id="wrap">
+			<div id="wrap_bj">
+			<div id="page_1">
+			<header>
+				<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/logo.png"/>
+				<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/tou.png"/>
+				<img id="active" @click='rule' src="http://lbs-10030008.file.myqcloud.com/mobile/img/active.png"/>
+			</header>
+			<section id="draw_wrap">
+				<div id="main">
+					<ul>
+						<li>
+							<img @click='selfShare' v-if='hundreds==null' src="http://lbs-10030008.file.myqcloud.com/mobile/img/hb_3.png"/>
+							<img @click='selfShare' v-if='hundreds=="noOpen"' src="http://lbs-10030008.file.myqcloud.com/mobile/img/hundred.png"/>
+							<img title="draw" v-if='hundreds=="Ipone_bai"' src="http://lbs-10030008.file.myqcloud.com/mobile/img/hundred0.png"/>
+							<img title="draw" v-if='hundreds==1' src="http://lbs-10030008.file.myqcloud.com/mobile/img/hundred1.png"/>
+							<img title="draw" v-if='hundreds==2' src="http://lbs-10030008.file.myqcloud.com/mobile/img/hundred2.png"/>
+							<img title="draw" v-if='hundreds==3' src="http://lbs-10030008.file.myqcloud.com/mobile/img/hundred3.png"/>
+							<img title="draw" v-if='hundreds==4' src="http://lbs-10030008.file.myqcloud.com/mobile/img/hundred4.png"/>
+						</li>
+						<li>
+							<img @click='selfShare' v-if='decade==null' src="http://lbs-10030008.file.myqcloud.com/mobile/img/hb_2.png"/>
+							<img @click='selfShare' v-if='decade=="noOpen"' src="http://lbs-10030008.file.myqcloud.com/mobile/img/ten.png"/>
+							<img title="draw" v-if='decade=="Ipone_ten"' src="http://lbs-10030008.file.myqcloud.com/mobile/img/ten0.png"/>
+							<img title="draw" v-if='decade==5' src="http://lbs-10030008.file.myqcloud.com/mobile/img/ten5.png"/>
+							<img title="draw" v-if='decade==6' src="http://lbs-10030008.file.myqcloud.com/mobile/img/ten6.png"/>
+							<img title="draw" v-if='decade==7' src="http://lbs-10030008.file.myqcloud.com/mobile/img/ten7.png"/>
+							<img title="draw" v-if='decade==8' src="http://lbs-10030008.file.myqcloud.com/mobile/img/ten8.png"/>
+							<img title="draw" v-if='decade==9' src="http://lbs-10030008.file.myqcloud.com/mobile/img/ten9.png"/>
+						</li>
+						<li>
+							<!--<img v-if='todayfinish' src="http://lbs-10030008.file.myqcloud.com/mobile/img/bitclose.png"/>-->
+							<img v-if='unitBit==null' src="http://lbs-10030008.file.myqcloud.com/mobile/img/bit.png" />
+							<img title="draw" v-else src="http://lbs-10030008.file.myqcloud.com/mobile/img/bit0.png" />
+			 			</li>
+					</ul>
+					<article id="dous">
+						<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/topico.png"/>
+						<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/left.png"/>
+						<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/right.png"/>
+					</article>
+				</div>
+				<p class="p_txet">
+					<span v-if='decadeOpenid!=null'><i v-text='decadeOpenid' style="font-style: normal;"></i>:打开了十位数红包<br/></span>
+					<span v-if='hundredOpenid!=null'><i v-text='hundredOpenid' style="font-style: normal;"></i>:打开了百位数红包<br/></span>
+					<span v-if='!unitBit||unitBit==1'>依次打开个位、十位、百位三个红包，拆到多少领多少<br/>100%中奖，更有实物黄金豆惊喜相送</span>
+					<span v-if='unitBit==2'>在好友们的帮助下，你已成功拆开三个红包 赶紧去领奖吧！</span>
+					<span v-if='unitBit==3 && !butPhone'>领取成功，人生赢家就是你！</span>
+					<span v-if='unitBit==3 && !butBean'>领取成功，日进“豆”金不是梦！</span>
+				</p>
+			</section>
+			<div id="buts">
+				<p>
+					<!--打开看看-->
+					<img @click='unit' v-if='!unitBit' src="http://lbs-10030008.file.myqcloud.com/mobile/img/open.png"/>
+					<!--好友助攻-->
+					<img @click='selfShare' v-if='unitBit==1' src="http://lbs-10030008.file.myqcloud.com/mobile/img/zhug.png"/>
+					<!--马上去领-->
+					<img @click='sbUpload(0)' v-if='unitBit==2' src="http://lbs-10030008.file.myqcloud.com/mobile/img/lingqu.png"/>
+					<!--传递好运-->
+					<img @click='selfShare(1)' v-if='unitBit==3' src="http://lbs-10030008.file.myqcloud.com/mobile/img/cd.png"/>
+					<!--帮他拆红包-->
+					<img @click='shareOther(0)' v-if='unitBit==4' src="http://lbs-10030008.file.myqcloud.com/mobile/img/nz.png"/>
+					<!--我也要玩-->
+					<img @click='openHref' v-if='unitBit==5' src="http://lbs-10030008.file.myqcloud.com/mobile/img/play.png"/>
+				</p>
+				<p v-if='finishbut'>
+					<!--我要兑换-->
+					<img @click='outChain' src="http://lbs-10030008.file.myqcloud.com/mobile/img/duhuan.png"/>
+				</p>
+				<!--中奖纪录-->
+				<p v-if='isSelfPro'>
+					<img @click='proList' style="width: 1.9rem; display: block; margin: auto;" src="http://lbs-10030008.file.myqcloud.com/mobile/img/list.png"/>
+				</p>
+			</div>
+		</div>
+		<!--第二部分-->
+		<div id="page_2">
+			<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/text_1.png"/>
+			<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/page_1.png"/>
+			<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/haoli.png"/>
+			<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/ico2.png"/>
+			<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/bottom_bj.png"/>
+		</div>
+		</div>
+		</div>
+		<!--弹框部分-->
+		<!--活动规则-->
+		<div id="rule" class="make" v-bind:class="{none:isNone}">
+			<div id="rule_wrap"> 
+				<header>
+					<img src="http://lbs-10030008.file.myqcloud.com/mobile/img/rule.png"/>
+					<img class="close_rule" @click='Close' src="http://lbs-10030008.file.myqcloud.com/mobile/img/close.png"/>
+				</header>
+				<div id="rule_text">
+					
+					<div>
+						<h1>一、活动时间：</h1>
+						<p>2017年2月22日-2017年3月1日</p>
+					</div>
+					<div>
+						<h1>二、活动对象：</h1>
+						<p>所有微信用户</p>
+					</div>
+					<div>
+						<h1>三、活动细则：</h1>
+						<p>用户通过拆红包可随机领取苏银豆和实物黄金豆。苏银豆可在【串串盈营销云平台】兑换好礼。</p>
+					</div>
+					<div>
+						<p>1. 参与方式：</p>
+						<p>
+							1）活动的红包分为三个（即个位、十位、百位数），点击“拆开看看”，即拆开个位的红包；十位、百位需分别转发给一位微信好友帮忙拆开。三个红包拆开后按照位数排列显示的数字，即参与者获得苏银豆的数量。<br/>
+							2）如果拆开的三个红包数字均为0，即可赢取实物黄金豆一颗。<br/>
+							3）每人每天可发起一次拆红包活动。首次参与活动需填写真实信息，便于后期信息核实和奖品发放，一经提交不可更改。
+						</p>
+					</div>
+					<div>
+						<p>2. 奖项设置：</p>
+						<p>
+							<span>1) 实物黄金豆：5颗，活动期间随机送出5颗实物黄金豆。</span>
+							<!--活动期间随机送出5颗实物黄金豆。-->
+							<span>2)苏银豆：5000000颗，红包拆开后的数字即为用户领取苏银豆的数量。</span>
+							<!--红包拆开后的数字即为用户领取苏银豆的数量。-->
+						</p>
+					</div>
+					<div>
+						<p>3. 兑换规则：</p>
+						<p>
+							活动结束10个工作日内，用户所领取的苏银豆将全部发放至【串串盈营销云平台】账户中，苏银豆可兑换好礼。逾期未领者，视为自动放弃。用户参与活动与注册串串盈营销云平台所填写的手机号码应保持一致，否则无法成功发放苏银豆。<br/>
+							1）苏银豆：用户需关注【江苏银行】微信公众号，点击<我要赚豆>，成功注册【串串盈营销云平台】，方可领取。<br/>
+							2）实物黄金豆：由工作人员联系核实发放，请携带身份证至指定网点领取。
+						</p>
+						
+					</div>
+					<div>
+						<p>4. 注意事项：</p>
+						<p>如违反活动规则或恶意伪造数据，一经发现立即取消活动资格，本活动解释权归江苏银行所有。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--表单提交-->
+		<div id="Submit" class="make" v-bind:class='{none:isUpload}'>
+			<div id="Submit_wrap">
+				<div class="fomre">
+					<header>
+						<p v-if='butBean'><span v-text='total'></span>颗苏银豆离你就差这一步！</p>
+						<p v-if='butPhone'>实物黄金豆离你就差这一步!</p>
+					</header>
+					<input type="text" name="Name" v-model='name' id="Name" placeholder="请输入姓名"/>
+					<input type="text" name="Phone" v-model='phone' id="Phone" placeholder="请输入电话"/>
+					<footer>
+						<div>
+							<p v-if='butBean'>苏银豆将在活动结束10个工作日内发放至【串串盈营销云平台】账户，请耐心等待。</p>
+							<p v-if='butPhone'>实物黄金豆将在活动结束10个工作日内，由工作人员联系核实，届时请携带身份证至指定网点领取。</p>
+						</div>	
+						<img @click='sbUpload(1)' class="submits" src="http://lbs-10030008.file.myqcloud.com/mobile/img/submit.png"/>
+						<p>*请确保手机号码真实无误，以便奖品成功发放</p>
+					</footer>
+				</div>
+				<i class="close" @click='closeUpload'><img src="http://lbs-10030008.file.myqcloud.com/mobile/img/close.png"/></i>
+			</div>
+		</div>
+		<!--分享-->
+		<div id="share" class="share_make" v-bind:class='{none:isShare}'>
+			<!--找好友帮忙-->
+			<img v-if='!isTransmit' src="http://lbs-10030008.file.myqcloud.com/mobile/img/share.png"/>
+			<!--一起发家致富-->
+			<img v-else src="http://lbs-10030008.file.myqcloud.com/mobile/img/share_1.png"/>
+		</div>
+		<!--中奖纪录-->
+		<div id="award_list" class="make" v-bind:class='{none:isPro}'>
+			<div class="list_wrap">
+				<div id="no_award" v-if='!dataList.length'>
+					拆开三个红包并领取才能获奖哟！
+				</div>
+				<div id="has_award" v-else>
+					<h1>中奖记录</h1>
+					<p class="title"><span>日期</span><span>奖品</span><span>数量</span></p>
+					<div class="pro_list">
+						<ul>
+							<template v-for='list in dataList'>
+							<li v-if='list.peasType==2'>
+								<p><span v-text='list.creatime|Time'></span></p>
+								<p><img src="http://lbs-10030008.file.myqcloud.com/mobile/img/phone7.png"/></p>
+								<p>x<span>1</span></p>
+							</li>
+							<li v-else>
+								<p><span v-text='list.creatime|Time'></span></p>
+								<p><img src="http://lbs-10030008.file.myqcloud.com/mobile/img/ren.png"/></p>
+								<p>x<span v-text='list.Count'></span></p>
+								
+							</li>
+							</template>
+						</ul>
+					</div>
+					<i @click='outChain'><img src="http://lbs-10030008.file.myqcloud.com/mobile/img/duhuan.png"/></i>
+					<p>苏银豆将在活动结束10个工作日内发放至【串串盈营销云平台】账户，请耐心等待。</p>
+				</div>
+				<i @click='closePro' class="close"><img src="http://lbs-10030008.file.myqcloud.com/mobile/img/close.png"/></i>
+			</div>
+		</div>
+		<!--今天已经完成提示明天再来-->
+		<div id="award_list" class="make" v-bind:class='{none:hjd}'>
+			<div class="list_wrap"  v-bind:class='{none:todayfinish}'>
+				<div id="no_award" style="line-height: 0.4rem;">
+					<p style="padding-top: 0.5rem;">今天您领红包的次数已用完，<br/>明天再来吧！</p>
+				</div>
+				<i @click='closePro' class="close"><img src="http://lbs-10030008.file.myqcloud.com/mobile/img/close.png"/></i>
+			</div>
+			
+			<div class="list_wrap" v-if='butPhone && todayfinish'>
+				<div id="no_award" style="line-height: 0.4rem;">
+					<p style="padding-top: 0.5rem;">恭喜您获得了一颗实物黄金豆,<br/>马上领取</p>
+				</div>
+				<i @click='closePro' class="close"><img src="http://lbs-10030008.file.myqcloud.com/mobile/img/close.png"/></i>
+			</div>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el:'body',
+			data:{
+				name:'',
+				phone:'',
+				isNone:true,
+				butImg:'',
+				unitBit:null,//个位
+				decade:null,//十位
+				hundreds:null,//百位
+				hjd:true,
+				ID:'',
+				isShare:true,//自己分享
+				isUpload:true,//表单提交
+				getID:getQueryString('ID'),
+				butBean:'',//豆子
+				butPhone:'',//手机
+				isTransmit:'',//传递幸运
+				total:'',//总数
+				finishbut:'',//领完奖
+				dataList:'',//奖品列表
+				isPro:true,//奖品列表
+				isSelfPro:true,//是否是自己打开，展示中奖纪录
+				todayfinish:true,//今天是否领完
+				decadeOpenid:null,//十位openid,
+				hundredOpenid:null,//百位openid
+				
+			},
+			filters:{
+				Time:function(Val){
+					console.log(Val)
+					return Val.split(" ")[0]
+				}
+			},
+			created:function(){
+				var This=this;
+				var getId=This.getID;
+				if(getId==0){
+					This.prizdraw();
+				}else{
+					This.shareOther(getId);
+				}
+				
+			},
+			ready:function(){
+				console.log(this.$el)
+				this.$el.style.opacity='1'
+			},
+			methods:{
+				rule:function(){
+					this.isNone=false;
+				},
+				Close:function(){
+					this.isNone=true;
+				},
+				closePro:function(){
+					this.isPro=true;
+					this.todayfinish=true;
+					this.hjd=true;
+				},
+				wxName:function(openID,fun){
+						$.get('nickname',{openid:openID},fun)
+				},
+				//初始生成红包检测是否有未完成红包
+				prizdraw:function(){
+					var This=this;
+					$.ajax({
+						type:"get",
+						url:"prizdraw",
+						async:true,
+						success:function(response){
+						//	alert(JSON.stringify(response))
+							var data=response;
+							var decadeOpenid=data.decadeOpenid;
+							if(data.decadeOpenid!=null){
+								This.wxName(decadeOpenid,function(response){
+									if(response.result_code==0){
+										This.decadeOpenid=response.nickname;
+//										alert(This.decadeOpenid);
+									}
+								});
+							}
+							var hundredOpenid=data.hundredOpenid;
+							if(data.hundredOpenid!=null){
+								This.wxName(hundredOpenid,function(response){
+									if(response.result_code==0){
+										This.hundredOpenid=response.nickname;
+//										alert(This.hundredOpenid);
+									}
+								});
+							}
+							This.ID=data.id;
+							if(data.result_code==0){//没有未完成作品，新建作品
+								WX_share(0,data.id)//分享
+							}else if(data.result_code==1){//有未完成作品
+								This.decade=data.decade==0?'Ipone_ten':data.decade;
+								This.hundreds=data.hundreds==0?'Ipone_bai':data.hundreds;
+								This.ID=data.id;
+								if(data.unitBit!=null){
+									WX_share(1,This.ID)
+								}else{
+									WX_share(0,0)
+								}
+								
+								if(data.unitBit!=null){
+//									This.unitBit=0;
+									if(This.decade&&This.hundreds){
+										This.unitBit=2;//作品全部完成
+										This.butImg=true;
+										if(This.decade=='Ipone_ten'&&This.hundreds=='Ipone_bai'){
+											This.butPhone=true;
+											This.hjd=false;
+											WX_share(3,This.ID)//分享
+										}else{
+											This.butBean=true;
+											if(data.hundreds==0){
+												This.total=This.decade+""+0;
+											}else{
+												This.total=This.hundreds+""+This.decade+""+0;
+											}
+											
+											WX_share(2,This.ID)//分享
+										}
+									}else{
+										This.unitBit=1;//作品没抽完，还需要好友抽
+										WX_share(1,This.ID)//分享
+									}
+								}
+								
+							}
+							else if(data.result_code==3){ //代表今天已经参加，必须领完奖品
+								
+								This.unitBit=3;//作品领完，传递好运
+								This.decade=data.decade==0?'Ipone_ten':data.decade;
+								This.hundreds=data.hundreds==0?'Ipone_bai':data.hundreds;
+								This.todayfinish=false;
+								This.hjd=false;
+								if(data.decade!=0||data.hundreds!=0){
+									This.finishbut=true;
+									WX_share(2,data.id)//分享
+								}
+							}
+							else if(data.result_code==4){//代表活动奖品以为空 活动结束
+								showTips('今日奖品已发完，正在补货中，请明日再来。');
+								WX_share(0,data.id)//分享
+							}
+//							alert('prizdraw接口'+JSON.stringify(response))
+						},
+						error:function(err){
+//							alert('prizdraw接口err'+JSON.stringify(err))
+						}
+					});
+				},
+				//自己抽奖
+				unit:function(){
+					var This=this;
+					var Json={
+								id:This.ID,
+								such:1,//自己打开，带1，分享出去打开什么都不带       不加such是查询，加such是
+						};
+//					alert(JSON.stringify(Json))
+					if(!This.unitBit){
+						$.ajax({
+							type:'get',
+							url:"unit",
+							data:Json,
+							async:true,
+							success:function(response){
+								var data=response;
+								console.log(data);
+								WX_share(1,This.ID);
+								if(!data.result_code){
+									This.unitBit=1; 
+								}else if(data.result_code==1){
+									showTips('已经点开');
+								}
+								else if(data.result_code==2){
+									showTips('发起人还未打开')
+								}
+//								alert('unit接口'+JSON.stringify(response))
+							},
+							error:function(err){
+//								alert('unit接口err'+JSON.stringify(err))
+							}
+						})
+					}
+				},
+				shareOther:function(IDs){//分享他人打开，或者自己打开分享的链接
+					var This=this;
+					var Json;
+					if(IDs!=0){
+						Json={id:This.getID}
+					}else{
+						Json={id:This.getID,such:1}
+//						alert(JSON.stringify(Json))
+					}
+					$.ajax({
+						type:"get",
+						url:"shareOther",
+						data:Json,
+						async:true,
+						success:function(response){
+							var data=response;
+//							alert(JSON.stringify(data))
+							var decadeOpenid=data.decadeOpenid;
+							if(data.decadeOpenid!=null){
+								This.wxName(decadeOpenid,function(response){
+									if(response.result_code==0){
+										This.decadeOpenid=response.nickname;
+//										alert(This.decadeOpenid);
+									}
+								});
+							}
+							var hundredOpenid=data.hundredOpenid;
+							if(data.hundredOpenid!=null){
+								This.wxName(hundredOpenid,function(response){
+									if(response.result_code==0){
+										This.hundredOpenid=response.nickname;
+//										alert(This.hundredOpenid);
+									}
+								});
+							}
+							
+							if(data.result_code==20){//初次显示
+								if(!data.isSelf){
+									This.prizdraw();//调用自己打开的函数
+								}else{
+									WX_share(1,This.getID)//分享
+									This.isSelfPro=false;//不是自己打开
+									if(data.decade!=null){//判断10位是否打开
+										This.decade=data.decade==0?'Ipone_ten':data.decade;
+										if(!data.Clickdecade){//0是自己打开的
+											This.unitBit=5;//我也要玩
+											This.hundreds=data.hundreds==0?"Ipone_bai":data.hundreds;
+										}else{
+											if(data.hundreds!=null){ //判断白位是否打开
+												This.hundreds=data.hundreds==0?"Ipone_bai":data.hundreds;
+												This.unitBit=5;//我也要玩
+											}else{
+												This.hundreds='noOpen';
+												This.unitBit=4;
+											}
+										}
+									}else{
+										This.decade='noOpen';
+										This.unitBit=4;//帮他拆红包
+									}
+								}
+							}else if(data.result_code==3){
+								showTips('发起人还未打开')
+							}else if(data.result_code==100){
+								showTips('您已经打开过了')
+							}else if(data.result_code==0){//点击调用显示
+								This.unitBit=5;
+								This.decade=data.decade==0?'Ipone_ten':data.decade;
+								This.hundreds=data.hundreds==0?'Ipone_bai':data.hundreds;
+							}
+//							alert('shareOther分享接口'+JSON.stringify(response))
+						},
+						error:function(err){
+//							alert('shareOther分享接口err'+JSON.stringify(err))
+						}
+					});
+				},
+				sbUpload:function(info){//上传信息
+					var This=this;
+					if(info==1){
+						var ph=/^1(3|4|5|7|8)\d{9}$/;
+						if(!This.name){
+							showTips('请填写姓名')
+							return false;
+						}
+						if(!This.phone){
+							showTips('请填写手机号')
+							return false;
+						}
+						if(!ph.test(This.phone)){
+							showTips('请填写正确的手机号');
+							return false;
+						}
+						var Url='upload?name='+This.name+"&phone="+This.phone;
+					
+						This.UploadFun(Url)
+					}else{
+						var Url='upload';
+						This.UploadFun(Url)
+					}
+				},
+				UploadFun:function(Url){
+					var This=this;
+					$.ajax({
+						type:"get",
+						url:Url,
+						async:true,
+						success:function(response){
+							var data=response;
+							//alert('upload上传信息'+JSON.stringify(response))
+							if(data.result_code==0){//如果后端未有信息且前端穿入name&phone字段返回
+								This.getFinish()
+							}else if(data.result_code==1){//如果后端数据库已有用户信息则返回
+								This.getFinish()
+							}else if(data.result_code==2){//如果后端暂未有用户信息且前端未传入name&phone字段则返回
+								This.isUpload=false;
+							}else if(data.result_code==3){
+								showTips('该手机号已被注册');
+							}
+//							alert('upload上传信息'+JSON.stringify(response))
+						},
+						error:function(err){
+//							alert('upload上传信息err'+JSON.stringify(err))
+						}
+					});
+				},
+				closeUpload:function(){
+					this.isUpload=true;
+				},
+				getFinish:function(){//完成领取
+					var This=this;
+					$.ajax({
+						type:"get",
+						url:"getFinish",
+						async:true,
+						data:{
+							id:This.ID
+						},
+						success:function(response){
+							//alert('getFinish完成领奖'+JSON.stringify(response))
+							showTips('领取成功');
+							This.isUpload=true;
+							This.unitBit=3;//领取成功
+								This.finishbut=true;
+//							if(data.decade!=0||data.hundreds!=0){
+//							}
+//							if(data.result_code==0){
+//								
+//							}
+						},
+						error:function(err){
+//							alert('getFinish完成领奖err'+JSON.stringify(err))
+						}
+					});
+				},
+				selfShare:function(but){//弹框提示
+					var This=this;
+					if(but){
+						This.isTransmit=true;
+					}else{
+						This.isTransmit=false;
+					}
+					This.isShare=false;
+					setTimeout(function(){
+						This.isShare=true;
+					},2000)
+				},
+				proList:function(){
+					var This=this;
+					$.ajax({
+						type:"get",
+						url:"checkSelf",
+						async:true,
+						success:function(response){
+							var data=response;
+							This.isPro=false;
+							This.dataList=data.dataList;
+//							alert("checkSelf列表11"+JSON.stringify(This.dataList))
+						},
+						error:function(err,Tex){
+//							alert("checkSelf列表err1"+JSON.stringify(Tex))
+						}
+					});
+				},
+				openHref:function(){
+					window.location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx82354932e734ce3f&redirect_uri=https%3a%2f%2fvbank.jsbchina.cn%2fwxcm%2findex.do?ID=0&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect';
+				},
+				outChain:function(){
+					window.location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx82354932e734ce3f&redirect_uri=https%3A%2F%2Fvbank.jsbchina.cn%2Fwxcm%2Findex.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
+				}
+			}
+		})
+	</script>
+</html>

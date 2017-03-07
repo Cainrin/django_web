@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^yc/getVerify$', views_action.getVerify),
     url(r'^yc/testynd.html$', views_page.testYnd),
     url(r'^yc/wx_ynd.html$', views_page.wxynd),
-    url(r'^yc/save$', views_action.save_ynd)
+    url(r'^yc/save$', views_action.save_ynd),
+    url(r'^lt_new.html$', views_page.lt_new)
 ]

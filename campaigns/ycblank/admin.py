@@ -13,7 +13,7 @@ from campaigns.foundation.actions import action_export_excel, form_platform_vali
 class WXUserAdmin(admin.ModelAdmin):
     list_display = ['nickname', 'city', 'gender', 'status', 'creationTime']
     list_filter = ['status', 'creationTime']
-    search_fields = ['uuid', 'nickname']
+    search_fields = ['openid', 'nickname']
     readonly_fields = ['creationTime']
     actions = [action_export_excel(), ]
 
@@ -45,6 +45,7 @@ class PageViewAdmin(admin.ModelAdmin):
 class jsPrizesAdmin(admin.ModelAdmin):
     list_display = ['id', 'user', 'peasType', 'Count', 'creatime']
     search_fields = ['user']
+    list_filter = ['peasType']
     actions = [action_export_excel()]
 
 
@@ -57,7 +58,7 @@ class JsAuthorAdmin(admin.ModelAdmin):
 
 #
 class prizePoolAdmin(admin.ModelAdmin):
-    list_display = ['id', 'master', 'hasFinished', 'luckChance']
+    list_display = ['id', 'master', 'hasFinished', 'luckChance', 'creatime']
     search_fields = ['master__openid']
     actions = [action_export_excel()]
 

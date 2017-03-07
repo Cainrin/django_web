@@ -10,26 +10,23 @@ from campaigns.ycblank.applet.decorators import P_verify_auth
 
 
 @pv
+
 @page_render(ViewConfig.TEMPLATE_MOBILE_URL + "index.html")
 def index(request):
     user = request.GET.get("user", None)
-    print user
     if user is None:
         return HttpResponseRedirect('error.html')
     else:
         secert = "zIe4q3zg9khpIl8tEuj83jr1UWxsah6juiy48mxK1DVTkee4aiSPJrRPR71SGuCt"
-        jarpath = '/tmp'
+        jarpath = '/www'
         isTurnOn = jpype.isJVMStarted()
         if isTurnOn == 0:
             jpype.startJVM(jpype.getDefaultJVMPath(), "-Djava.ext.dirs=%s" % jarpath)
         Test = jpype.JClass("cn.com.yitong.util.security.ThreeDes")
         str_json = Test.getDec(user, secert)
-        print str_json
         str_dict = json.loads(str_json)
-        print str_dict
         openid = str_dict['openid']
         nickname = str_dict['nickname']
-        print openid, nickname
         request.session['wxUser'] = openid
         usrInfo = models.WXUser.objects.filter(openid=openid).first()
         if usrInfo is None:

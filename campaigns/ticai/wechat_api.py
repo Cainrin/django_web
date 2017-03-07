@@ -13,7 +13,6 @@ import hashlib, json
 from django.utils.encoding import smart_str
 from django.core.cache import cache
 
-
 log = logging.getLogger('django')
 # campaign = models.Campaign.objects.get(pk=app_id)
 # appid = campaign.weixin.key

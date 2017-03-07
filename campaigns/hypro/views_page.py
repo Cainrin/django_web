@@ -23,6 +23,11 @@ def zhIndex(request):
 
 
 
+@page_render(ViewConfig.TEMPLATE_MOBILE_URL + "lt_new.html")
+def lt_new(request):
+    pass
+
+
 @page_render(ViewConfig.TEMPLATE_MOBILE_URL + "touch.html")
 def zhTouch(request):
     pass

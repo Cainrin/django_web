@@ -60,6 +60,5 @@ urlpatterns = [
     url(r'^mobile/wo1223.html$', views_page.wo1223),
     # url(r'^mobile/jtkn.html$', views_page.jt_kuanian),
     # url(r'^mobile/jtjc.html$', views_page.jt_airport),
-    url(r'^mobile/yhapp.html', views_page.yh_app)
-
+    url(r'^mobile/yhapp.html', views_page.yh_app),
 ]

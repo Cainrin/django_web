@@ -47,13 +47,15 @@ def nickName(request):
 def uploadInfo(request):
     try:
         name = request.GET.get("name", None)
-        phone = request.GET.get("phone", None)
+        phone = request.GET.get("phone", "default")
         openid = request.session.get("wxUser")
-        info = models.JsAuthor.objects.filter(phone=phone).first()
-        if info.name is not None:
+        info = models.JsAuthor.objects.filter(openid=openid).first()
+        if info.phone is not None:
             return {"result_code": 1, "result_msg": "已有信息"}
         else:
-            if name is not None and phone is not None:
+            if models.JsAuthor.objects.filter(phone=phone).first() is not None:
+                return {"result_code": 3, "result_msg": "手机号已被注册"}
+            if name is not None and phone != "default":
                 usrinfo = models.JsAuthor.objects.filter(openid=openid).update(name=name,
                     phone=phone)
                 return {"result_code": 0, "result_msg": "done"}
@@ -68,7 +70,8 @@ def uploadInfo(request):
 def chance(request):
     try:
         openid = request.session.get("wxUser")
-        print openid
+        if int("".join(str(datetime.date.today()).split("-"))) > 20170301:
+            return {"result_code": 6, "result_msg": "活动已结束"}
         finishInfo = models.prizePool.objects.filter(hasFinished=False, master__openid=openid).first()
         today = datetime.date.today()
         torrmor = today + datetime.timedelta(days=1)
@@ -102,12 +105,12 @@ def chance(request):
                 nowsend = iphoneInfo.peaSend + 1
                 models.peasCount.objects.filter(peasType=2).update(peaSend=nowsend)
 
-            elif models.peasCount.objects.filter(peasType=0).first().peaSend >= 799510:
+            elif models.peasCount.objects.filter(peasType=0).first().peaSend >= 9900000:
                 return {"result_code": 4, "result_msg": "活动奖品为空 活动结束"}
 
             else:
                 decade = random.randint(5, 9)
-                hundred = random.randint(0, 4)
+                hundred = random.randint(0, 0)
                 luckChance = str(decade) + str(hundred)
                 nowsend = models.peasCount.objects.filter(peasType=0).first().peaSend + int(luckChance[1] + luckChance[0] + "0")
                 models.peasCount.objects.filter(peasType=0).update(peaSend=nowsend)

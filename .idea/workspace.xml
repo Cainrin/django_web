@@ -5,928 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c697ffa-87ae-4408-9427-8f4f34273144" name="默认的" comment="None type">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/404/img/img/bj_404.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/404/img/img/bj_404_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/dian.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/hx/img-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/hx/img-2-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/hx/img-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/hx/img-3-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/hx/img-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/hx/img-4-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/hx/img-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/index_but6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/jiazai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/winner_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/winner_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/winner_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/winner_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/winner_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/winner_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/img/winner_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/but6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/dian.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/hx/img-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/hx/img-2-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/hx/img-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/hx/img-3-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/hx/img-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/hx/img-4-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/hx/img-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/jiazai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/winner_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/winner_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/winner_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/winner_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/winner_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/winner_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/winner_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/img/winner_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/1-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/1-4-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/1-5-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/1-6-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/1-7-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-4-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/10-6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/11-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/11-10-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/11-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/11-5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/11-6-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/11-6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/11-7-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/11-8-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/11-9-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/12-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/12-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/13-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2-4-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2-5-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-10-25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-10-26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-10-27.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-10-28.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-10-29.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-10-30.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-10-31.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-11-01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-11-02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-11-03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/2016-11-04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/3-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/3-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/3-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/4-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/4-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/4-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/5-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/5-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/5-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/6-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/6-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/6-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/7-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/7-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/7-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/8-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/8-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/8-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/9-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/9-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/9-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/FlorianBur-TheWay.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/bj.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/click-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/fenxiang300x300.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-10-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-11-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-12-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-13-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-14-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-15-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-16-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-17-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-18-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-19-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-20-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-21-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-22-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-4-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-5-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-6-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-7-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-8-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/new-9-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/none.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/shuoming01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/shuoming02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/start.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/time-1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/time-2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/time-3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/time-4.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/time-5.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/time-6.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/img/time-7.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/1-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/1-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/1-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/1-4-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/1-5-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/1-6-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/1-6-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/10-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/10-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/10-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/10-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/2-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/2-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/2-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/3-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/3-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/4-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/4-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/5-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/5-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/6-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/6-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/7-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/7-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/8-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/8-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/9-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/9-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/9-3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/bj-min.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/bj-min1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaiimg/yinyue.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/pc/img/zhonghangpc.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/4-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/9-20X-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/9-21-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/back-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/big/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/bj-min.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/close-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/disvote.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/footer1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/footer2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/footer3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/footer4-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/footerlogo-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/fx.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/guan.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/indexText1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/indexText2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/indexclose-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/indexshuom-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/kai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/left-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/list-1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/list-2-min-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/list-2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/list-3-min.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/log1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/logo-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/make.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/make.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/play-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/right-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/shake-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/shakeimg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/shuom-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/submit-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/text3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/vote-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/vote_other-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/wx-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/1-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/10-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/11-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/12-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/13-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/14-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/15-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/16-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/17-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/2-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/3-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/4-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/5-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/6-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/7-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/8-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/x/9-min.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/xx.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/xx1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/xx2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/xx3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/xx4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/xx5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/image/xx6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/1-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/1-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/1-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/1-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/1-6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/bj.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/left-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/left-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/pc/img/left-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/call/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/call/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/call/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/call/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/call/5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/call/6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/ico10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/ico6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/ico7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/ico8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/ico9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/1/ico9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/2/ico1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/2/ico2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/2/ico3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/2/ico4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/2/ico5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/2/ico6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/2/ico7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/2/ico8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/2/top.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/di.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/envelopebj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/envelopeup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/jiazai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/logo1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/ren.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/renw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/text.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/text1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/image/upload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1-9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/2016-08-17_145301.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/2016-08-17_145406.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/2016-08-17_145507.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/a1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/a2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/a3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/aaa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/b1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/c1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/c2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/c3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/c4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/c5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/c6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/c7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/c8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/call/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/call/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/call/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/call/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/call/5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/call/6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ewm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico9-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ico9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/1/ren.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/2/ico1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/2/ico2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/2/ico3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/2/ico4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/2/ico5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/2/ico6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/2/ico7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/2/ico8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/2/top.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/E0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/di.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/envelopebj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/envelopeup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/jiazai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/logo1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/ren.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/rent.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/renw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/text.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/text1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/image/upload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/a1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/a2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/a3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/aaa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/b1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/c1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/c2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/c3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/c4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/c5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/c6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/c7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/c8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/call/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/call/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/call/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/call/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/call/5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/call/6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ewm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico9-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico9-1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ico9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/onUpload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/1/ren.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/10-12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/ico8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/top.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/2/upload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/3/ico10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/3/ico6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/3/ico7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/3/ico8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/3/ico9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/E0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/di.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/envelopebj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/envelopeup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/jiazai.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/logo1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/logo_new.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/ren.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/rent.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/renw.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/share/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/share/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/share/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/share/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/share/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/share/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/share/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/text.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/text1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/image/upload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/images/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/calendar/images/calendar_all.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/calendar/images/icon_date.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/calendar/images/page.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/calendar/images/px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/1-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/1-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/1-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/1-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/1-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/1-6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/1-7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/1-8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/2-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/2-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/2-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/2-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/2-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/2-7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/2-8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/lunbo/1-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/lunbo/1-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/lunbo/1-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/hx/lunbo/1-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/new1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/new2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/new3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/new4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/new5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/new6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/new7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/new8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/img/share.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx15.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx16.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx17.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx18.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx19.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx20.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx21.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/hx/hx9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/index.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/product3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/yifu/0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/yifu/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/yifu/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/yifu/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/yifu/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/yifu/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/yifu/6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/pc/img/yifu/7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cain.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/DrawExcel.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/Get_Auth_verification.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/Tcos.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/cheat.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/decorators.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/excelProcess.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/getLocation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/uitls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/userData.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/applet/vote.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/apps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/config.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/const.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/views_action.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/views_page.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/jsblank/wechat_api.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/applet/Get_Auth_verification.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/applet/Tcos.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/applet/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/applet/cheat.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/applet/decorators.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/applet/getLocation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/applet/uitls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/applet/vote.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/apps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/config.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/const.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/views_action.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/views_page.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/liantong/wechat_api.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/applet/Get_Auth_verification.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/applet/Tcos.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/applet/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/applet/cheat.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/applet/decorators.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/applet/getLocation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/applet/uitls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/applet/vote.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/apps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/config.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/const.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/views_action.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/qc/views_page.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/ticai/applet/DrawExcel.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/ticai/applet/Send.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/ticai/applet/excelProcess.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/ticai/applet/sendPrice.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/ticai/wechat_api.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/campaigns/yh/applet/uploadFile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cmp/views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/admin.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/applet/Get_Auth_verification.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/applet/Tcos.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/applet/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/applet/cheat.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/applet/decorators.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/applet/getLocation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/applet/uitls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/applet/vote.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/apps.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/config.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/const.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/migrations/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/models.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/views_action.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/views_page.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jsbank/wechat_api.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/css/winners.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/js/DIY.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/js/PhotoCanvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/mobile/js/exif.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/css/winners.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/js/DIY.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/js/PhotoCanvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/fenda201605/pc/js/exif.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/css/animate.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/css/ticai.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/css/ticainew.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/css/touch.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/js/font-size.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/js/jquery-3.0.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/js/wx-share.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/js/yiru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaijs/font-size.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaijs/jquery-3.0.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/hypro/mobile/ticaijs/wx-share.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/css/footer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/css/idangerous.swiper.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/css/list.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/css/public.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/app/fontSize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/app/footer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/app/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/app/list.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/app/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/Jquery-min-1.12.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/idangerous.swiper.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/sha1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/shake.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/swiper.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/weixinapi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/wx-share.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/zepto.cookie.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/zepto.fx.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/zepto.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/picc/mobile/js/plugins/zepto.selector.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/css/public.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/css/scss/index.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/css/scss/shareIndex.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/css/shareIndex.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/css/success.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/css/upload.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/js/app/fontSize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/js/app/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/js/app/route.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/js/app/shareIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/js/app/update.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/mobile/js/plugins/Jquery-min-1.12.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/fugai.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/qiche/pc/fugai/sazhong.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/css/public.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/css/scss/index.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/css/scss/shareIndex.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/css/shareIndex.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/css/success.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/css/upload.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/app/fontSize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/app/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/app/route.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/app/shareIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/app/update.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/FabricCustom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/Jquery-min-1.12.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/PhotoCanvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/ag-router.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/an-route.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/angular-sanitize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/angular.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/exif.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/iscroll-probe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/md5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/mui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/sha1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/swiper.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/weixinapi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/wx-share.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/zepto.cookie.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/zepto.fx.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/zepto.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/js/plugins/zepto.selector.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/css/index_1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/css/index_2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/css/public.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/css/shareIndex.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/css/success.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/css/upload.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/app/fontSize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/app/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/app/route.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/app/shareIndex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/app/update.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/FabricCustom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/Jquery-min-1.12.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/PhotoCanvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/ag-router.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/an-route.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/angular-sanitize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/angular.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/exif.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/iscroll-probe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/md5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/mui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/qcloud_sdk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/sha1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/swiper.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/weixinapi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/wx-share.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/zepto.cookie.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/zepto.fx.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/zepto.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/js/plugins/zepto.selector.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/view/explain.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/view/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/view/indexSuccess.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/view/list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/view/prize.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/mobile/view/signUp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/angular-sanitize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/angular.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/calendar/dateRange.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/calendar/dateRange.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/calendar/monthPicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/calendar/monthPicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/ticai.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/js/tm.pagination.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/active.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/award.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/draw.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/message.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/nav.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/offline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/progressive.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/rank.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/rankId.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/pc/view/user.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/view/explain.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/view/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/view/indexSuccess.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/view/list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/view/prize.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/ticai/view/signUp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/js/app/myProduct.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/js/app/otherProduct.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/campaigns/yiquan/mobile/js/app/weMakeShare1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/fenda201605/404/error.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/fenda201605/mobile/winners.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/fenda201605/pc/winners.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/hypro/mobile/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/hypro/mobile/ticai.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/hypro/mobile/ticainew.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/hypro/mobile/touch.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/hypro/pc/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/hypro/pc/ticaiIndex.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/hypro/pc/zhonghangpc.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/picc/mobile/error.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/picc/mobile/footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/picc/mobile/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/picc/mobile/list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/picc/mobile/main.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/picc/pc/show.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/qiche/mobile/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/qiche/mobile/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/qiche/mobile/indexSuccess.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/qiche/pc/history.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/qiche/pc/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticai/mobile/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticai/mobile/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticai/mobile/shareIndex.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticai/mobile/success.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticai/mobile/upload.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticai/pc/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ticai/pc/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/yiquan/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/campaigns/yh/applet/111.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/campaigns/testticai/wechat_api.py" afterPath="$PROJECT_DIR$/campaigns/qc/wechat_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/fenda201605/applet/Get_Auth_verification.py" afterPath="$PROJECT_DIR$/campaigns/fenda201605/applet/Get_Auth_verification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/fenda201605/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/fenda201605/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/fenda201605/views.py" afterPath="$PROJECT_DIR$/campaigns/fenda201605/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/fenda201605/views_action.py" afterPath="$PROJECT_DIR$/campaigns/fenda201605/views_action.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/fenda201605/wechat_api.py" afterPath="$PROJECT_DIR$/campaigns/fenda201605/wechat_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/foundation/applet/cheat.py" afterPath="$PROJECT_DIR$/campaigns/foundation/applet/cheat.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/foundation/const.py" afterPath="$PROJECT_DIR$/campaigns/foundation/const.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/foundation/wechat_api.py" afterPath="$PROJECT_DIR$/campaigns/foundation/wechat_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/hypro/admin.py" afterPath="$PROJECT_DIR$/campaigns/hypro/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/hypro/applet/Get_Auth_verification.py" afterPath="$PROJECT_DIR$/campaigns/hypro/applet/Get_Auth_verification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/hypro/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/hypro/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/hypro/models.py" afterPath="$PROJECT_DIR$/campaigns/hypro/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/foundation/applet/export.py" afterPath="$PROJECT_DIR$/campaigns/foundation/applet/export.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/hypro/urls.py" afterPath="$PROJECT_DIR$/campaigns/hypro/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/hypro/views_action.py" afterPath="$PROJECT_DIR$/campaigns/hypro/views_action.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/hypro/views_page.py" afterPath="$PROJECT_DIR$/campaigns/hypro/views_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/lottery/applet/Get_Auth_verification.py" afterPath="$PROJECT_DIR$/campaigns/lottery/applet/Get_Auth_verification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/lottery/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/lottery/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/management/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/management/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/meeting/admin.py" afterPath="$PROJECT_DIR$/campaigns/meeting/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/meeting/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/meeting/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/meeting/models.py" afterPath="$PROJECT_DIR$/campaigns/meeting/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/meeting/urls.py" afterPath="$PROJECT_DIR$/campaigns/meeting/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/meeting/views_action.py" afterPath="$PROJECT_DIR$/campaigns/meeting/views_action.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/meeting/views_page.py" afterPath="$PROJECT_DIR$/campaigns/meeting/views_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/nihuawocai/applet/Get_Auth_verification.py" afterPath="$PROJECT_DIR$/campaigns/nihuawocai/applet/Get_Auth_verification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/nihuawocai/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/nihuawocai/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/nihuawocai/views_actions.py" afterPath="$PROJECT_DIR$/campaigns/nihuawocai/views_actions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/picc/applet/Get_Auth_verification.py" afterPath="$PROJECT_DIR$/campaigns/picc/applet/Get_Auth_verification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/picc/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/picc/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/picc/views_action.py" afterPath="$PROJECT_DIR$/campaigns/picc/views_action.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/picc/wechat_api.py" afterPath="$PROJECT_DIR$/campaigns/picc/wechat_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/picc/wxviews.py" afterPath="$PROJECT_DIR$/campaigns/picc/wxviews.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/qiche/applet/Get_Auth_verification.py" afterPath="$PROJECT_DIR$/campaigns/qiche/applet/Get_Auth_verification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/qiche/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/qiche/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/qiche/views_action.py" afterPath="$PROJECT_DIR$/campaigns/qiche/views_action.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/qiche/wechat_api.py" afterPath="$PROJECT_DIR$/campaigns/qiche/wechat_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/test/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/test/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/testproject/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/testproject/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/admin.py" afterPath="$PROJECT_DIR$/campaigns/ticai/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/applet/Get_Auth_verification.py" afterPath="$PROJECT_DIR$/campaigns/ticai/applet/Get_Auth_verification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/applet/QRCode.py" afterPath="$PROJECT_DIR$/campaigns/ticai/applet/QRCode.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/ticai/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/applet/walkExcel.py" afterPath="$PROJECT_DIR$/campaigns/ticai/applet/walkExcel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/const.py" afterPath="$PROJECT_DIR$/campaigns/ticai/const.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/models.py" afterPath="$PROJECT_DIR$/campaigns/ticai/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/views_action.py" afterPath="$PROJECT_DIR$/campaigns/ticai/views_action.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/views_action_admin.py" afterPath="$PROJECT_DIR$/campaigns/ticai/views_action_admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/admin.py" afterPath="$PROJECT_DIR$/campaigns/yh/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/applet/Get_Auth_verification.py" afterPath="$PROJECT_DIR$/campaigns/yh/applet/Get_Auth_verification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/applet/cheat.py" afterPath="$PROJECT_DIR$/campaigns/yh/applet/cheat.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/yh/applet/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/applet/uitls.py" afterPath="$PROJECT_DIR$/campaigns/yh/applet/uitls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/models.py" afterPath="$PROJECT_DIR$/campaigns/yh/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/urls.py" afterPath="$PROJECT_DIR$/campaigns/yh/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/views_action.py" afterPath="$PROJECT_DIR$/campaigns/yh/views_action.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/views_page.py" afterPath="$PROJECT_DIR$/campaigns/yh/views_page.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yh/wechat_api.py" afterPath="$PROJECT_DIR$/campaigns/yh/wechat_api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yiquan/Views_Action.py" afterPath="$PROJECT_DIR$/campaigns/yiquan/Views_Action.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yiquan/applet/Get_Auth_verification.py" afterPath="$PROJECT_DIR$/campaigns/yiquan/applet/Get_Auth_verification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/yiquan/applet/decorators.py" afterPath="$PROJECT_DIR$/campaigns/yiquan/applet/decorators.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/liantong/urls.py" afterPath="$PROJECT_DIR$/campaigns/liantong/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/liantong/views_page.py" afterPath="$PROJECT_DIR$/campaigns/liantong/views_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ticai/wechat_api.py" afterPath="$PROJECT_DIR$/campaigns/ticai/wechat_api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ycblank/admin.py" afterPath="$PROJECT_DIR$/campaigns/ycblank/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ycblank/views_action.py" afterPath="$PROJECT_DIR$/campaigns/ycblank/views_action.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/campaigns/ycblank/views_page.py" afterPath="$PROJECT_DIR$/campaigns/ycblank/views_page.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmp/settings.py" afterPath="$PROJECT_DIR$/cmp/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmp/urls.py" afterPath="$PROJECT_DIR$/cmp/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/decorators.py" afterPath="$PROJECT_DIR$/templates/decorators.py" />
     </list>
     <ignored path="cmp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -977,77 +66,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="views_action.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/campaigns/ycblank/views_action.py">
+      <file leaf-file-name="decorators.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/ycblank/applet/decorators.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
-              <folding>
-                <element signature="e#24#59#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="27">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views_page.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/campaigns/ycblank/views_page.py">
+      <file leaf-file-name="wechat_api.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/ticai/wechat_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
-              <folding>
-                <element signature="e#24#106#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="188">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/wechat_sdk/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views_page.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/liantong/views_page.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="359" column="8" selection-start-line="359" selection-start-column="8" selection-end-line="359" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views_action.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/liantong/views_action.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/liantong/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views_page.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/hypro/views_page.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="524">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/campaigns/hypro/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+            <state relative-caret-position="416">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views_action.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/campaigns/hypro/views_action.py">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/campaigns/ycblank/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="40" column="54" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
-              <folding>
-                <element signature="e#24#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="const.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/campaigns/hypro/const.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/campaigns/hypro/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="167" column="26" selection-start-line="167" selection-start-column="26" selection-end-line="167" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/campaigns/ycblank/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+            <state relative-caret-position="324">
+              <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -1056,30 +159,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/campaigns/ycblank/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decorators.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/campaigns/foundation/applet/decorators.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-              <folding>
-                <element signature="e#24#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="const.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/campaigns/foundation/const.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7722">
-              <caret line="286" column="4" selection-start-line="286" selection-start-column="4" selection-end-line="286" selection-end-column="4" />
+            <state relative-caret-position="1061">
+              <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -1096,19 +177,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/campaigns/jsblank/applet/vote.py" />
-        <option value="$PROJECT_DIR$/campaigns/jsblank/applet/cheat.py" />
-        <option value="$PROJECT_DIR$/campaigns/liantong/views_page.py" />
         <option value="$PROJECT_DIR$/campaigns/jsblank/config.py" />
         <option value="$PROJECT_DIR$/campaigns/jsblank/wechat_api.py" />
-        <option value="$PROJECT_DIR$/campaigns/liantong/urls.py" />
         <option value="$PROJECT_DIR$/campaigns/jsblank/views_page.py" />
         <option value="$PROJECT_DIR$/../uploadFile.py" />
-        <option value="$PROJECT_DIR$/campaigns/foundation/applet/export.py" />
         <option value="$PROJECT_DIR$/campaigns/jsblank/applet/decorators.py" />
         <option value="$PROJECT_DIR$/campaigns/jsblank/applet/excelProcess.py" />
         <option value="$PROJECT_DIR$/campaigns/jsblank/applet/DrawExcel.py" />
@@ -1137,20 +216,25 @@
         <option value="$PROJECT_DIR$/cmp/urls.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/campaigns/yiquan/applet/decorators.py" />
-        <option value="$PROJECT_DIR$/campaigns/ycblank/admin.py" />
-        <option value="$PROJECT_DIR$/campaigns/ycblank/applet/decorators.py" />
         <option value="$PROJECT_DIR$/campaigns/fenda201605/wechat_api.py" />
         <option value="$PROJECT_DIR$/../test.py" />
-        <option value="$PROJECT_DIR$/campaigns/ycblank/models.py" />
         <option value="$PROJECT_DIR$/campaigns/hypro/applet/decorators.py" />
         <option value="$PROJECT_DIR$/campaigns/hypro/admin.py" />
-        <option value="$PROJECT_DIR$/campaigns/hypro/views_page.py" />
-        <option value="$PROJECT_DIR$/campaigns/ycblank/views_action.py" />
         <option value="$PROJECT_DIR$/campaigns/ycblank/urls.py" />
         <option value="$PROJECT_DIR$/campaigns/hypro/views_action.py" />
         <option value="$PROJECT_DIR$/campaigns/hypro/models.py" />
-        <option value="$PROJECT_DIR$/campaigns/hypro/urls.py" />
+        <option value="$PROJECT_DIR$/campaigns/ycblank/models.py" />
+        <option value="$PROJECT_DIR$/campaigns/foundation/applet/export.py" />
+        <option value="$PROJECT_DIR$/campaigns/ycblank/views_action.py" />
         <option value="$PROJECT_DIR$/campaigns/ycblank/views_page.py" />
+        <option value="$PROJECT_DIR$/cmp/settings.py" />
+        <option value="$PROJECT_DIR$/campaigns/ycblank/admin.py" />
+        <option value="$PROJECT_DIR$/campaigns/ycblank/applet/decorators.py" />
+        <option value="$PROJECT_DIR$/campaigns/ticai/wechat_api.py" />
+        <option value="$PROJECT_DIR$/campaigns/liantong/views_page.py" />
+        <option value="$PROJECT_DIR$/campaigns/liantong/urls.py" />
+        <option value="$PROJECT_DIR$/campaigns/hypro/views_page.py" />
+        <option value="$PROJECT_DIR$/campaigns/hypro/urls.py" />
       </list>
     </option>
   </component>
@@ -1213,6 +297,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1221,10 +307,140 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaigns" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaigns" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ycblank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaigns" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ycblank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="applet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaigns" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ticai" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaigns" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liantong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="campaigns" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hypro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1234,7 +450,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="ToolWindowPython Console.ShowToolbar" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
-    <property name="SearchEverywhereHistoryKey" value="u&#9;FILE&#9;file://C:/Users/Cain/Desktop/django_web/campaigns/hypro/urls.py" />
+    <property name="SearchEverywhereHistoryKey" value="'&#9;null&#9;null&#10;u&#9;FILE&#9;file://C:/Users/Cain/Desktop/django_web/campaigns/hypro/urls.py" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="269" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
@@ -1272,6 +488,168 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1508987365000" />
+                <option name="domain" value="baidu.com" />
+                <option name="name" value="BAIDUID" />
+                <option name="path" value="/" />
+                <option name="value" value="227F4047CCB1F948E4DB8D08F3A190FF:FG=1" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1480657417000" />
+                <option name="domain" value="yanghe.hylinknj.com" />
+                <option name="name" value="sessionid" />
+                <option name="path" value="/" />
+                <option name="value" value="ux6j4lgvwxrb6o2ac9ffazdz6xszqwik" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://115.159.77.117" />
+          <option name="urlPath" value="/ycblank/setChace" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="passwd" />
+                <option name="value" value="13770701228" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="start" />
+                <option name="value" value="6665" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="end" />
+                <option name="value" value="7165" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1508987365000" />
+                <option name="domain" value="baidu.com" />
+                <option name="name" value="BAIDUID" />
+                <option name="path" value="/" />
+                <option name="value" value="227F4047CCB1F948E4DB8D08F3A190FF:FG=1" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1480657417000" />
+                <option name="domain" value="yanghe.hylinknj.com" />
+                <option name="name" value="sessionid" />
+                <option name="path" value="/" />
+                <option name="value" value="ux6j4lgvwxrb6o2ac9ffazdz6xszqwik" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://njhylink.hylinkjs.com" />
+          <option name="urlPath" value="/ycbank/setChace" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="passwd" />
+                <option name="value" value="13770701228" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="start" />
+                <option name="value" value="6665" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="end" />
+                <option name="value" value="7165" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="biscuits">
+            <list>
+              <Biscuit>
+                <option name="date" value="1508987365000" />
+                <option name="domain" value="baidu.com" />
+                <option name="name" value="BAIDUID" />
+                <option name="path" value="/" />
+                <option name="value" value="227F4047CCB1F948E4DB8D08F3A190FF:FG=1" />
+              </Biscuit>
+              <Biscuit>
+                <option name="date" value="1480657417000" />
+                <option name="domain" value="yanghe.hylinknj.com" />
+                <option name="name" value="sessionid" />
+                <option name="path" value="/" />
+                <option name="value" value="ux6j4lgvwxrb6o2ac9ffazdz6xszqwik" />
+              </Biscuit>
+            </list>
+          </option>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://njhylink.hylinkjs.com" />
+          <option name="urlPath" value="/ycblank/setChace" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="passwd" />
+                <option name="value" value="13770701228" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="start" />
+                <option name="value" value="6665" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="end" />
+                <option name="value" value="7165" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="biscuits">
             <list>
@@ -3568,120 +2946,6 @@
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="1508987365000" />
-                <option name="domain" value="baidu.com" />
-                <option name="name" value="BAIDUID" />
-                <option name="path" value="/" />
-                <option name="value" value="227F4047CCB1F948E4DB8D08F3A190FF:FG=1" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="1480657396000" />
-                <option name="domain" value="yanghe.hylinknj.com" />
-                <option name="name" value="sessionid" />
-                <option name="path" value="/" />
-                <option name="value" value="ux6j4lgvwxrb6o2ac9ffazdz6xszqwik" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://yanghe.hylinknj.com" />
-          <option name="urlPath" value="/yh/randomDream" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="1508987365000" />
-                <option name="domain" value="baidu.com" />
-                <option name="name" value="BAIDUID" />
-                <option name="path" value="/" />
-                <option name="value" value="227F4047CCB1F948E4DB8D08F3A190FF:FG=1" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="1480657395000" />
-                <option name="domain" value="yanghe.hylinknj.com" />
-                <option name="name" value="sessionid" />
-                <option name="path" value="/" />
-                <option name="value" value="ux6j4lgvwxrb6o2ac9ffazdz6xszqwik" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://yanghe.hylinknj.com" />
-          <option name="urlPath" value="/yh/randomDream" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="1508987365000" />
-                <option name="domain" value="baidu.com" />
-                <option name="name" value="BAIDUID" />
-                <option name="path" value="/" />
-                <option name="value" value="227F4047CCB1F948E4DB8D08F3A190FF:FG=1" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="1480657393000" />
-                <option name="domain" value="yanghe.hylinknj.com" />
-                <option name="name" value="sessionid" />
-                <option name="path" value="/" />
-                <option name="value" value="ux6j4lgvwxrb6o2ac9ffazdz6xszqwik" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://yanghe.hylinknj.com" />
-          <option name="urlPath" value="/yh/randomDream" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
       </list>
     </option>
   </component>
@@ -4152,7 +3416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487228878927</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="None type">
+      <created>1487229184201</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1487229184201</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -4166,18 +3437,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14895834" sideWeight="0.7082452" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14895834" sideWeight="0.7003155" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27272728" sideWeight="0.1640625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25158563" sideWeight="0.6484375" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42071882" sideWeight="0.49583334" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14895834" sideWeight="0.29175475" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14895834" sideWeight="0.29968455" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -4189,11 +3459,12 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39452845" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27272728" sideWeight="0.8359375" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21035941" sideWeight="0.8359375" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1987315" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24524313" sideWeight="0.6289144" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2073027" sideWeight="0.4875" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@cmp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4122497" sideWeight="0.48958334" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25158563" sideWeight="0.6484375" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901368" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
     </layout>
@@ -4232,95 +3503,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/campaigns/jsblank/views_action.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7533">
-          <caret line="292" column="0" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/jsblank/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmp/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../py脚本/Websocket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2772">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/ticai/views_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_eventlet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/applet/cheat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/ycblank/applet/Get_Auth_verification.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4366,13 +3552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="942">
-          <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/fenda201605/wechat_api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
@@ -4401,13 +3580,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../test.py" />
     <entry file="file://$PROJECT_DIR$/campaigns/hypro/applet/vote.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -4471,13 +3644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/nihuawocai/applet/CainSocks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/hypro/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1334">
@@ -4500,75 +3666,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/hypro/views_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <element signature="e#24#108#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/wechat_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
-          <folding>
-            <element signature="e#16#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/applet/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
-          <folding>
-            <element signature="e#24#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/foundation/applet/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="e#24#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/foundation/const.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7722">
-          <caret line="286" column="4" selection-start-line="286" selection-start-column="4" selection-end-line="286" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/hypro/const.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4577,7 +3678,7 @@
         <state relative-caret-position="836">
           <caret line="40" column="54" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
           <folding>
-            <element signature="e#24#59#0" expanded="true" />
+            <element signature="e#24#59#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -4590,18 +3691,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/campaigns/hypro/urls.py">
+    <entry file="file://$PROJECT_DIR$/campaigns/ticai/views_action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+        <state relative-caret-position="243">
+          <caret line="122" column="76" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/wechat_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="863">
+          <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/nihuawocai/applet/CainSocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2075">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/foundation/actions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/foundation/applet/export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/-762174762/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8343">
+          <caret line="309" column="4" selection-start-line="309" selection-start-column="4" selection-end-line="309" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/foundation/const.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/foundation/applet/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="45" column="69" selection-start-line="45" selection-start-column="69" selection-end-line="45" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/ycblank/views_action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        <state relative-caret-position="2673">
+          <caret line="112" column="45" selection-start-line="112" selection-start-column="45" selection-end-line="112" selection-end-column="45" />
           <folding>
             <element signature="e#24#59#0" expanded="true" />
           </folding>
@@ -4610,11 +3786,99 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/campaigns/ycblank/views_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        <state relative-caret-position="378">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
           <folding>
             <element signature="e#24#106#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="212" column="36" selection-start-line="212" selection-start-column="36" selection-end-line="212" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1061">
+          <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/ycblank/applet/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/ticai/wechat_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/wechat_sdk/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/liantong/views_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="359" column="8" selection-start-line="359" selection-start-column="8" selection-end-line="359" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/liantong/views_action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/liantong/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="62" column="50" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/hypro/views_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/campaigns/hypro/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

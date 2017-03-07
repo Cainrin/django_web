@@ -45,7 +45,7 @@ def export_queryset_to_excel(queryset, fields=None, exclude=None, header=True):
             if isinstance(val, unicode):
                 val = val.encode(FoundationConst.ENCODE_UTF8)
             elif isinstance(val, datetime.datetime):
-                val = (val + datetime.timedelta(hours=8)).strftime(FoundationConst.EXPORT_DATETIME_SECOND_FORMAT)
+                val = val.strftime("%Y年%m月%d日")
             elif isinstance(val, bool):
                 val = FoundationConst.EXPORT_BOOL_TRUE if val else FoundationConst.EXPORT_BOOL_FALSE
             elif val is None:
